@@ -59,10 +59,10 @@
                     <!-- START FORM  -->
                     <form>
                         <p>Enter the page URL to be escaped or unescaped:</p>
-                        <input class="form-control" type="text" placeholder="www.example.com" inputmode="url" style="margin-bottom: 15px;">
-                        <button class="btn btn-primary border rounded-0" type="button" style="width: 102.719px;">Escape</button>
-                        <button class="btn btn-primary border rounded-0" type="button" style="margin: 10px;">Unescape</button>
-                        <textarea class="form-control" readonly="" placeholder="<result>" style="margin-top: 5px;"></textarea>
+                        <input id ="url" class="form-control" type="text" placeholder="www.example.com" inputmode="url" style="margin-bottom: 15px;">
+                        <button id = "submit" onclick="escapeIt()" class="btn btn-primary border rounded-0" type="button" style="width: 102.719px;">Escape</button>
+                        <button id = "cat" onclick="unEscapeIt()" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;">Unescape</button>
+                        <p><textarea id = "result" class="form-control" readonly placeholder="<result>" style="margin-top: 5px;"></textarea></p>
                     </form>
                     <!-- END FORM -->
                 </div>
@@ -82,6 +82,8 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
     <div ng-include="'/assets/templates/scripts.htm'"></div>
+
+    <script src="assets/js/siteFunctionality/escapaid.js"></script>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
