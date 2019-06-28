@@ -19,36 +19,9 @@
 </head>
 <!--  END HEAD -->
 <!-- START BODY -->
-<body>
+<body ng-app="">
   <!-- START NAV -->
-  <nav class="navbar navbar-dark navbar-expand-xl fixed-top bg-white layout-navbar gradient">
-      <div class="container">
-        <a class="navbar-brand logo" href="#">PANDORA</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="nav navbar-nav ml-auto">
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">AdTech Helpdesk</a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="adxcelorator.html">Adxcelorator</a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="escapaid.html">EscapAid</a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="pixeltron.html">Pixeltron</a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="testador.html">Testador</a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="utmatic.html">UtMatic</a></li>
-                  <li class="nav-item dropdown">
-                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Generators</a>
-                      <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item border rounded-0" role="presentation" href="interstitial.html" style="font-family: Lato, sans-serif; font-weight: 700;">Interstitial</a>
-                        <a class="dropdown-item border rounded-0" role="presentation" href="mobilecodegen.html" style="font-family: Lato, sans-serif; font-weight: 700;">Mobile Code</a>
-                        <a class="dropdown-item border rounded-0" role="presentation" href="surveygen.html" style="font-family: Lato, sans-serif; font-weight: 700;">Survey Code</a>
-                        <a class="dropdown-item border rounded-0" role="presentation" href="XML.html" style="font-family: Lato, sans-serif; font-weight: 700;">XML Member</a>
-                      </div>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
+  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 70px"></div>
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
@@ -169,24 +142,14 @@
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
-    <div class="border rounded-0 footer-basic">
-        <footer>
-            <div class="social" style="padding-bottom: 0px;">
-              <a href="https://www.instagram.com/pandora/?hl=en"><i class="icon ion-social-instagram"></i></a>
-              <a href="https://twitter.com/PandoraMusic"><i class="icon ion-social-twitter"></i></a>
-              <a href="https://www.facebook.com/Pandora/"><i class="icon ion-social-facebook"></i></a>
-            </div>
-            <p class="copyright">Pandora Media, LLC © 2019</p>
-        </footer>
-    </div>
+    <div ng-include="'/assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
     <!-- START SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="assets/js/Pricing-Tables-Item-Featured.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <div ng-include="'/assets/templates/scripts.htm'"></div>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
