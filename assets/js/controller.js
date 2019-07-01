@@ -5,14 +5,14 @@
   };
 // ------------ BEGIN ESCAPAID.HTML ---------------------------------------
   function escapeIt() {
-    var url = e("url").value;
+    var url = e("url-escapaid").value;
     var encodedUrl = encodeURIComponent(url);
     var encodedUrl = encodedUrl.replace("https%3A%2F%2F", "https://");
     var encodedUrl = encodedUrl.replace("http%3A%2F%2F", "http://");
     e("result-escapaid").value = encodedUrl;
   };
   function unEscapeIt() {
-    var url = e("url").value;
+    var url = e("url-escapaid").value;
     var unencodedUrl = unescape(url);
     e("result-escapaid").value = unencodedUrl;
   };
@@ -110,7 +110,7 @@
     }
     html = html.replace(/\|/g, "%7C");
     html = html.replace(' ', "%20");
-    e("url").value = html;
+    e("url-utmatic").value = html;
   };
   function warning() {
     e('warned').style.display="block"
