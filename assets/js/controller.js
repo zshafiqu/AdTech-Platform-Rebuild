@@ -1,9 +1,8 @@
 // <script src="assets/js/controller.js"></script>
-// getElementbyID shortcut
+// getElementbyID shortcut applies to all pages
   function e(n){
     return document.getElementById(n);
   };
-
 // ------------ BEGIN ESCAPAID.HTML ---------------------------------------
   function escapeIt() {
     var url = e("url").value;
@@ -18,7 +17,6 @@
     e("result").value = unencodedUrl;
   };
 // ------------ END ESCAPAID.HTML ---------------------------------------
-
 // ------------ BEGIN TESTADOR.HTML ---------------------------------------
   function qrCode() {
     var adId = e("adId").value;
@@ -41,4 +39,4 @@
     e("result-container").style.display = "block"
   	e("result").innerHTML = divResult;
   };
-  // ------------ END TESTADOR.HTML ---------------------------------------
+// ------------ END TESTADOR.HTML ---------------------------------------
