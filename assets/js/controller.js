@@ -35,8 +35,8 @@
   	}
   	var imgURL = 'http://qrcode.kaywa.com/img.php?&d='+url;
   	console.log(imgURL);
-  	var divResult = '<img class="img-thumbnail img-fluid" src='+imgURL+'>'
-    e("result-container").style.display = "block"
+  	var divResult = '<img class="img-thumbnail img-fluid" src='+imgURL+'>';
+    e("result-container").style.display = "block";
   	e("result-test").innerHTML = divResult;
   };
 // ------------ END TESTADOR.HTML ---------------------------------------
@@ -114,5 +114,49 @@
   };
   function warning() {
     e('warned').style.display="block"
-  }
+  };
   // ------------ END UTMATIC.HTML ---------------------------------------
+  // ------------ BEGIN XML.HTML ---------------------------------------
+  function isVideo() {
+    return e("videoRadio").checked;
+  };
+  function isAudio() {
+    return e("audioRadio").checked;
+  };
+  function isInternal() {
+    return e("internalTracker").checked;
+  };
+  function isThirdParty() {
+    return e("thirdPartyTracker").checked;
+  };
+  function updateProduct(){
+    if (isVideo()){
+      e("audioEvent").style.display = "none";
+    }
+    if (isAudio()){
+      e("audioEvent").style.display = "block";
+      e("videoEvent").style.display = "none";
+    }
+    else{
+      e("videoEvent").style.display = "block";
+    }
+  };
+  // XML Generator Function
+  function generateMember(){
+    if (isVideo()) {
+      var memberName = e("videoEvent").value;
+    } if (isAudio()) {
+      var memberName = e("audioEvent").value;
+    }
+    if (isThirdParty()) {
+      var memberNameComplete = "trackingUrl_"+ memberName;
+    }
+    if (isInternal()) {
+      var memberNameComplete = "internalUrl_"+ memberName;
+    }
+    var pix = e("tracking_pixel").value;
+    var memberGenerated = "<member>\n<name>"+memberNameComplete+"</name>\n<value>\n<string><![CDATA["+pix+"]]></string>\n<value>\n</member>";
+    e("member_code").value = memberGenerated
+  };
+// ------------ END XML.HTML ---------------------------------------
+// ------------ BEGIN <>.HTML ---------------------------------------

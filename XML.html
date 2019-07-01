@@ -8,7 +8,7 @@
     <title>adTech</title>
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Button-thib.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
@@ -21,7 +21,7 @@
 <!-- START BODY -->
 <body ng-app="">
   <!-- START NAV -->
-  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 70px"></div>
+  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
@@ -105,7 +105,7 @@
                             <!-- END SELECTOR DIV -->
                         </div>
                         <!-- END TRACKER TYPE SELECTORS -->
-                        <!-- START DROPDOWN FOR EVENT TYPE -->
+                        <!-- START DROPDOWN FOR EVENT TYPE *** THIRD PARTY *** -->
                         <div style="padding-bottom: 7px;">
                             <p style="margin-bottom: 10px;">Select an event:</p>
                             <div class="dropdown">
@@ -119,6 +119,22 @@
                                 <!-- END DROPDOWN MENU -->
                             </div>
                           </div>
+                          <!-- END DROPDOWN FOR EVENT TYPE -->
+                          <!-- START DROPDOWN FOR EVENT TYPE *** INTERNAL *** -->
+                          <div style="padding-bottom: 7px;">
+                              <p style="margin-bottom: 10px;">Select an event:</p>
+                              <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle border rounded-0" data-toggle="dropdown" aria-expanded="false" type="button">Event Type</button>
+                                  <!-- START DROPWDOWN MENU -->
+                                  <div class="dropdown-menu text-center" role="menu">
+                                    <a class="dropdown-item" role="presentation" href="#">First Item</a>
+                                    <a class="dropdown-item" role="presentation" href="#">Second Item</a>
+                                    <a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                                  </div>
+                                  <!-- END DROPDOWN MENU -->
+                              </div>
+                            </div>
+                            <!-- END DROPDOWN FOR EVENT TYPE -->
                         <!-- START PIXEL INPUT / BUTTON -->
                         <div>
                             <p style="margin-bottom: 10px;padding-top: 10px;">Tracking pixel:</p>
@@ -142,14 +158,16 @@
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
-    <div ng-include="'/assets/templates/footer.htm'"></div>
+    <div ng-include="'assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
     <!-- START SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
-    <div ng-include="'/assets/templates/scripts.htm'"></div>
+    <div ng-include="'assets/templates/scripts.htm'"></div>
+    <!-- Site functionality script -->
+    <script src="assets/js/controller.js"></script>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
