@@ -8,7 +8,7 @@
     <title>adTech</title>
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Button-thib.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
@@ -21,7 +21,7 @@
 <!-- START BODY -->
 <body ng-app="">
   <!-- START NAV -->
-  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 70px"></div>
+  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
@@ -58,44 +58,49 @@
                 <div>
                     <form>
                         <!-- START INPUTS -->
-                        <div>
+                        <div id="inputs">
                             <!-- INPUT #1 -->
                             <div style="margin-bottom: 10px;">
                                 <p style="margin-bottom: 10px;padding-top: 10px;">Enter the base URL of the client's landing page:</p>
-                                <input class="form-control" type="text" placeholder="http://www.clientLandingPage.com" inputmode="url" style="margin-bottom: 0px;">
+                                <input id="domain" name="domain" class="form-control" type="text" placeholder="http://www.clientLandingPage.com" inputmode="url" style="margin-bottom: 0px;">
                             </div>
                             <!-- INPUT #2 -->
                             <div style="margin-bottom: 10px;">
                                 <p style="margin-bottom: 10px;padding-top: 10px;"><strong>*Campaign Source:</strong></p>
-                                <input class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;"><small>(Referrer: Pandora)</small>
+                                <input id="source" name="source" readonly=true value="Pandora" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Referrer: Pandora)</small>
                             </div>
                             <!-- INPUT #3 -->
                             <div style="margin-bottom: 10px;">
                                 <p style="margin-bottom: 10px;padding-top: 10px;"><strong>*Campaign Medium:</strong></p>
-                                <input class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;"><small>(Medium: audio, display, video)</small>
+                                <input id="medium" name="medium" class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;"><small>(Medium: audio, display, video)</small>
                             </div>
                             <!-- INPUT #4 -->
                             <div style="margin-bottom: 10px;">
                                 <p style="margin-bottom: 10px;padding-top: 10px;"><strong>*Campaign Name:</strong></p>
-                                <input class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;"><small>(Campaign Name: chevy_tahoe_jan, toyotaCamryQ3, McdonaldsNW2011)</small>
+                                <input id="name" name="name" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Campaign Name: chevy_tahoe_jan, toyotaCamryQ3, McdonaldsNW2011)</small>
                             </div>
                             <!-- INPUT #5 -->
                             <div style="margin-bottom: 10px;">
                                 <p style="margin-bottom: 10px;padding-top: 10px;">Campaign Term:</p>
-                                <input class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;"><small>(Target Demographics: f25-35, m18-24)</small>
+                                <input id="term" name="term" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Target Demographics: f25-35, m18-24)</small>
                             </div>
                             <!-- INPUT #6 -->
                             <div style="margin-bottom: 10px;">
                                 <p style="margin-bottom: 10px;padding-top: 10px;">Campaign Content:</p>
-                                <input class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;"><small>(Creative Specific: blue, tuesday, etc.)</small>
+                                <input id="content" name="content" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Creative Specific: blue, tuesday, etc.)</small>
                             </div>
                             <!-- START CHECK BOX FOR ANCHOR DELIMITER -->
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" id="formCheck-1">
-                                      <label class="form-check-label" for="formCheck-1"
-                                        style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Pass parameters using an <a href="#">Anchor Delimiter</a></label>
+                                      <input class="form-check-input" type="checkbox" id="anchorTag" name="anchorTag" onclick="warning()">
+                                      <label class="form-check-label" for="anchorTag" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">
+                                        Pass parameters using an <a href="https://wiki.savagebeast.com/display/CS/Google+Analytics+UTM+URLs#GoogleAnalyticsUTMURLs-AnchorURLs" target="_blank">Anchor Delimiter</a>
+                                      </label>
+                                    </div>
+                                    <div style="padding-top: 10px; margin-bottom: -30px; display:none;" id="warned">
+                                      <p class="text-danger"><small>ONLY USE IF CLIENT HAS ANCHOR DELIMITING ENABLED!<br>Instructions for the client to enable this can be found
+                                      <a href="https://wiki.savagebeast.com/display/CS/Google+Analytics+UTM+URLs#GoogleAnalyticsUTMURLs-AnchorURLs" target="_blank">here.</a></small></p>
                                     </div>
                                 </div>
                             </div>
@@ -106,11 +111,13 @@
                         <div>
                           <div class="form-row">
                               <div class="col">
-                                <button class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate URL</button>
+                                <button id="submit-utmatic" onclick="generateUrl()" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate URL</button>
                               </div>
                           </div>
                             <!-- RESULT TEXTARE, NO WRAP WITH DIV. -->
-                              <textarea class="form-control" readonly="" placeholder="<generated URL>" style="height: 65px;margin-top: 25px;"></textarea>
+                            <div id="html">
+                            <textarea id="url" class="form-control" readonly="" placeholder="<generated URL>" style="height: 100px;margin-top: 25px;"></textarea>
+                            </div>
                           </div>
                           <!-- END SUBMIT & RESULT -->
                     </form>
@@ -123,14 +130,16 @@
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
-    <div ng-include="'/assets/templates/footer.htm'"></div>
+    <div ng-include="'assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
     <!-- START SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
-    <div ng-include="'/assets/templates/scripts.htm'"></div>
+    <div ng-include="'assets/templates/scripts.htm'"></div>
+    <!-- Site functionality script -->
+     <script src="assets/js/controller.js"></script>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->

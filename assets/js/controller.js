@@ -9,12 +9,12 @@
     var encodedUrl = encodeURIComponent(url);
     var encodedUrl = encodedUrl.replace("https%3A%2F%2F", "https://");
     var encodedUrl = encodedUrl.replace("http%3A%2F%2F", "http://");
-    e("result").value = encodedUrl;
+    e("result-escapaid").value = encodedUrl;
   };
   function unEscapeIt() {
     var url = e("url").value;
     var unencodedUrl = unescape(url);
-    e("result").value = unencodedUrl;
+    e("result-escapaid").value = unencodedUrl;
   };
 // ------------ END ESCAPAID.HTML ---------------------------------------
 // ------------ BEGIN TESTADOR.HTML ---------------------------------------
@@ -37,6 +37,82 @@
   	console.log(imgURL);
   	var divResult = '<img class="img-thumbnail img-fluid" src='+imgURL+'>'
     e("result-container").style.display = "block"
-  	e("result").innerHTML = divResult;
+  	e("result-test").innerHTML = divResult;
   };
 // ------------ END TESTADOR.HTML ---------------------------------------
+// ------------ BEGIN UTMATIC.HTML ---------------------------------------
+  function generateUrl() {
+    var domain = e("domain").value
+    var source = e("source").value
+    var medium = e("medium").value
+    var name = e("name").value
+    var term = e("term").value
+    var content = e("content").value
+    if (e("anchorTag").checked == true) {
+      if(domain.indexOf("utm_") !== -1) {
+        alert("Original URL already contains UTM codes, no processing needed.")
+      } if(domain.indexOf("UTM_") !== -1) {
+        alert("Original URL already contains UTM codes, no processing needed.")
+      } else if(domain.indexOf("#") !== -1)  {
+          alert('Anchor Tag already exists in URL -- please use query string method or request a new URL')
+      }
+      else if(domain.indexOf("#") === -1 ) {
+        if(domain && source && medium && name && term==false && content==false ) {
+          var html = domain+'#utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name;
+        } else if(domain && source && medium && name && term && content==false) {
+          var html = domain+'#utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_term='+term;
+        } else if(domain && source && medium && name && term && content) {
+          var html = domain+'#utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_term='+term+'&utm_content='+content;
+        } else if(domain && source && medium && name && content && term==false) {
+          var html = domain+'#utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_content='+content;
+        } else {
+          alert('Please fill in all of the required fields')
+        }
+      }
+      else {
+        alert('Please fill in all of the required fields')
+      }
+    }
+    else {
+      if(domain.indexOf("utm_") !== -1) {
+        alert("Original URL already contains UTM codes, no processing needed.")
+      } if(domain.indexOf("UTM_") !== -1) {
+        alert("Original URL already contains UTM codes, no processing needed.")
+      } else if(domain.indexOf("?") !== -1) {
+        if (domain && source && medium && name && term==false && content==false ) {
+          var html = domain+'&utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name;
+        } else if(domain && source && medium && name && term && content==false) {
+          var html = domain+'&utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_term='+term;
+        } else if(domain && source && medium && name && term && content) {
+          var html = domain+'&utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_term='+term+'&utm_content='+content;
+        } else if(domain && source && medium && name && content && term==false) {
+          var html = domain+'&utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_content='+content;
+        } else {
+          alert('Please fill in all of the required fields')
+        }
+      }
+      else if(domain.indexOf("?") === -1 ) {
+        if(domain && source && medium && name && term==false && content==false ) {
+          var html = domain+'?utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name;
+        } else if(domain && source && medium && name && term && content==false) {
+          var html = domain+'?utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_term='+term;
+        } else if(domain && source && medium && name && term && content) {
+          var html = domain+'?utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_term='+term+'&utm_content='+content;
+        } else if(domain && source && medium && name && content && term==false) {
+          var html = domain+'?utm_source='+source+'&utm_medium=Pandora_'+medium+'&utm_campaign=Pandora_'+name+'&utm_content='+content;
+        } else {
+          alert('Please fill in all of the required fields')
+        }
+      }
+      else{
+        alert('Please fill in all of the required fields')
+      }
+    }
+    html = html.replace(/\|/g, "%7C");
+    html = html.replace(' ', "%20");
+    e("url").value = html;
+  };
+  function warning() {
+    e('warned').style.display="block"
+  }
+  // ------------ END UTMATIC.HTML ---------------------------------------
