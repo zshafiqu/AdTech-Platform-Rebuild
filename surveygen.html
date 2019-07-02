@@ -60,13 +60,13 @@
             <div class="container d-flex flex-column" style="padding-top: 0px;">
                 <!-- START RANDOMIZE QUESTIONS BUTTON -->
                 <div style="margin-bottom: 15px;">
-                    <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle border rounded-0" data-toggle="dropdown" aria-expanded="false" type="button">Randomize Questions?</button>
-                      <div class="dropdown-menu text-center" role="menu">
-                        <a class="dropdown-item" role="presentation" href="#">Yes</a>
-                        <a class="dropdown-item" role="presentation" href="#">No</a>
-                      </div>
-                    </div>
+                  <p style="margin-bottom: 10px;">Randomize Questions?</p>
+                  <div class="field" style="display: inline-block;">
+                    <select id="audioEvent" class="form-control">
+                      <option id="r1" value="true">Yes</option>
+                      <option id="r2" value="false">No</option>
+                    </select>
+                  </div>
                 </div>
                 <!-- END RANDOMIZE QUESTIONS BUTTON -->
                 <!-- START QUESTIONS & DROPDOWN BUTTONS -->
@@ -76,29 +76,29 @@
                         <p style="margin-bottom: 10px;">Question 1</p>
                         <input class="form-control" type="text" style="margin-bottom: 10px;">
                         <!-- QUESTION TYPE -->
-                        <div class="dropdown">
-                          <button class="btn btn-primary dropdown-toggle border rounded-0" data-toggle="dropdown" aria-expanded="false" type="button" style="width: 198px;margin-top: 5px;margin-bottom: 15px;">Question Type</button>
-                            <div class="dropdown-menu text-center" role="menu">
-                              <a class="dropdown-item" role="presentation" href="#">Brand-Awareness</a>
-                              <a class="dropdown-item" role="presentation" href="#">Demographic</a>
-                            </div>
+                        <p style="margin-bottom: 10px;">Question Type:</p>
+                        <div class="field" style="margin-bottom: 10px; display: inline-block;">
+                          <select id="audioEvent" class="form-control">
+                            <option id="q1" value="brand-awareness">brand-awareness</option>
+                            <option id="q2" value="demographic">demographic</option>
+                          </select>
                         </div>
                         <!-- SURVEY TYPE -->
-                        <div class="dropdown">
-                          <button class="btn btn-primary dropdown-toggle border rounded-0" data-toggle="dropdown" aria-expanded="false" type="button" style="width: 198px;margin-bottom: 15px;">Survey Type</button>
-                            <div class="dropdown-menu text-center" role="menu">
-                              <a class="dropdown-item" role="presentation" href="#">Single</a>
-                              <a class="dropdown-item" role="presentation" href="#">Multiple</a>
-                              <a class="dropdown-item" role="presentation" href="#">Agree-Disagree</a>
-                            </div>
+                        <p style="margin-bottom: 10px;">Survey Type:</p>
+                        <div class="field" style="margin-bottom: 10px; display: inline-block;">
+                          <select id="audioEvent" class="form-control">
+                            <option id="s1" value="single">single</option>
+                            <option id="s2" value="multiple">mutiple</option>
+                            <option id="s2" value="agree-disagree">agree-disagree</option>
+                          </select>
                         </div>
                         <!-- RANDOMIZE ANSWERS? -->
-                        <div class="dropdown">
-                          <button class="btn btn-primary dropdown-toggle border rounded-0" data-toggle="dropdown" aria-expanded="false" type="button" style="width: 198px;margin-bottom: 15px;">Randomize Answers?</button>
-                            <div class="dropdown-menu text-center" role="menu">
-                              <a class="dropdown-item" role="presentation" href="#">Yes</a>
-                              <a class="dropdown-item" role="presentation" href="#">No</a>
-                            </div>
+                        <p style="margin-bottom: 10px;">Randomize Answers?</p>
+                        <div class="field" style="margin-bottom: 10px; display: inline-block;">
+                          <select id="audioEvent" class="form-control">
+                            <option id="r1" value="true">Yes</option>
+                            <option id="r2" value="false">No</option>
+                          </select>
                         </div>
                         <!-- AMSWER: -->
                         <p style="margin-bottom: 10px;">Answer:</p>
