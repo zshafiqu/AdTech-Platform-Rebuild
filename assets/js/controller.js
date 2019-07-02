@@ -131,14 +131,14 @@
   };
   function updateProduct(){
     if (isVideo()){
-      e("audioEvent").style.display = "none";
+      e("audioDiv").style.display = "none";
     }
     if (isAudio()){
-      e("audioEvent").style.display = "block";
-      e("videoEvent").style.display = "none";
+      e("audioDiv").style.display = "block";
+      e("videoDiv").style.display = "none";
     }
     else{
-      e("videoEvent").style.display = "block";
+      e("videoDiv").style.display = "block";
     }
   };
   // XML Generator Function
