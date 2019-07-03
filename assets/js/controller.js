@@ -160,6 +160,9 @@
   };
 // ------------ END XML.HTML ----------------------------------------
 // ------------ BEGIN INTERSTITIAL.HTML -----------------------------
+  function isoneCTA() {
+    return e("oneCTA").checked;
+  };
   function updateType() {
     if (isoneCTA()) {
       e("twoCTAinput").style.display = "none";

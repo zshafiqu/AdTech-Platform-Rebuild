@@ -59,79 +59,47 @@
                     <p style="margin-bottom: 5px;">Select the number of CTAs</p>
                     <div class="row d-inline-flex" style="padding-bottom: 25px;padding-top: 0px;">
                         <div class="col">
-                            <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3"><label class="form-check-label" for="formCheck-3" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">One</label></div>
+                            <div class="form-check">
+                              <input id="oneCTA" onclick="updateType()" name="adType" checked class="form-check-input" type="radio">
+                              <label class="form-check-label" for="formCheck-3" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">One</label>
+                            </div>
                         </div>
                         <div class="col">
-                            <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-4"><label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Two</label></div>
+                            <div class="form-check">
+                              <input id="twoCTA" onclick="updateType()" name="adType" class="form-check-input" type="radio">
+                              <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Two</label>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- END RADIO SELECTORS -->
-                <!-- BEGIN INPUT FORM -->
-                <div>
-                    <form>
-                        <!-- BEGIN INPUTS -->
-                        <div>
-                            <!-- BEGIN FIRST FOUR INPUTS -->
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Checked-in interstitial URL:</p>
-                            <input class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
-                            <p style="margin-bottom: 10px;margin-top: 0px;">Intskip HTML:</p>
-                            <textarea class="form-control" placeholder="<HTML>"></textarea>
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
-                            <input class="form-control" type="text" value="%i" inputmode="url" style="margin-bottom: 0px;">
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Third party impression tracker:</p>
-                            <input class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
-                            <!-- END FIRST FOUR -->
-                            <!-- BEGIN HEIGHT -->
-                            <div class="form-row d-inline-block">
-                                <div class="col">
-                                    <p>Ad Height:</p>
-                                    <input class="form-control" type="text" value="100" style="margin-top: -25px;margin-bottom: 10px;">
-                                </div>
-                            </div>
-                            <!-- END HEIGHT -->
-                        </div>
-                        <!-- END INPUTS -->
-                        <!-- BEGIN SUBMIT BUTTON AND RESULT -->
-                        <div>
-                          <button class="btn btn-primary border rounded-0" type="button"
-                            style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
-                            <p>Generated code:</p>
-                            <textarea class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 200px;"></textarea>
-                        </div>
-                        <!-- END SUBMIT BUTTON AND RESULT -->
-                    </form>
-                </div>
-                <!-- END INPUT FORM -->
 
-                <!-- COMMENT FOR DEVELOPMENT -->
-                <div style="padding-top: 40px;">
-                <strong style="color: rgb(249,14,14);">***NOTE FOR DEVELOPMENT/DESIGN: only one of these forms will show up depending on the number of CTAs the user selects... this can be set by using an "on-click" and showing/hiding depending on click status***</strong>
-                </div>
-                <!-- COMMENT FOR DEVELOPMENT -->
-
-                <!-- BEGIN ALTERNATE FORM -->
+                <!-- BEGIN FORM -->
                 <div>
                     <form>
                         <!-- BEGIN INPUTS -->
                         <div>
                             <!-- BEGIN FIRST FIVE INPUTS -->
                             <p style="margin-bottom: 10px;padding-top: 10px;">Checked-in interstitial URL:</p>
-                            <input class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
+                            <input id="lp_input" class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
                             <p style="margin-bottom: 10px;margin-top: 0px;">Intskip HTML:</p>
-                            <textarea class="form-control" placeholder="<HTML>"></textarea>
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Second click URL:</p>
-                            <input class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;">
+                            <textarea id="htmlCode" class="form-control" style="height:150px" placeholder="<HTML>"></textarea>
+                            <!-- two CTA div -->
+                            <div id="twoCTAinput" style="display:none">
+                              <p style="margin-bottom: 10px;padding-top: 10px;">Second click URL:</p>
+                              <input id="secondClick" class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;">
+                            </div>
+                            <!-- end two CTA div -->
                             <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
-                            <input class="form-control" type="text" value="%i" inputmode="url" style="margin-bottom: 0px;">
+                            <input id="impressionURL" class="form-control" type="text" value="%i" inputmode="url" style="margin-bottom: 0px;">
                             <p style="margin-bottom: 10px;padding-top: 10px;">Third party impression tracker:</p>
-                            <input class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
+                            <input id="impressionTracker" class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
                             <!-- END FIRST FIVE INPUTS -->
                             <!-- BEGIN HEIGHT -->
                             <div class="form-row d-inline-block">
                                 <div class="col">
                                     <p>Ad Height:</p>
-                                    <input class="form-control" type="text" value="100" style="margin-top: -25px;margin-bottom: 10px;">
+                                    <input id = "adHeight" class="form-control" type="text" value="100" style="margin-top: -25px;margin-bottom: 10px;">
                                 </div>
                             </div>
                             <!-- END HEIGHT -->
@@ -139,15 +107,15 @@
                         <!-- END INPUTS -->
                         <!-- BEGIN SUBMIT BUTTON AND RESULT -->
                         <div>
-                          <button class="btn btn-primary border rounded-0" type="button"
+                          <button onclick="generateCode(); return false;" class="btn btn-primary border rounded-0" type="button"
                           style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
                             <p>Generated code:</p>
-                            <textarea class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 200px;"></textarea>
+                            <textarea id="adCode" class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 230px;"></textarea>
                         </div>
                         <!-- END SUBMIT BUTTON AND RESULT -->
                     </form>
                 </div>
-                <!-- END ALTERNATE FORM -->
+                <!-- END FORM -->
             </div>
             <!-- END CONTAINER 1 -->
         </section>
