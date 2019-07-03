@@ -8,7 +8,7 @@
     <title>adTech</title>
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Button-thib.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
@@ -21,7 +21,7 @@
 <!-- START BODY -->
 <body ng-app="">
   <!-- START NAV -->
-  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 70px"></div>
+  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
@@ -61,7 +61,7 @@
                         <!-- START COLUMN 1 -->
                         <div class="col">
                             <div class="form-check">
-                              <input class="form-check-input" type="radio" id="formCheck-3">
+                              <input id="htmlAdType" onclick="updateType()" name="adType" checked class="form-check-input" type="radio">
                               <label class="form-check-label" for="formCheck-3" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">HTML</label>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                         <!-- START COLUMN 2 -->
                         <div class="col">
                             <div class="form-check">
-                              <input class="form-check-input" type="radio" id="formCheck-4">
+                              <input id="imageAdType" onclick="updateType()" name="adType" class="form-check-input" type="radio">
                               <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Image</label>
                             </div>
                         </div>
@@ -79,94 +79,56 @@
                 <!-- END SELECTOR FOR AD TYPE -->
                 <!-- START INPUT FORM #1 -->
                 <div>
-                    <form>
-                        <p style="margin-bottom: 10px;margin-top: -15px;">Ad HTML:</p>
-                        <textarea class="form-control" placeholder="<HTML>" style="height: 125px;"></textarea>
-                        <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
-                        <input class="form-control" type="text" value="%i" placeholder="www.example.com" inputmode="url" style="margin-bottom: 15px;">
-                        <!-- START AD HEIGHT AND LOGON SPONSOR -->
-                        <div class="form-row d-inline-block">
-                            <!-- START COLUMN 1 -->
-                            <div class="col">
-                                <p>Ad Height:</p>
-                                <input class="form-control" type="text" value="50" style="margin-top: -25px;margin-bottom: 10px;">
-                            </div>
-                            <!-- END COLUMN 1 -->
-                            <!-- START COLUMN 2 -->
-                            <div class="col">
-                                <p>Logon Sponsor:</p>
-                                <input class="form-control" type="text" style="margin-top: -25px;width: 200px;">
-                            </div>
-                            <!-- END COLUMN 2 -->
+                    <form onsubmit="return false;">
+                        <!-- htmlOptions div -------------------------------------------------------------------------------->
+                        <div id="htmlOptions" style="display:block">
+                          <p style="margin-bottom: 10px;">Ad HTML:</p>
+                          <textarea id="htmlCode" class="form-control" placeholder="<HTML>" style="height: 125px;"></textarea>
                         </div>
-                        <!-- END AD HEIGHT AND LOGON SPONSOR -->
-                        <!-- START SMALL FOOTER MESSAGE-->
-                        <div class="form-row">
-                            <div class="col">
-                              <small>Note: Logon sponsor is a splash screen only, available in iPhone 3.0.3+</small>
-                            </div>
+                        <!-- imageOptions div -------------------------------------------------------------------------------->
+                        <div id="imageOptions" style="display:none">
+                          <p style="margin-bottom: 10px;">Image URL:</p>
+                          <input id="imageURL" class="form-control" type="text" style="margin-bottom: 15px;">
+                          <p style="margin-bottom: 10px;padding-top: 10px;">Click URL:</p>
+                          <input id="clickURL" class="form-control" type="text" value="%c%u" style="margin-bottom: 15px;">
                         </div>
+                        <!-- basicForm div -------------------------------------------------------------------------------->
+                        <div id="basicForm" style="display:block">
+                          <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
+                          <input id="impressionURL" class="form-control" type="text" value="%i" placeholder="www.example.com" inputmode="url" style="margin-bottom: 15px;">
+                          <!-- START AD HEIGHT AND LOGON SPONSOR -->
+                          <div class="form-row d-inline-block">
+                              <!-- START COLUMN 1 -->
+                              <div class="col">
+                                  <p>Ad Height:</p>
+                                  <input id="adHeight" class="form-control" type="text" value="50" style="margin-top: -25px;margin-bottom: 10px;">
+                              </div>
+                              <!-- END COLUMN 1 -->
+                              <!-- START COLUMN 2 -->
+                              <div class="col">
+                                  <p>Logon Sponsor:</p>
+                                  <input id="logonSponsor" class="form-control" type="text" style="margin-top: -25px;width: 200px;">
+                              </div>
+                              <!-- END COLUMN 2 -->
+                          </div>
+                          <!-- END AD HEIGHT AND LOGON SPONSOR -->
+                          <!-- START SMALL FOOTER MESSAGE-->
+                          <div class="form-row">
+                              <div class="col">
+                                <small>Note: Logon sponsor is a splash screen only, available in iPhone 3.0.3+</small>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- END basicForm div -------------------------------------------------------------------------------->
                         <!-- END SMALL FOOTER MESSAGE -->
                         <div>
-                          <button class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
+                          <button onclick="generateMobileCode(); return false;" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
                           <p>Generated code:</p>
-                          <textarea class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 125px;"></textarea>
+                          <textarea id="adCode" class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 170px;"></textarea>
                         </div>
                     </form>
                 </div>
                 <!-- END INPUT FORM #1 -->
-
-                <!-- COMMENT FOR DEV -->
-                <div style="padding-top: 40px;"><strong style="color: rgb(249,14,14);">***NOTE FOR DEVELOPMENT/DESIGN:
-                  only one of these forms will show up depending on the advertisement type the user selects... this can
-                  be set by using an "on-click" and showing/hiding depending on click status***</strong>
-                </div>
-                <!-- COMMENT FOR DEV -->
-
-                <!-- START INPUT FORM #2 -->
-                <div style="margin-top: 30px;">
-                    <form>
-                        <!-- START IMAGE/CLICK/IMPRESSION -->
-                        <div>
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Image URL:</p>
-                            <input class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Click URL:</p>
-                            <input class="form-control" type="text" value="%c%u" inputmode="url" style="margin-bottom: 15px;">
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
-                            <input class="form-control" type="text" value="%i" inputmode="url" style="margin-bottom: 15px;">
-                        </div>
-                        <!-- END IMAGE/CLICK/IMPRESSION -->
-                        <!-- START AD HEIGHT AND LOGON SPONSOR -->
-                        <div class="form-row d-inline-block">
-                            <!-- COLUMN 1 -->
-                            <div class="col">
-                                <p>Ad Height:</p>
-                                <input class="form-control" type="text" value="50" style="margin-top: -25px;margin-bottom: 10px;">
-                            </div>
-                            <!-- COLUMN 2 -->
-                            <div class="col">
-                                <p>Logon Sponsor:</p>
-                                <input class="form-control" type="text" style="margin-top: -25px;width: 200px;">
-                            </div>
-                        </div>
-                        <!-- END AD HEIGHT AND LOGON SPONSOR -->
-                        <div class="form-row">
-                            <!-- START SMALL MESSAGE -->
-                            <div class="col">
-                              <small>Note: Logon sponsor is a splash screen only, available in iPhone 3.0.3+</small>
-                            </div>
-                            <!-- END SMALL MESSAGE -->
-                        </div>
-                        <!-- START BUTTON AND RESULT -->
-                        <div>
-                          <button class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
-                          <p>Generated code:</p>
-                          <textarea class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 125px;"></textarea>
-                        </div>
-                        <!-- END BUTTON AND RESULT -->
-                    </form>
-                </div>
-            <!-- END INPUT FORM # 2 -->
             </div>
             <!-- END CONTAINER 1 -->
         </section>
@@ -174,14 +136,16 @@
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
-    <div ng-include="'/assets/templates/footer.htm'"></div>
+    <div ng-include="'assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
     <!-- START SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
-    <div ng-include="'/assets/templates/scripts.htm'"></div>
+    <div ng-include="'assets/templates/scripts.htm'"></div>
+    <!-- site function script -->
+    <script src="assets/js/controller.js"></script>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
