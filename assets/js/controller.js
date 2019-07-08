@@ -163,7 +163,7 @@
   function isoneCTA() {
     return e("oneCTA").checked;
   };
-  function updateType() {
+  function updateTypeInterstitial() {
     if (isoneCTA()) {
       e("twoCTAinput").style.display = "none";
     }
@@ -225,7 +225,7 @@
   function isHTML() {
     return e("htmlAdType").checked;
   };
-  function updateType() {
+  function updateTypeMobile() {
     if (isHTML()) {
       e("htmlOptions").style.display = "block";
       e("imageOptions").style.display = "none";
