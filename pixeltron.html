@@ -8,7 +8,7 @@
     <title>adTech</title>
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Button-thib.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
@@ -21,7 +21,7 @@
 <!-- START BODY -->
 <body ng-app="">
   <!-- START NAV -->
-  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 70px"></div>
+  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
@@ -62,16 +62,67 @@
                         <div style="padding-bottom: 10px;padding-top: 0px;">
                             <p style="margin-bottom: 10px;">Vendor/Tag Format:</p>
                             <!-- START DROPDOWN MENU -->
-                            <div class="dropdown">
-                              <button class="btn btn-primary dropdown-toggle border rounded-0" data-toggle="dropdown" aria-expanded="false" type="button">Pick Vendor</button>
-                                <div class="dropdown-menu text-center" role="menu">
-                                  <a class="dropdown-item" role="presentation" href="#">First Item</a>
-                                  <a class="dropdown-item" role="presentation" href="#">Second Item</a>
-                                  <a class="dropdown-item" role="presentation" href="#">Third Item</a>
-                                  <a class="dropdown-item" role="presentation" href="#">Menu Item</a>
-                                  <a class="dropdown-item" role="presentation" href="#">Menu Item</a>
+                            <!-- START DROPDOWN FOR EVENT TYPE *** THIRD PARTY *** -->
+                            <div style="padding-bottom: 7px;">
+                                <div id="audioDiv" class="field">
+                                  <select id="audioEvent" class="form-control">
+                                    <option value="nullVal">Pick a Vendor</option>
+                                    <option value="adaraPix">Adara Pixel</option>
+                                    <option value="adshufflePix">AdShuffle Pixel/Click</option>
+                                    <option value="adTechJs">AdTech Javascript</option>
+                                    <option value="amazonPix">Amazon Pixel</option>
+                                    <option value="atlasJs">Atlas Javascript</option>
+                                    <option value="atlasPix">Atlas Pixel/Click</option>
+                                    <option value="barometric">Barometric</option>
+                                    <option value="bridgetrackIframe">Bridgetrack Iframe</option>
+                                    <option value="bridgetrackPix">Bridgetrack Pixel/Click</option>
+                                    <option value="cobaltPix">Cobalt Pixel/Click</option>
+                                    <option value="comscorePix">Comscore Pixel/vCE Tracker (Web ONLY)</option>
+                                    <option value="dfaIframe">Doubleclick Iframe</option>
+                                    <option value="dfaJs">Doubleclick Javascript</option>
+                                    <option value="dfaDcmJs">Doubleclick INS Javascript (DCM)</option>
+                                    <option value="dfaPix">Doubleclick Pixel/Click</option>
+                                    <option value="extremePix">Extreme Reach Pixel</option>
+                                    <option value="facilitateJs">Facilitate Javascript/Pixel/Click</option>
+                                    <option value="flashtalkingJs">Flashtalking Javascript</option>
+                                    <option value="flashtalkingPix">Flashtalking Pixel/Click</option>
+                                    <option value="innovidPix">Innovid Pixel/Click</option>
+                                    <option value="insightPix">Insight Express Pixel</option>
+                                    <option value="justAdJs">JustAd Javascript</option>
+                                    <option value="lucidPix">Lucid Pixel</option>
+                                    <option value="medialetsJs">Medialets Javascript</option>
+                                    <option value="mediamathPix">MediaMath</option>
+                                    <option value="mediaplexJs">Mediaplex/Conversant Javascript</option>
+                                    <option value="mediaplexPix">Mediaplex/Conversant Pixel/Click</option>
+                                    <option value="millwardBrown">Millward Brown Pixel</option>
+                                    <option value="mobileMajority">Mobile Majority Standard Tag</option>
+                                    <option value="mookiePix">Mookie Pixel</option>
+                                    <option value="nielsenPix">Nielsen Pixel (Web ONLY)</option>
+                                    <option value="numberly">Numberly Pixel</option>
+                                    <option value="pointrollJs">Pointroll Javascript</option>
+                                    <option value="pointrollPix">Pointroll Pixel/Click</option>
+                                    <option value="mediamindJs">Sizmek (Mediamind) Javascript</option>
+                                    <option value="mediamindPix">Sizmek Pixel/Click</option>
+                                    <option value="mediamindStandard">Sizmek Standard Creative</option>
+                                    <option value="spongecellJs">Spongecell JS</option>
+                                    <option value="smartJS">Smart Ad Server JS</option>
+                                    <option value="trueEffectJs">True Effect Iframe/JS</option>
+                                    <option value="trueEffectPix">True Effect Pixel/Click</option>
+                                    <option value="veltiStandard">Velti Standard Tags</option>
+                                    <option value="videoHubPix">VideoHub Pixel</option>
+                                    <option value="vindicoIframe">Vindico Iframe</option>
+                                    <option value="vindicoPix">Vindico Pixel/Click</option>
+                                    <option value="vindicoVast">Vindico VAST/VPAID URL</option>
+                                    <option value="visualIqPix">Visual IQ Pixel</option>
+                                    <option value="vizuIframe">Vizu Iframe</option>
+                                    <option value="whiteOpsJs">White Ops Javascript</option>
+                                    <option value="whiteOpsPix">White Ops Pixel</option>
+                                    <option value="x1Pix">X+1 Pixel</option>
+                                    <option value="zedoIframe">Zedo Iframe</option>
+                                  </select>
                                 </div>
-                            </div>
+                              </div>
+                              <!-- END DROPDOWN FOR EVENT TYPE -->
                             <!-- END DROPDOWN -->
                             <!-- START CHECKBOX -->
                             <div class="form-row">
@@ -172,14 +223,16 @@
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
-    <div ng-include="'/assets/templates/footer.htm'"></div>
+    <div ng-include="'assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
     <!-- START SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
-    <div ng-include="'/assets/templates/scripts.htm'"></div>
+    <div ng-include="'assets/templates/scripts.htm'"></div>
+    <!-- Site Functionality Script -->
+    <script src="assets/js/controller.js"></script>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->

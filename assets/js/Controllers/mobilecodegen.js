@@ -50,9 +50,4 @@
     code += "}\n"
     e("adCode").value = code;
   };
-  // function diffImage(img) {
-  //    if(img.src.match("img/dog.png")) img.src = "img/answer_dog.png";
-  //    else img.src = "img/answer_dog.png";
-  //  };
 // ------------ END MOBILECODEGEN.HTML ------------------------------
-// ------------ BEGIN ADXCELORATOR.HTML ------------------------------
