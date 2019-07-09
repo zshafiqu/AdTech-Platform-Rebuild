@@ -55,6 +55,13 @@
           rowNum++;
            //defines a new row's HTML
           var row = ' <div id="divRow' + rowNum + '" class="rowDisplay row"> <div id="displayName" class="displayNames col-md-2"> <label>Placement Name</label> <textarea id="displayName' + rowNum + '" class="displayNameText form-control" type="text" type="textarea" style="width:100%;height:100px"></textarea> </div><div id="adxcel" class="adxcel col-md-2"> <label>AdXcel Tag</label> <textarea id="' + rowNum + '" type="textarea" style="width:100%;height:100px" size="4" onchange="generateCode(this.id);" class="form-control" rows="3"></textarea> </div><div id="xfp" class="xfp col-md-2"> <label>DFP Code</label> <textarea readonly id="adcodeXFP' + rowNum + '" type="text" type="textarea" style="width:100%;height:100px" class="form-control"></textarea> </div><div id="ss" class="ss col-md-2"> <label>Slingshot Code</label> <textarea readonly id="adcodeSS' + rowNum + '" type="text" type="textarea" style="width:100%;height:100px" class="ssDisplayText form-control"></textarea> </div><div id="addButton" class="addRemoveButton col-md-3 pulldown"><input type="button" value="Remove" onclick="removeRow(' + rowNum + ');" id="removeButton' + rowNum + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
+          // updated form to be added ----->
+          var row = ' <form> <div id="divRow' + rowNum + '"> <div id="displayName"> <p>Placement Name:</p> <displayName' + rowNum + '" class="form-control" style="margin-top: -20px;"></textarea> </div> <div id="adxcel"> <p style="margin-top: 15px;">AdXcel Tag:</p> <textarea id="' + rowNum + '" onchange="generateCode(this.id);" class="form-control" style="margin-top: -20px;"></textarea> </div> <div id="xfp"> <p style="margin-top: 15px;">DFP Code:</p> <textarea id="adcodeXFP' + rowNum + '" class="form-control" readonly="" style="margin-top: -20px;"></textarea> </div> <div id="ss"> <p style="margin-top: 15px;">Slingshot Code:</p> <textarea id="adcodeSS' + rowNum + '" class="form-control" readonly="" style="margin-top: -20px;"></textarea> </div> <div id="removeButton" class="form-row" style="margin-top: 15px;"> <div class="col"> <button onclick="removeRow(' + rowNum + ');" id="removeButton' + rowNum + '" class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Remove</button> </div> </div> </div> </form>';
+
+
+
+
+          // ----------------------------- -->
           //appends the new row to the div
           $('#itemRows').append(row);
       }
