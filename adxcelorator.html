@@ -83,7 +83,7 @@
 
 
                     <!-- START FORM VERSION 1  -------------------------------------------------------------------------------------------------------->
-                    <div id="itemRows" class="itemRows container" style="display:none;">
+                    <div id="itemRows" class="itemRows container" style="display:block;">
                       <form id=style="margin-top: 50px">
                         VERSION 1
                           <!-- BEGIN ENTRY FIELDS -->
@@ -166,7 +166,7 @@
 
                     <!-- INTERSTITIAL OPTIONS -->
                     <!-- START FORM VERSION 2  -------------------------------------------------------------------------------------------------------->
-                    <div id="intItemRows" class="itemRows container" style="display: block;">
+                    <div id="intItemRows" class="itemRows container" style="display: none;">
                       <form style="margin-top: 50px">
                         VERSION 2
                           <!-- BEGIN ENTRY FIELDS -->
@@ -240,56 +240,7 @@
                           </div>
                           <!-- END ENTRY FIELDS -->
                       </form>
-
                     <!-- alternate form for form2 -->
-                    <!-- <div id="divRow1">
-                      <form>
-                        <div id="intName" class="displayNames">
-                          <p>Placement Name:</p>
-                          <textarea id="intName0" class="intNameText form-control" style="margin-top: -20px;"></textarea>
-                        </div>
-                        <div id="adxcelInt" class="adxcel">
-                          <p style="margin-top: 15px;">AdXcel Tag:</p>
-                          <textarea id="int0" onchange="generateInt(this.id);" class="form-control" style="margin-top: -20px;"></textarea>
-                        </div>
-                        <div id="xfpInt" class="xfp">
-                          <p style="margin-top: 15px;">DFP Code:</p>
-                          <textarea id="adCodeXFPint0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
-                        </div>
-                        <div id="ssInt" class="ss">
-                          <p style="margin-top: 15px;">Slingshot Code:</p>
-                          <textarea id="adCodeSSint0" class="ssIntText form-control" readonly="" style="margin-top: -20px;"></textarea>
-                        </div>
-
-                        <div id="platformSelector">
-                          <p style="margin-top:15px; margin-bottom: 5px;">Platform:</p>
-                          <div class="row d-inline-flex">
-                              <div class="col">
-                                  <div class="form-check">
-                                    <input id="" onclick="" name="platform" checked class="form-check-input" type="radio">
-                                    <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Android</label>
-                                  </div>
-                              </div>
-                              <div class="col">
-                                  <div class="form-check">
-                                    <input id="" onclick="" name="platform" class="form-check-input" type="radio">
-                                    <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">iPhone</label>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>
-
-                        <div id="addButton" class="addRemoveButton form-row" style="margin-top: 15px;">
-                            <div class="col">
-                              <button onclick="removeRow(this.form);" id="removeButton" class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Remove</button>
-                            </div>
-                        </div>
-                      </form>
-
-                    </div> -->
-
-
-
                     </div>
                     <!-- END FORM VERSION 1  -------------------------------------------------------------------------------------------------------->
 
@@ -329,28 +280,28 @@
 
 
                     <!-- START FORM VERSION 1  -------------------------------------------------------------------------------------------------------->
-                    <div id="pixelItemRows" class="container" style="display: none;">
+                    <div id="pixelItemRows" class="itemRows container" style="display: none;">
                       <form style="margin-top: 50px">
                         VERSION 3
                           <!-- BEGIN ENTRY FIELDS -->
-                          <div id="divPixRow0">
-                            <div id="pixelName">
+                          <div id="divPixRow0" class="rowPix">
+                            <div id="pixelName" class="pixelNames">
                               <p>Placement Name:</p>
-                              <textarea id="pixelNamepix0" class="form-control" style="margin-top: -20px;"></textarea>
+                              <textarea id="pixelNamepix0" class="pixelNameText form-control" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="creativeId">
+                            <div id="creativeId" class="creativeIds">
                               <p style="margin-top: 15px;">DFP Creative ID:</p>
                               <textarea id="pix0" onchange="generatePixel(this.id);" class="form-control" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="opt-in">
+                            <div id="opt-in" class="optInPixels">
                               <p style="margin-top: 15px;">DFP Pixel Opt-in:</p>
                               <textarea id="optinTextpix0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="opt-out">
+                            <div id="opt-out" class="optOutPixels">
                               <p style="margin-top: 15px;">DFP Pixel Opt-out:</p>
                               <textarea id="optoutTextpix0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="addPixelButton" style="margin-top: 15px;">
+                            <div id="addPixelButton" class="addRemoveButton" style="margin-top: 15px;">
                               <div class="form-row">
                                   <div class="col">
                                     <button onclick="addRow(this.form);" class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Add Pixels</button>
@@ -366,7 +317,7 @@
                             <!-- ROW 3 -->
                             <div class="form-row">
                                 <div class="col">
-                                  <button id="downloadLinkPix" class="btn btn-primary border rounded-0" type="button" style="margin-top: 15px;margin-bottom: 0px;">Export Pixels</button>
+                                  <button id="downloadLinkPix" class="downloadLinks btn btn-primary border rounded-0" type="button" style="margin-top: 15px;margin-bottom: 0px;">Export Pixels</button>
                                 </div>
                             </div>
 
@@ -377,6 +328,7 @@
                       </form>
                     </div>
                     <!-- END FORM VERSION 1  -------------------------------------------------------------------------------------------------------->
+
 
 
 
@@ -402,8 +354,19 @@
     <script src="assets/js/Controllers/adxcel.js"></script>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-
+    <script>
+      $('.downloadLinks').click(function() {
+          console.log('onclick');
+          if (isPixel()) {
+              var fileName = 'Adxcel_Tags_' + e('campaignNamePix').value;
+          }else if(isIntersitial()){
+              var fileName = 'Adxcel_Tags_' + e('campaignNameInt').value;
+          }else{
+              var fileName = 'Adxcel_Tags_' + e('campaignName').value;
+          }
+          downloadInnerHtml(fileName, 'text/html');
+      });
+    </script>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
