@@ -83,7 +83,7 @@
 
 
                     <!-- START FORM VERSION 1  -------------------------------------------------------------------------------------------------------->
-                    <div id="itemRows" class="container">
+                    <div id="itemRows" class="itemRows container" style="display:none;">
                       <form id=style="margin-top: 50px">
                         VERSION 1
                           <!-- BEGIN ENTRY FIELDS -->
@@ -98,27 +98,27 @@
                             </div>
                           </div>
                           <!-- ! break ! -->
-                          <div id="divRow0">
-                            <div id="displayName">
+                          <div id="divRow0" class="rowDisplay">
+                            <div id="displayName" class="displayNames">
                               <p>Placement Name:</p>
-                              <textarea id="displayName0" class="form-control" style="margin-top: -20px;"></textarea>
+                              <textarea id="displayName0" class="displayNameText form-control" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="adxcel">
+                            <div id="adxcel" class="adxcel">
                               <p style="margin-top: 15px;">AdXcel Tag:</p>
                               <textarea id="0" onchange="generateCode(this.id);" class="form-control" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="xfp">
+                            <div id="xfp" class="xfp">
                               <p style="margin-top: 15px;">DFP Code:</p>
                               <textarea id="adcodeXFP0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="ss">
+                            <div id="ss" class="ss">
                               <p style="margin-top: 15px;">Slingshot Code:</p>
-                              <textarea id="adcodeSS0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
+                              <textarea id="adcodeSS0" class="ssDisplayText form-control" readonly="" style="margin-top: -20px;"></textarea>
                             </div>
                             <!-- ! nreak ! -->
-                            <div id="addButton" class="form-row" style="margin-top: 15px;">
+                            <div id="addButton" class="addRemoveButton form-row" style="margin-top: 15px;">
                                 <div class="col">
-                                  <button onclick="addRow(this.form);" class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Add Tags</button>
+                                  <button onclick="addRow(this.form);" class="ssDisplayText btn btn-primary border rounded-0" type="button" style="width: 110px;">Add Tags</button>
                                 </div>
                             </div>
                             <!-- CAMPAIGN NAME &&& SUBMIT BUTTON *** EXCLUSIVE FROM THE MAIN FORMS -->
@@ -132,7 +132,7 @@
                               <!-- ROW 3 -->
                               <div class="form-row">
                                   <div class="col">
-                                    <button id="downloadLinkDisplay" class="btn btn-primary border rounded-0" type="button" style="margin-top: 15px;margin-bottom: 0px;">Export SS Tags</button>
+                                    <button id="downloadLinkDisplay" class="downloadLinks btn btn-primary border rounded-0" type="button" style="margin-top: 15px;margin-bottom: 0px;">Export SS Tags</button>
                                   </div>
                               </div>
                             <!-- CAMPAIGN NAME &&& SUBMIT BUTTON *** EXCLUSIVE FROM THE MAIN FORMS -->
@@ -166,7 +166,7 @@
 
                     <!-- INTERSTITIAL OPTIONS -->
                     <!-- START FORM VERSION 2  -------------------------------------------------------------------------------------------------------->
-                    <div id="intItemRows" class="container" style="display: none;">
+                    <div id="intItemRows" class="itemRows container" style="display: block;">
                       <form style="margin-top: 50px">
                         VERSION 2
                           <!-- BEGIN ENTRY FIELDS -->
@@ -180,23 +180,24 @@
                               <input id="adHeightInt" class="form-control d-inline-flex" type="text" value="50" style="margin-top: -15px;width: 150px;">
                             </div>
                           </div>
+
                           <!-- ! break ! -->
                           <div id="divIntRow">
-                            <div id="intName">
+                            <div id="intName" class="displayNames">
                               <p>Placement Name:</p>
-                              <textarea id="intName0" class="form-control" style="margin-top: -20px;"></textarea>
+                              <textarea id="intName0" class="intNameText form-control" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="adxcelInt">
+                            <div id="adxcelInt" class="adxcel">
                               <p style="margin-top: 15px;">AdXcel Tag:</p>
                               <textarea id="int0" onchange="generateInt(this.id);" class="form-control" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="xfpInt">
+                            <div id="xfpInt" class="xfp">
                               <p style="margin-top: 15px;">DFP Code:</p>
                               <textarea id="adCodeXFPint0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
                             </div>
-                            <div id="ssInt">
+                            <div id="ssInt" class="ss">
                               <p style="margin-top: 15px;">Slingshot Code:</p>
-                              <textarea id="adCodeSSint0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
+                              <textarea id="adCodeSSint0" class="ssIntText form-control" readonly="" style="margin-top: -20px;"></textarea>
                             </div>
 
                             <div id="platformSelector">
@@ -204,95 +205,43 @@
                               <div class="row d-inline-flex">
                                   <div class="col">
                                       <div class="form-check">
-                                        <input id="tag" onclick="updateType()" name="adType" checked class="form-check-input" type="radio">
+                                        <input id="" onclick="" name="platform" checked class="form-check-input" type="radio">
                                         <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Android</label>
                                       </div>
                                   </div>
                                   <div class="col">
                                       <div class="form-check">
-                                        <input id="intersitial" onclick="updateType()" name="adType" class="form-check-input" type="radio">
+                                        <input id="" onclick="" name="platform" class="form-check-input" type="radio">
                                         <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">iPhone</label>
                                       </div>
                                   </div>
                               </div>
-                            </div> 
+                            </div>
 
-
-                            <!-- <input style="border-radius: 0px !important;" type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="Not Ready" data-onstyle="success" data-offstyle="danger"> -->
-                            <!-- <input style="!important;" id="platformint0" type="checkbox" data-toggle="toggle" data-on="iPhone" data-off="Android" data-onstyle="primary" data-offstyle="success"data-width="100" data-index="0" class="form-control" onchange="generateInt('int0')"></input> -->
-                            <div id="addButton" class="form-row" style="margin-top: 15px;">
+                            <div id="addButton" class="addRemoveButton form-row" style="margin-top: 15px;">
                                 <div class="col">
                                   <button onclick="addRow(this.form);"class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Add Tags</button>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="col">
-                                    <p style="margin-top: 15px;">Campaign Name:</p>
-                                    <input id="campaignNameInt" class="form-control" type="text" style="margin-top: -20px;">
-                                </div>
-                            </div>
-                            <!-- ROW 3 -->
-                            <div class="form-row">
-                                <div class="col">
-                                  <button id="downloadLinkInt" class="btn btn-primary border rounded-0" type="button" style="margin-top: 15px;margin-bottom: 0px;">Export SS Tags</button>
-                                </div>
+                            <div id="submitButtons">
+                              <div class="form-row">
+                                  <div class="col">
+                                      <p style="margin-top: 15px;">Campaign Name:</p>
+                                      <input id="campaignNameInt" class="form-control" type="text" style="margin-top: -20px;">
+                                  </div>
+                              </div>
+                              <!-- ROW 3 -->
+                              <div class="form-row">
+                                  <div class="col">
+                                    <button id="downloadLinkInt" class="downloadLinks btn btn-primary border rounded-0" type="button" style="margin-top: 15px;margin-bottom: 0px;">Export SS Tags</button>
+                                  </div>
+                              </div>
                             </div>
                           </div>
                           <!-- END ENTRY FIELDS -->
                       </form>
 
-
-
-
-                      <div id="divIntRow">
-                        <form>
-                          <div id="intName">
-                            <p>Placement Name:</p>
-                            <textarea id="intName0" class="form-control" style="margin-top: -20px;"></textarea>
-                          </div>
-                          <div id="adxcelInt">
-                            <p style="margin-top: 15px;">AdXcel Tag:</p>
-                            <textarea id="int0" onchange="generateInt(this.id);" class="form-control" style="margin-top: -20px;"></textarea>
-                          </div>
-                          <div id="xfpInt">
-                            <p style="margin-top: 15px;">DFP Code:</p>
-                            <textarea id="adCodeXFPint0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
-                          </div>
-                          <div id="ssInt">
-                            <p style="margin-top: 15px;">Slingshot Code:</p>
-                            <textarea id="adCodeSSint0" class="form-control" readonly="" style="margin-top: -20px;"></textarea>
-                          </div>
-
-                          <div id="platformSelector">
-                            <p style="margin-top:15px; margin-bottom: 5px;">Platform:</p>
-                            <div class="row d-inline-flex">
-                                <div class="col">
-                                    <div class="form-check">
-                                      <input id="tag" onclick="updateType()" name="adType" checked class="form-check-input" type="radio">
-                                      <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Android</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-check">
-                                      <input id="intersitial" onclick="updateType()" name="adType" class="form-check-input" type="radio">
-                                      <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">iPhone</label>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-
-
-                          <div id="addButton" class="form-row" style="margin-top: 15px;">
-                              <div class="col">
-                                <button onclick="addRow(this.form);"class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Remove</button>
-                              </div>
-                          </div>
-
-
-                        </form>
-
-                      </div>
-
+                      
 
 
 
