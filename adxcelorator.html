@@ -155,7 +155,7 @@
                     			</div>
                     			<div id="height">
                     				<p style="margin-bottom: 15px;">Ad Height:</p>
-                    				<input class="form-control d-inline-flex" id="adHeight" style="margin-top: -15px;width: 150px;" type="text" value="50">
+                    				<input class="form-control d-inline-flex" id="adHeight" style="margin-top: -15px;width: 150px;" type="text" value="1">
                     			</div>
                     		</div>
                         <!-- INPUT FIELDS -->
@@ -181,6 +181,15 @@
                     				<textarea class="ssIntText form-control" id="adCodeSSint0" readonly style="margin-top: -20px; height: 100px;"></textarea>
                     			</div>
                           <!-- PLATFORM SELECTOR -->
+                          <!-- break -->
+                          <div id="platformToggle" class="form-group">
+                            <label>Platform</label>
+                            <input id="platformint0" type="checkbox" data-toggle="toggle" data-on="iPhone" data-off="Android" data-onstyle="primary" data-offstyle="success"data-width="80" data-index="0" class="form-control" onchange="generateInt('int0')"></input>
+                          </div>
+
+
+
+                          <!-- break -->
                     			<div id="platformSelector">
                     				<p style="margin-top:15px; margin-bottom: 5px;">Platform:</p>
                     				<div class="row d-inline-flex">
@@ -250,7 +259,7 @@
                           <!-- DFP PIXEL OPT OUT -->
                     			<div class="optOutPixels" id="opt-out">
                     				<p style="margin-top: 15px;">DFP Pixel Opt-out:</p>
-                    				<textarea class="form-control" id="optoutTextpix0" readonly style="margin-top: -20px; height:100px;"></textarea>
+                    				<textarea class="form-control" id="optoutTextpix0" readonly style="margin-top: -20px; height:170px;"></textarea>
                     			</div>
                           <!-- ADD PIXELS -->
                     			<div class="addRemoveButton" id="addPixelButton" style="margin-top: 15px;">
