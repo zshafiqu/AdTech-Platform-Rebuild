@@ -135,118 +135,126 @@
       e("optinText" + thisRow).innerHTML = pixel1;
       console.log(e("optoutText" + thisRow).value);
   };
-//generates interstitial tags for DFP/Slingshot
-  function generateInt(thisRow) {
-      //checks which platform is selected; returns iPhone for True, Android for False
-      var selectedPlatform = $('#platform' + thisRow).prop('checked');
-      //iPhone
-      if (selectedPlatform == true) {
-          var htmlXFP = e(thisRow).value;
-          //defnines which part of the Adxcel Tag to grab
-          var startposition = htmlXFP.indexOf("http://dfvuzgpsen67.cloudfront.net");
-          var endposition = htmlXFP.indexOf("?nature");
-          htmlXFP = htmlXFP.substring(startposition,endposition);
-          var htmlXFP2 = "<html>\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n   \n<title>Pandora Interstitial</title>\n   \n<script>\nfunction param(name, macro) {\n  if (location.search && location.search.match(new RegExp(name + \"=([^&]*)\"))) {\n    return unescape(RegExp.$1);\n  } else {\n    return macro;\n  }\n}\n   \nvar dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myIDFA = param('idfa', '__IDFA__');\nvar LID = param('listener_id', '%%PATTERN:l%%');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n \n<\/script>\n   \n<link type=\"text/css\" href=\"http://pandora.com/static/ads/interstitial/interstitial.css\" rel=\"stylesheet\" media=\"screen\"/>\n   \n</head>\n<body>\n   \n<div id=\"adContainer\">\n  <div id=\"adTag\">\n    <script>\n      document.write('<scr'+'ipt src=\""+ htmlXFP +"?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&idfa='+myIDFA+'&listener_id='+LID+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+'\"><\/scr'+'ipt>');\n    <\/script>\n  <\/div>\n   \n  <a href=\"#\" id=\"adFooter\" onClick=\"PandoraApp.closeCustomWebViewContainer(); return false;\"><img src=\"http://pandora.com/static/ads/interstitial/close_btn.png\" width=\"320\"></a>\n   \n<\/div>\n   \n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n   \nif(isAndroid && appVersion != '') {\n  document.getElementById('adContainer').style.width = '320px';\n  document.getElementById('adContainer').style.height = '453px';\n  document.getElementById('adFooter').style.display = 'block';\n}\n<\/script>\n   \n</body>\n<\/html>";
-          //escapes the tag
-          htmlXFP2 = htmlXFP2.replace("\u00AB","\"");
-          htmlXFP2 = htmlXFP2.replace(/\\/g, "\\\\");
-          htmlXFP2 = htmlXFP2.replace(/"/g, '\\"');
-          htmlXFP2 = htmlXFP2.replace(/\n/g, "\\n");
-          htmlXFP2 = htmlXFP2.replace(/\r/g, "\\r");
-          htmlXFP2 = htmlXFP2.replace(/\t/g, "\\t");
-          htmlXFP2 = htmlXFP2.replace(/\//g, "\\\/");
-          //defines JSON KVP for DFP
-          var codeXFP = "{\n";
-          codeXFP += '  "intskip":"' + htmlXFP2 + '",\n';
-          codeXFP += '  "impressionUrl":"' + URL("impressionURL") + '",\n';
-          codeXFP += '  "height":' + e("adHeight").value + '\n';
-          codeXFP += "}\n";
-          //creates HTML wrapped for tag
-          var htmlSS =  "<html>\n"
-          htmlSS += "<head>\n";
-          htmlSS += '<meta charset="utf-8" />\n';
-          htmlSS += '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">\n';
-          htmlSS += '<title>Pandora Interstitial</title>\n';
-          htmlSS += '<script>\n';
-          htmlSS += 'function param(name, macro) {\nif (location.search && location.search.match(new RegExp(name + "=([^&]*)"))) {\nreturn unescape(RegExp.$1);\n} else {\nreturn macro;\n}\n}\n';
-          htmlSS += "var dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myIDFA = param('idfa', '__IDFA__');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n";
-          htmlSS += '<\/script>\n<link type="text\/css" href="http:\/\/pandora.com\/static\/ads/interstitial\/interstitial.css" rel="stylesheet" media="screen"\/>\n<\/head>\n<body>\n<div id="adContainer">\n<div id="adTag">\n<script>\n';
-          htmlSS += "document.write('<scr'+'ipt src=\""+ htmlXFP +"";
-          htmlSS += "?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&idfa='+myIDFA+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+";
-          htmlSS += "'";
-          htmlSS += '"';
-          htmlSS += "><\/scr'+'ipt>');\n";
-          htmlSS += "<\/script>\n";
-          htmlSS += "<\/div>";
-          htmlSS += '<a href="#" id="adFooter" onClick="PandoraApp.closeCustomWebViewContainer(); return false;"><img src="http:\/\/pandora.com\/static\/ads\/interstitial\/close_btn.png" width="320"><\/a>\n';
-          htmlSS += "<\/div>\n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n";
-          htmlSS += "if(isAndroid && appVersion != '') {\n";
-          htmlSS += "document.getElementById('adContainer').style.width = '320px';\n";
-          htmlSS += "document.getElementById('adContainer').style.height = '453px';\n";
-          htmlSS += "document.getElementById('adFooter').style.display = 'block';\n"
-          htmlSS += "}\n";
-          htmlSS += "<\/script>\n";
-          htmlSS += "<\/body>\n";
-          htmlSS += "<\/html>";
-          //prints final tags to tool
-          e("adCodeXFP" + thisRow).innerHTML = codeXFP;
-          e("adCodeSS" + thisRow).innerHTML = htmlSS;
-          console.log('iphone');
-      }
-      //Android
-      else {
-          var htmlXFP = e(thisRow).value;
-          //defnines which part of the Adxcel Tag to grab
-          var startposition = htmlXFP.indexOf("http://dfvuzgpsen67.cloudfront.net");
-          var endposition = htmlXFP.indexOf("?nature");
-              htmlXFP = htmlXFP.substring(startposition,endposition);
-          //places adxcel tag in an html document
-          var htmlXFP2 = "<html>\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n   \n<title>Pandora Interstitial</title>\n   \n<script>\nfunction param(name, macro) {\n  if (location.search && location.search.match(new RegExp(name + \"=([^&]*)\"))) {\n    return unescape(RegExp.$1);\n  } else {\n    return macro;\n  }\n}\n   \nvar dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myGAID = param('device_id', '__GAID__');\nvar LID = param('listener_id', '%%PATTERN:l%%');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n \n<\/script>\n   \n<link type=\"text/css\" href=\"http://pandora.com/static/ads/interstitial/interstitial.css\" rel=\"stylesheet\" media=\"screen\"/>\n   \n</head>\n<body>\n   \n<div id=\"adContainer\">\n  <div id=\"adTag\">\n    <script>\n      document.write('<scr'+'ipt src=\""+ htmlXFP +"?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&device_id='+myGAID+'&listener_id='+LID+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+'\"><\/scr'+'ipt>');\n    <\/script>\n  <\/div>\n   \n  <a href=\"#\" id=\"adFooter\" onClick=\"PandoraApp.closeCustomWebViewContainer(); return false;\"><img src=\"http://pandora.com/static/ads/interstitial/close_btn.png\" width=\"320\"></a>\n   \n<\/div>\n   \n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n   \nif(isAndroid && appVersion != '') {\n  document.getElementById('adContainer').style.width = '320px';\n  document.getElementById('adContainer').style.height = '453px';\n  document.getElementById('adFooter').style.display = 'block';\n}\n<\/script>\n   \n</body>\n<\/html>";
-              //escaping
-              htmlXFP2 = htmlXFP2.replace("\u00AB","\"");
-              htmlXFP2 = htmlXFP2.replace(/\\/g, "\\\\");
-              htmlXFP2 = htmlXFP2.replace(/"/g, '\\"');
-              htmlXFP2 = htmlXFP2.replace(/\n/g, "\\n");
-              htmlXFP2 = htmlXFP2.replace(/\r/g, "\\r");
-              htmlXFP2 = htmlXFP2.replace(/\t/g, "\\t");
-              htmlXFP2 = htmlXFP2.replace(/\//g, "\\\/");
-          //created JSON objects
-          var codeXFP = "{\n";
-              codeXFP += '  "intskip":"' + htmlXFP2 + '",\n';
-              codeXFP += '  "impressionUrl":"' + URL("impressionURL") + '",\n';
-              codeXFP += '  "height":' + e("adHeight").value + '\n';
-              codeXFP += "}\n";
-          var htmlSS =  "<html>\n"
-              htmlSS += "<head>\n";
-              htmlSS += '<meta charset="utf-8" />\n';
-              htmlSS += '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">\n';
-              htmlSS += '<title>Pandora Interstitial</title>\n';
-              htmlSS += '<script>\n';
-              htmlSS += 'function param(name, macro) {\nif (location.search && location.search.match(new RegExp(name + "=([^&]*)"))) {\nreturn unescape(RegExp.$1);\n} else {\nreturn macro;\n}\n}\n';
-              htmlSS += "var dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myGAID = param('device_id', '__GAID__');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n";
-              htmlSS += '<\/script>\n<link type="text\/css" href="http:\/\/pandora.com\/static\/ads/interstitial\/interstitial.css" rel="stylesheet" media="screen"\/>\n<\/head>\n<body>\n<div id="adContainer">\n<div id="adTag">\n<script>\n';
-              htmlSS += "document.write('<scr'+'ipt src=\""+ htmlXFP +"";
-              htmlSS += "?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&device_id='+myGAID+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+";
-              htmlSS += "'";
-              htmlSS += '"';
-              htmlSS += "><\/scr'+'ipt>');\n";
-              htmlSS += "<\/script>\n";
-              htmlSS += "<\/div>";
-              htmlSS += '<a href="#" id="adFooter" onClick="PandoraApp.closeCustomWebViewContainer(); return false;"><img src="http:\/\/pandora.com\/static\/ads\/interstitial\/close_btn.png" width="320"><\/a>\n';
-              htmlSS += "<\/div>\n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n";
-              htmlSS += "if(isAndroid && appVersion != '') {\n";
-              htmlSS += "document.getElementById('adContainer').style.width = '320px';\n";
-              htmlSS += "document.getElementById('adContainer').style.height = '453px';\n";
-              htmlSS += "document.getElementById('adFooter').style.display = 'block';\n"
-              htmlSS += "}\n";
-              htmlSS += "<\/script>\n";
-              htmlSS += "<\/body>\n";
-              htmlSS += "<\/html>";
-          //prints final tags to tool
-          e("adCodeXFP" + thisRow).innerHTML = codeXFP;
-          e("adCodeSS" + thisRow).innerHTML = htmlSS;
-          console.log('android');
-      }
+  //generates interstitial tags for DFP/Slingshot
+    function generateInt(thisRow) {
+        //checks which platform is selected; returns iPhone for True, Android for False
+        // var selectedPlatform = $('#platform' + thisRow).prop('checked');
+        //iPhone
+        if (isiPhone()) {
+            var htmlXFP = e(thisRow).value;
+            //defnines which part of the Adxcel Tag to grab
+            var startposition = htmlXFP.indexOf("http://dfvuzgpsen67.cloudfront.net");
+            var endposition = htmlXFP.indexOf("?nature");
+            htmlXFP = htmlXFP.substring(startposition,endposition);
+            var htmlXFP2 = "<html>\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n   \n<title>Pandora Interstitial</title>\n   \n<script>\nfunction param(name, macro) {\n  if (location.search && location.search.match(new RegExp(name + \"=([^&]*)\"))) {\n    return unescape(RegExp.$1);\n  } else {\n    return macro;\n  }\n}\n   \nvar dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myIDFA = param('idfa', '__IDFA__');\nvar LID = param('listener_id', '%%PATTERN:l%%');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n \n<\/script>\n   \n<link type=\"text/css\" href=\"http://pandora.com/static/ads/interstitial/interstitial.css\" rel=\"stylesheet\" media=\"screen\"/>\n   \n</head>\n<body>\n   \n<div id=\"adContainer\">\n  <div id=\"adTag\">\n    <script>\n      document.write('<scr'+'ipt src=\""+ htmlXFP +"?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&idfa='+myIDFA+'&listener_id='+LID+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+'\"><\/scr'+'ipt>');\n    <\/script>\n  <\/div>\n   \n  <a href=\"#\" id=\"adFooter\" onClick=\"PandoraApp.closeCustomWebViewContainer(); return false;\"><img src=\"http://pandora.com/static/ads/interstitial/close_btn.png\" width=\"320\"></a>\n   \n<\/div>\n   \n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n   \nif(isAndroid && appVersion != '') {\n  document.getElementById('adContainer').style.width = '320px';\n  document.getElementById('adContainer').style.height = '453px';\n  document.getElementById('adFooter').style.display = 'block';\n}\n<\/script>\n   \n</body>\n<\/html>";
+            //escapes the tag
+            htmlXFP2 = htmlXFP2.replace("\u00AB","\"");
+            htmlXFP2 = htmlXFP2.replace(/\\/g, "\\\\");
+            htmlXFP2 = htmlXFP2.replace(/"/g, '\\"');
+            htmlXFP2 = htmlXFP2.replace(/\n/g, "\\n");
+            htmlXFP2 = htmlXFP2.replace(/\r/g, "\\r");
+            htmlXFP2 = htmlXFP2.replace(/\t/g, "\\t");
+            htmlXFP2 = htmlXFP2.replace(/\//g, "\\\/");
+            //defines JSON KVP for DFP
+            var codeXFP = "{\n";
+            codeXFP += '  "intskip":"' + htmlXFP2 + '",\n';
+            codeXFP += '  "impressionUrl":"' + URL("impressionURL") + '",\n';
+            codeXFP += '  "height":' + e("adHeight").value + '\n';
+            codeXFP += "}\n";
+            //creates HTML wrapped for tag
+            var htmlSS =  "<html>\n"
+            htmlSS += "<head>\n";
+            htmlSS += '<meta charset="utf-8" />\n';
+            htmlSS += '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">\n';
+            htmlSS += '<title>Pandora Interstitial</title>\n';
+            htmlSS += '<script>\n';
+            htmlSS += 'function param(name, macro) {\nif (location.search && location.search.match(new RegExp(name + "=([^&]*)"))) {\nreturn unescape(RegExp.$1);\n} else {\nreturn macro;\n}\n}\n';
+            htmlSS += "var dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myIDFA = param('idfa', '__IDFA__');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n";
+            htmlSS += '<\/script>\n<link type="text\/css" href="http:\/\/pandora.com\/static\/ads/interstitial\/interstitial.css" rel="stylesheet" media="screen"\/>\n<\/head>\n<body>\n<div id="adContainer">\n<div id="adTag">\n<script>\n';
+            htmlSS += "document.write('<scr'+'ipt src=\""+ htmlXFP +"";
+            htmlSS += "?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&idfa='+myIDFA+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+";
+            htmlSS += "'";
+            htmlSS += '"';
+            htmlSS += "><\/scr'+'ipt>');\n";
+            htmlSS += "<\/script>\n";
+            htmlSS += "<\/div>";
+            htmlSS += '<a href="#" id="adFooter" onClick="PandoraApp.closeCustomWebViewContainer(); return false;"><img src="http:\/\/pandora.com\/static\/ads\/interstitial\/close_btn.png" width="320"><\/a>\n';
+            htmlSS += "<\/div>\n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n";
+            htmlSS += "if(isAndroid && appVersion != '') {\n";
+            htmlSS += "document.getElementById('adContainer').style.width = '320px';\n";
+            htmlSS += "document.getElementById('adContainer').style.height = '453px';\n";
+            htmlSS += "document.getElementById('adFooter').style.display = 'block';\n"
+            htmlSS += "}\n";
+            htmlSS += "<\/script>\n";
+            htmlSS += "<\/body>\n";
+            htmlSS += "<\/html>";
+            //prints final tags to tool
+            e("adCodeXFP" + thisRow).innerHTML = codeXFP;
+            e("adCodeSS" + thisRow).innerHTML = htmlSS;
+            console.log('iphone');
+        }
+        //Android
+        else {
+            var htmlXFP = e(thisRow).value;
+            //defnines which part of the Adxcel Tag to grab
+            var startposition = htmlXFP.indexOf("http://dfvuzgpsen67.cloudfront.net");
+            var endposition = htmlXFP.indexOf("?nature");
+                htmlXFP = htmlXFP.substring(startposition,endposition);
+            //places adxcel tag in an html document
+            var htmlXFP2 = "<html>\n<head>\n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n   \n<title>Pandora Interstitial</title>\n   \n<script>\nfunction param(name, macro) {\n  if (location.search && location.search.match(new RegExp(name + \"=([^&]*)\"))) {\n    return unescape(RegExp.$1);\n  } else {\n    return macro;\n  }\n}\n   \nvar dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myGAID = param('device_id', '__GAID__');\nvar LID = param('listener_id', '%%PATTERN:l%%');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n \n<\/script>\n   \n<link type=\"text/css\" href=\"http://pandora.com/static/ads/interstitial/interstitial.css\" rel=\"stylesheet\" media=\"screen\"/>\n   \n</head>\n<body>\n   \n<div id=\"adContainer\">\n  <div id=\"adTag\">\n    <script>\n      document.write('<scr'+'ipt src=\""+ htmlXFP +"?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&device_id='+myGAID+'&listener_id='+LID+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+'\"><\/scr'+'ipt>');\n    <\/script>\n  <\/div>\n   \n  <a href=\"#\" id=\"adFooter\" onClick=\"PandoraApp.closeCustomWebViewContainer(); return false;\"><img src=\"http://pandora.com/static/ads/interstitial/close_btn.png\" width=\"320\"></a>\n   \n<\/div>\n   \n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n   \nif(isAndroid && appVersion != '') {\n  document.getElementById('adContainer').style.width = '320px';\n  document.getElementById('adContainer').style.height = '453px';\n  document.getElementById('adFooter').style.display = 'block';\n}\n<\/script>\n   \n</body>\n<\/html>";
+                //escaping
+                htmlXFP2 = htmlXFP2.replace("\u00AB","\"");
+                htmlXFP2 = htmlXFP2.replace(/\\/g, "\\\\");
+                htmlXFP2 = htmlXFP2.replace(/"/g, '\\"');
+                htmlXFP2 = htmlXFP2.replace(/\n/g, "\\n");
+                htmlXFP2 = htmlXFP2.replace(/\r/g, "\\r");
+                htmlXFP2 = htmlXFP2.replace(/\t/g, "\\t");
+                htmlXFP2 = htmlXFP2.replace(/\//g, "\\\/");
+            //created JSON objects
+            var codeXFP = "{\n";
+                codeXFP += '  "intskip":"' + htmlXFP2 + '",\n';
+                codeXFP += '  "impressionUrl":"' + URL("impressionURL") + '",\n';
+                codeXFP += '  "height":' + e("adHeight").value + '\n';
+                codeXFP += "}\n";
+            var htmlSS =  "<html>\n"
+                htmlSS += "<head>\n";
+                htmlSS += '<meta charset="utf-8" />\n';
+                htmlSS += '<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">\n';
+                htmlSS += '<title>Pandora Interstitial</title>\n';
+                htmlSS += '<script>\n';
+                htmlSS += 'function param(name, macro) {\nif (location.search && location.search.match(new RegExp(name + "=([^&]*)"))) {\nreturn unescape(RegExp.$1);\n} else {\nreturn macro;\n}\n}\n';
+                htmlSS += "var dfpClick = param('click', '%%CLICK_URL_ESC%%');\nvar clickURL = dfpClick+param('clickURL', '%u');\nvar appVersion = param('version', '');\nvar pxl = param('pixel', '');\nvar rnd = Math.floor(Math.random()*10000000000);\nvar myZip = param('zip', '%%PATTERN:zip%%');\nvar myGeo = param('am_geo', '%%PATTERN:dma%%');\nvar myAge = param('age', '%%PATTERN:ag%%');\nvar myGender = param('gender', '%%PATTERN:gnd%%');\nvar myGAID = param('device_id', '__GAID__');\nvar OID = param('dfp_order_id', '%ebuy!');\nvar AID = param('dfp_ad_id', '%eaid!');\nvar CID = param('dfp_creative_id', '%ecid!');\n";
+                htmlSS += '<\/script>\n<link type="text\/css" href="http:\/\/pandora.com\/static\/ads/interstitial\/interstitial.css" rel="stylesheet" media="screen"\/>\n<\/head>\n<body>\n<div id="adContainer">\n<div id="adTag">\n<script>\n';
+                htmlSS += "document.write('<scr'+'ipt src=\""+ htmlXFP +"";
+                htmlSS += "?nature=dfp&adv_name=adxcel&ctp='+dfpClick+'&cb='+rnd+'&zip='+myZip+'&am_geo='+myGeo+'&age='+myAge+'&gender='+myGender+'&device_id='+myGAID+'&dfp_creative_id='+CID+'&dfp_order_id='+OID+'&dfp_ad_id='+AID+";
+                htmlSS += "'";
+                htmlSS += '"';
+                htmlSS += "><\/scr'+'ipt>');\n";
+                htmlSS += "<\/script>\n";
+                htmlSS += "<\/div>";
+                htmlSS += '<a href="#" id="adFooter" onClick="PandoraApp.closeCustomWebViewContainer(); return false;"><img src="http:\/\/pandora.com\/static\/ads\/interstitial\/close_btn.png" width="320"><\/a>\n';
+                htmlSS += "<\/div>\n<script>\nvar ua = navigator.userAgent.toLowerCase();\nvar isAndroid = ua.indexOf('android') > -1;\n";
+                htmlSS += "if(isAndroid && appVersion != '') {\n";
+                htmlSS += "document.getElementById('adContainer').style.width = '320px';\n";
+                htmlSS += "document.getElementById('adContainer').style.height = '453px';\n";
+                htmlSS += "document.getElementById('adFooter').style.display = 'block';\n"
+                htmlSS += "}\n";
+                htmlSS += "<\/script>\n";
+                htmlSS += "<\/body>\n";
+                htmlSS += "<\/html>";
+            //prints final tags to tool
+            e("adCodeXFP" + thisRow).innerHTML = codeXFP;
+            e("adCodeSS" + thisRow).innerHTML = htmlSS;
+            console.log('android');
+        }
+    };
+// platform checker ->
+  function isAndroid() {
+    return e("droid").checked;
+    console.log("droid");
+  };
+  function isiPhone() {
+    return e("iphone").checked;
   };
 //checks to see if the user has selected pixel generation
   function isPixel() {
