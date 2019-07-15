@@ -131,7 +131,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-check" style="margin-top: 10px;">
-                                      <input id="applyToAll" onchange="applyToAll();" class="form-check-input" type="checkbox">
+                                      <input id="applyToAll" value="True" onchange="applyToAll();" class="form-check-input" type="checkbox">
                                       <label class="form-check-label" for="applyToAll" style="font-family: Lato, sans-serif;font-size: 1.2em;font-weight: 300;width: 210px;">Apply vendor to all tags</label>
                                     </div>
                                 </div>
@@ -172,18 +172,23 @@
 
 
                     <!-- modal -->
-                    <!-- <div role="dialog" tabindex="-1" class="modal fade show" style="display: hidden;">
+                    <div id="exportModal" role="dialog" tabindex="-1" class="modal fade show" style="display: none;">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
                             <h4 class="modal-title" style="justify-content:center;">Export Options</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                             <div class="modal-body">
-                              <p>The content of your modal.</p>
+                              <p>Please choose export file type.</p>
                             </div>
-                            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                            <div class="modal-footer">
+                              <!-- <button class="btn btn-light" type="button" data-dismiss="modal">Close</button> -->
+                              <button id="downloadLinkPix" class="btn btn-light" type="button">Export .txt</button>
+                              <button id="downloadLinkCsv" onclick="convertToTable();" class="btn btn-primary" type="button">Export .xls</button>
+                            </div>
                           </div>
                         </div>
-                      </div> -->
+                      </div>
+                      <!-- modal -->
 
 
 
@@ -300,8 +305,8 @@
                       <div style="padding-bottom: 0px;height: 198px;">
                           <p style="margin-bottom: 10px;padding-top: 10px;">Campaign Name:</p>
                           <input class="form-control" type="text" inputmode="url" style="margin-bottom: 10px;">
-                          <button class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;background-color: rgb(18,220,50);">Export</button>
-                          <button class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;background-color: rgb(210,50,50);">Clear All</button>
+                          <button id="exportOptions" data-toggle="modal" data-target="#exportModal" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;background-color: rgb(18,220,50);">Export</button>
+                          <button id="resetAll" onclick="location.reload();" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;background-color: rgb(210,50,50);">Clear All</button>
                       </div>
                     </form>
                     <!-- END FORM # 3 -->
@@ -335,6 +340,35 @@
     <!-- Site Functionality Script -->
     <script src="assets/js/Controllers/pixeltron.js"></script>
     <script src="assets/js/Controllers/excellentexport.js"></script>
+    <!-- scripts that can't be imported -->
+    <script>
+    // $('#exportModal').on('shown.bs.modal', function() {
+    //     $('#exportOptions').click()
+    // });
+    // this is causing the modal to appear and dissapear quickly 
+
+    $('#downloadLinkPix').click(function() {
+        console.log('onclick');
+        var fileName = e('campaignNamePix').value;
+        downloadInnerHtml(fileName, 'text/plain');
+    });
+
+    $('#downloadLinkCsv').click(function() {
+        console.log('stuff');
+        if (!e('campaignNamePix').value) {
+            var fileName = "Campaign" + '.xls';
+        } else {
+            var fileName = e('campaignNamePix').value + '.xls';
+        }
+        $("#downloadLinkCsv").attr("download", fileName);
+        var excelFunction = ExcellentExport.excel(this, 'tabledTags', 'fileName');
+        $("#hiddenTable").empty();
+        return excelFunction;
+    });
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
