@@ -3,7 +3,7 @@
   function e(n){
     return document.getElementById(n);
   };
-// ------------ BEGIN MOBILECODEGEN.HTML ----------------------------
+// ------------ BEGIN ADXCELORATOR.HTML ----------------------------
 //shortcuts for block/none display
   function block(n) {
       e(n).style.display = "block";
@@ -345,4 +345,4 @@
       link.click();
       console.log(finalText);
   };
-// ------------ END MOBILECODEGEN.HTML ----------------------------
+// ------------ END ADXCELORATOR.HTML ----------------------------
