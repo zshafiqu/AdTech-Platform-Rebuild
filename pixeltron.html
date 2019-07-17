@@ -69,7 +69,7 @@
                             <!-- START DROPDOWN MENU -->
                             <!-- START DROPDOWN FOR EVENT TYPE *** THIRD PARTY *** -->
                                 <div id="vendorSelect" style="padding-bottom: 5px;" class="field">
-                                  <select id="tagType0" class="form-control" onchange="getText('inputText0',this.id,'outputText0'); applyToAll();">
+                                  <select id="tagType0" class="form-control" onchange="getText('inputText0',this.id,'outputText0'); anotherFunc();">
                                     <option value="nullVal">Pick a Vendor</option>
                                     <option value="adaraPix">Adara Pixel</option>
                                     <option value="adshufflePix">AdShuffle Pixel/Click</option>
@@ -131,8 +131,13 @@
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-check" style="margin-top: 10px;">
-                                       <input id="applyToAll" value="True" onchange="applyToAll();" class="form-check-input" type="checkbox">
-                                      <label class="form-check-label" for="applyToAll" style="font-family: Lato, sans-serif;font-size: 1.2em;font-weight: 300;width: 210px;">Apply vendor to all tags</label>
+                                      <label for="anotherFuncId" style="font-size:small;color:grey">
+    <input type="checkbox" id="anotherFuncId" value="True" onchange="anotherFunc();"> Apply Vendor to All Tags </input>
+</label>
+                                        <!-- <label for="anotherFunc" class="form-check label">
+                                          <input id="anotherFunc" value="True" onchange="anotherFunc();" class="form-check-input" type="checkbox">Apply to vendor to all tags</input>
+                                        </label> -->
+                                      <!-- <label class="form-check-label" for="anotherFunc" style="font-family: Lato, sans-serif;font-size: 1.2em;font-weight: 300;width: 210px;">Apply vendor to all tags</label> -->
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +187,7 @@
                             </div>
                             <div class="modal-footer">
                               <!-- <button class="btn btn-light" type="button" data-dismiss="modal">Close</button> -->
-                              <button id="downloadLinkPix" class="btn btn-light" type="button">Export .txt</button>
+                              <button id="downloadLinkPix" class="btn btn-success" type="button">Export .txt</button>
                               <button id="downloadLinkCsv" onclick="convertToTable();" class="btn btn-primary" type="button">Export .xls</button>
                             </div>
                           </div>
@@ -360,9 +365,9 @@
         $("#hiddenTable").empty();
         return excelFunction;
     });
-    // $(document).ready(function(){
-    //     $('[data-toggle="tooltip"]').tooltip();
-    // });
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
     </script>
     <!-- END SCRIPTS -->
 </body>
