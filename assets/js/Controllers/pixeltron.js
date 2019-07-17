@@ -8,15 +8,11 @@
       document.getElementsByClassName(n);
   };
 // ------------ BEGIN PIXELTRON.HTML -----------------------------
-function anotherFunc() {
-    var selectedVendor = $('#tagType0').val();
-    if (e('anotherFuncId').checked) {
-        $(".vendorClass").not('#tagType0').val(selectedVendor).change();
-    } else {
-        $(".vendorClass").not('#tagType0').val('nullVal').change();
-        $("#tagType0").val(selectedVendor);
-    }
-}
+
+
+
+
+
 // check dash
   function checkDash() {
       var inputString = e('myText').value
