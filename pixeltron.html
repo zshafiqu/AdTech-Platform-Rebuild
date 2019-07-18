@@ -54,16 +54,14 @@
                     <p>Pixeltron will assist in translating some 3rd party pixels with the right click and timestamp macros. It magically adds, removes, and changes things.<br>
                       <a href="https://wiki.savagebeast.com/display/SALESOPS/Example+Third+Party+Tags+-+Pixeltron" target="_blank">Example Tags for Reference</a></p>
                 </div>
-                <!-- END TITLE BLOCK -->
+                <!-- END DESCRIPTION BLOCK -->
                 <!-- START INPUT FORMS -->
                 <div id="inputOutputContainer" class="d-flex flex-row flex-grow-1 flex-shrink-0 justify-content-center align-items-center align-content-center flex-wrap">
                   <!-- d-flex float-none flex-row flex-grow-1 flex-shrink-0 flex-fill justify-content-center align-items-center align-content-center flex-wrap -->
                   <div id="inputOutput0">
                     <form>
-                        <!-- START DROPDOWN AND CHECBOX -->
                             <p style="margin-bottom: 10px;">Vendor/Tag Format:</p>
                             <!-- START DROPDOWN MENU -->
-                            <!-- START DROPDOWN FOR EVENT TYPE *** THIRD PARTY *** -->
                                 <div id="vendorSelect" style="padding-bottom: 5px;" class="field">
                                   <select id="tagType0" class="vendorClass form-control" onchange="getText('inputText0',this.id,'outputText0'); applyToAll();">
                                     <option value="nullVal">Pick a Vendor</option>
@@ -121,35 +119,33 @@
                                     <option value="zedoIframe">Zedo Iframe</option>
                                   </select>
                                 </div>
-                              <!-- END DROPDOWN FOR EVENT TYPE -->
                             <!-- END DROPDOWN -->
                             <!-- START CHECKBOX -->
                             <div class="form-row">
                                 <div class="col">
-                                  <!-- merge conflict -->
                                   <div class="form-check" style="margin-top: 10px;">
                                     <input id="vendorTagCheck" value="True" onchange="applyToAll();" class="form-check-input" type="checkbox">
                                     <label class="form-check-label" for="vendorTagCheck" style="font-family: Lato, sans-serif;font-size: 1.2em;font-weight: 300;width: 210px;">Apply vendor to all tags</label>
                                   </div>
-                                  <!-- merge conflict -->
                                 </div>
                             </div>
-                        <!-- END DROPDOWN AND CHECKBOX -->
-                        <!-- START INPUTS / BUTTON / PREVIEW -->
+                        <!-- END CHECKBOX -->
+                        <!-- START INPUT -->
                         <div>
+                            <!-- PLACEMENT NAME -->
                             <p style="margin-bottom: 10px;padding-top: 10px;">Placement Name:</p>
                             <input id="pixelNamepix0" class="pixelNameText form-control" type="text" inputmode="url" style="margin-bottom: 10px;">
-
+                            <!-- TAG TO BE CONVERTED: -->
                             <div id="inputTextRow0">
                               <p style="margin-bottom: 10px;">Tag to be converted:</p>
                               <textarea id="inputText0" onchange="getText(this.id,'tagType0','outputText0')" class="inputTagText form-control" style="margin-bottom: 10px;"></textarea>
                             </div>
-
+                            <!-- CONVERTED TAG: -->
                             <div id="outputTextRow0">
                               <p style="margin-bottom: 10px;">Converted tag:</p>
                               <textarea id="outputText0" class="outputTagText form-control" disabled="" readonly="" style="margin-bottom: 10px;"></textarea>
                             </div>
-
+                            <!-- ADD TAGS BUTTON -->
                             <button onclick="addRow(this.form);" class="addRemoveButton btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;">Add Tags</button>
                             <!-- PREVIEW TAG -->
                             <div class="form-row">
@@ -158,13 +154,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- END INPUTS / BUTTON / PREVIEW -->
+                        <!-- END INPUTS -->
                     </form>
-                    <!-- END FORM # 1 -->
+                    <!-- END FORM -->
                   </div>
-
                 </div>
-              <!-- END INPUT FORMS -->
+              <!-- START EXPORT OPTIONS AND MODAL -->
               <div id="submissionButtons">
                 <form style="height: 255px;padding-top: 25px;padding-bottom: 25px;margin-top: 75px; display:block;">
                   <div style="padding-bottom: 0px;height: 198px;">
@@ -193,8 +188,8 @@
                     <!-- modal -->
                 </form>
               </div>
+              <!-- END EXPORT OPTIONS AND MODAL -->
             </div>
-            <!-- END CONTAINER 1 -->
           </section>
     </main>
     <!-- END MAIN -->

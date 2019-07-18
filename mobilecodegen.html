@@ -146,6 +146,14 @@
     <div ng-include="'assets/templates/scripts.htm'"></div>
     <!-- site function script -->
     <script src="assets/js/Controllers/mobilecodegen.js"></script>
+    <!-- script to resize onload -->
+    <script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "85%"
+        }
+    </script>
+
+    <body onload="zoom()">
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
