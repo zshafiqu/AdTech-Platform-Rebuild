@@ -58,10 +58,6 @@
                 <!-- START INPUT FORMS -->
                 <div id="inputOutputContainer" class="d-flex flex-row flex-grow-1 flex-shrink-0 justify-content-center align-items-center align-content-center flex-wrap">
                   <!-- d-flex float-none flex-row flex-grow-1 flex-shrink-0 flex-fill justify-content-center align-items-center align-content-center flex-wrap -->
-
-
-
-
                   <div id="inputOutput0">
                     <form>
                         <!-- START DROPDOWN AND CHECBOX -->
@@ -238,6 +234,14 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
     </script>
+    <!-- script to resize onload -->
+    <script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "85%"
+        }
+    </script>
+
+    <body onload="zoom()">
     <!-- END SCRIPTS -->
 </body>
 <!-- END BODY -->
