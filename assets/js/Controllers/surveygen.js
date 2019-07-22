@@ -435,9 +435,9 @@
 
           if(rowNum==1) { // rownum hasnt been altered yet
             var curr = qNum; // curr stores the question number we were on
-          } else {
-            
           }
+
+          if (curr==)
 
 
 
