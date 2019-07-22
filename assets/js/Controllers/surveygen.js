@@ -1,3 +1,5 @@
+// <script src="assets/js/Controllers/"></script>
+// getElementbyID shortcut applies to all pages
   function e(n) {
     return document.getElementById(n);
   };
@@ -141,6 +143,7 @@
       if (questioI2 || questioI3 || questioI4 || questioI5 || questioI6 || questioI7 || questioI8) { htmlCode2 += "," }
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
+    // --------------------------------
   	if (questioI2) {
   	htmlCode2 += "      [ // second survey question\n"
       htmlCode2 += "        '"+questioT2+"', // question type\n"
@@ -162,6 +165,7 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
+    // --------------------------------
   	if (questioI3) {
   	htmlCode2 += "      [ // third survey question\n"
       htmlCode2 += "        '"+questioT3+"', // question type\n"
@@ -183,6 +187,7 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
+    // --------------------------------
   	if (questioI4) {
   	htmlCode2 += "      [ // fourth survey question\n"
       htmlCode2 += "        '"+questioT4+"', // question type\n"
@@ -204,6 +209,7 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
+    // --------------------------------
   	if (questioI5) {
   	htmlCode2 += "      [ // fifth survey question\n"
       htmlCode2 += "        '"+questioT5+"', // question type\n"
@@ -225,13 +231,15 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
+    // --------------------------------
   	if (questioI6) {
   	htmlCode2 += "      [ // sixth survey question\n"
       htmlCode2 += "        '"+questioT6+"', // question type\n"
       htmlCode2 += "        '"+surveyTy6+"', // survey type: single, multiple, agree-disagree\n"
       htmlCode2 += "        '"+questioI6+"', // question\n"
       htmlCode2 += "        '"+randomAn6+"', // randomize answers? true or false\n"
-  	var counter = 0;
+
+    var counter = 0;
   	for (counter = 0; counter <= rowNum6; counter++) {
   	var whichResponse = "responseInputttttt"
   	whichResponse += counter
@@ -241,11 +249,13 @@
   		else { htmlCode2 += "        '"+responsI6+"' // response AND last element, no comma needed\n" }
   		}
   	}
+
   	htmlCode2 += "       ]"
   	if (questioI7 || questioI8) { htmlCode2 += "," }
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
+    // --------------------------------
   	if (questioI7) {
   	htmlCode2 += "      [ // seventh survey question\n"
       htmlCode2 += "        '"+questioT7+"', // question type\n"
@@ -253,7 +263,8 @@
       htmlCode2 += "        '"+questioI7+"', // question\n"
       htmlCode2 += "        '"+randomAn7+"', // randomize answers? true or false\n"
   	var counter = 0;
-  	for (counter = 0; counter <= rowNum7; counter++) {
+
+    for (counter = 0; counter <= rowNum7; counter++) {
   	var whichResponse = "responseInputtttttt"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI7 = e(whichResponse).value; }
@@ -267,6 +278,7 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
+    // --------------------------------
   	if (questioI8) {
   	htmlCode2 += "      [ // eighth survey question\n"
       htmlCode2 += "        '"+questioT8+"', // question type\n"
@@ -274,6 +286,7 @@
       htmlCode2 += "        '"+questioI8+"', // question\n"
       htmlCode2 += "        '"+randomAn8+"', // randomize answers? true or false\n"
   	var counter = 0;
+
   	for (counter = 0; counter <= rowNum8; counter++) {
   	var whichResponse = "responseInputttttttt"
   	whichResponse += counter
@@ -286,6 +299,7 @@
   	htmlCode2 += "       ]\n"
   	htmlCode2 += "\n"
   	}
+    // --------------------------------
   	htmlCode2 += "    ];\n"
   	if (randomQue == "true") {
   	    htmlCode2 += "    var randomQst = true; // randomize questions - set to false to turn off\n"
@@ -293,7 +307,7 @@
   	    htmlCode2 += "    var randomQst = false; // randomize questions - set to false to turn off\n"
   	}
   	htmlCode2 += "      var hive = [\n"
-      htmlCode2 += "          slingshot.brandName,\n"
+    htmlCode2 += "          slingshot.brandName,\n"
   	htmlCode2 += "          lineId,\n"
   	htmlCode2 += "          creativeId,\n"
   	htmlCode2 += "          slingshot.offerButtonLabel,\n"
@@ -397,6 +411,7 @@
   	htmlCode2 += "</body>\n"
       e("surveyCode").value = htmlCode2;
   }
+//-----------------------------------------------
   var rowNum = 0;
   var rowNum2 = 0;
   var rowNum3 = 0;
@@ -409,6 +424,7 @@
   function removeRow(rnum) {
       $('#divRow' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer() {
           //increases row number
@@ -419,10 +435,12 @@
   		$('#itemRows').append(row);
 
   }
+//-----------------------------------------------
   //removes added rows
   function removeRow2(rnum) {
       $('#divRow2' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer2() {
           //increases row number
@@ -433,10 +451,12 @@
   		$('#itemRows2').append(row2);
 
   }
+//-----------------------------------------------
   //removes added rows
   function removeRow3(rnum) {
       $('#divRow3' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer3() {
           //increases row number
@@ -447,10 +467,12 @@
   		$('#itemRows3').append(row3);
 
   }
+//-----------------------------------------------
   //removes added rows
   function removeRow4(rnum) {
       $('#divRow4' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer4() {
           //increases row number
@@ -461,10 +483,12 @@
   		$('#itemRows4').append(row4);
 
   }
+//-----------------------------------------------
   //removes added rows
   function removeRow5(rnum) {
       $('#divRow5' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer5() {
           //increases row number
@@ -475,10 +499,12 @@
   		$('#itemRows5').append(row5);
 
   }
+//-----------------------------------------------
   //removes added rows
   function removeRow6(rnum) {
       $('#divRow6' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer6() {
           //increases row number
@@ -489,10 +515,12 @@
   		$('#itemRows6').append(row6);
 
   }
+//-----------------------------------------------
   //removes added rows
   function removeRow7(rnum) {
       $('#divRow7' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer7() {
           //increases row number
@@ -503,10 +531,12 @@
   		$('#itemRows7').append(row7);
 
   }
+//-----------------------------------------------
   //removes added rows
   function removeRow8(rnum) {
       $('#divRow8' + rnum).remove();
   }
+//-----------------------------------------------
   //adds rows
   function addAnswer8() {
           //increases row number
@@ -517,3 +547,4 @@
   		$('#itemRows8').append(row8);
 
   }
+  //-----------------------------------------------
