@@ -412,14 +412,14 @@
       e("surveyCode").value = htmlCode2;
   }
 //-----------------------------------------------
-  var rowNum = 0;
-  var rowNum2 = 0;
-  var rowNum3 = 0;
-  var rowNum4 = 0;
-  var rowNum5 = 0;
-  var rowNum6 = 0;
-  var rowNum7 = 0;
-  var rowNum8 = 0;
+  var rowNum = 1;
+  // var rowNum2 = 0;
+  // var rowNum3 = 0;
+  // var rowNum4 = 0;
+  // var rowNum5 = 0;
+  // var rowNum6 = 0;
+  // var rowNum7 = 0;
+  // var rowNum8 = 0;
 
   var questionNum = 1;
   //removes added rows
@@ -429,10 +429,21 @@
 //-----------------------------------------------
   //adds rows
   function addAnswer(qNum) {
-          //increases row number
+          // create a system where we reset the input number if its a different question
+          // check if the current rownNumber is greater than one
+          // then check it against the current questionNum
+
+          if(rowNum==1) { // rownum hasnt been altered yet
+            var curr = qNum; // curr stores the question number we were on
+          } else {
+            
+          }
+
+
+
           rowNum++;
            //defines a new row's HTML
-          var row = ' <div class="input-group" style="margin-top: 15px;"> <div class="input-group-prepend"> <span class="input-group-text">Answer</span> </div> <input id="responseInput'+rowNum+'" type="text" class="form-control"/> <div class="input-group-append"> <button class="btn btn-primary border rounded-0" type="button"> <i class="fa fa-trash-o"></i> </button> </div> </div>'
+          var row = ' <div id="QuestionNum'+qNum+'InputNum'+rowNum+'" class="input-group" style="margin-top: 15px;"> <div class="input-group-prepend"> <span class="input-group-text">Answer</span> </div> <input id="'+qNum+'_responseInput_'+rowNum+'" type="text" class="form-control"/> <div class="input-group-append"> <button class="btn btn-primary border rounded-0" type="button"> <i class="fa fa-trash-o"></i> </button> </div> </div>'
           //appends the new row to the div
   		$('#form'+qNum).append(row);
 
