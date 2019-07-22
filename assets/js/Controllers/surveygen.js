@@ -420,6 +420,8 @@
   var rowNum6 = 0;
   var rowNum7 = 0;
   var rowNum8 = 0;
+
+  var questionNum = 1;
   //removes added rows
   function removeRow(rnum) {
       $('#divRow' + rnum).remove();
@@ -430,121 +432,26 @@
           //increases row number
           rowNum++;
            //defines a new row's HTML
-          var row = ' <div id="divRow' + rowNum + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInput'+rowNum+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow(' + rowNum + ');" id="removeButton' + rowNum + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
+          // var x = ' <div id="divRow' + rowNum + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInput'+rowNum+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow(' + rowNum + ');" id="removeButton' + rowNum + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
+          var row = ' <div class="input-group" style="margin-top: 15px;"> <div class="input-group-prepend"> <span class="input-group-text">Answer</span> </div> <input id="responseInput'+rowNum+'" type="text" class="form-control"/> <div class="input-group-append"> <button class="btn btn-primary border rounded-0" type="button"> <i class="fa fa-trash-o"></i> </button> </div> </div>'
           //appends the new row to the div
-  		$('#itemRows').append(row);
+  		$('#form1').append(row);
 
   }
-//-----------------------------------------------
-  //removes added rows
-  function removeRow2(rnum) {
-      $('#divRow2' + rnum).remove();
-  }
-//-----------------------------------------------
-  //adds rows
-  function addAnswer2() {
-          //increases row number
-          rowNum2++;
-           //defines a new row's HTML
-          var row2 = ' <div id="divRow2' + rowNum2 + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInputt'+rowNum2+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow2(' + rowNum2 + ');" id="removeButton' + rowNum2 + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
-          //appends the new row to the div
-  		$('#itemRows2').append(row2);
+  function removeAnswer() {
+    // get the unique identifiers [form number + answer number]
 
-  }
+  };
 //-----------------------------------------------
-  //removes added rows
-  function removeRow3(rnum) {
-      $('#divRow3' + rnum).remove();
-  }
-//-----------------------------------------------
-  //adds rows
-  function addAnswer3() {
-          //increases row number
-          rowNum3++;
-           //defines a new row's HTML
-          var row3 = ' <div id="divRow3' + rowNum3 + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInputtt'+rowNum3+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow3(' + rowNum3 + ');" id="removeButton' + rowNum3 + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
-          //appends the new row to the div
-  		$('#itemRows3').append(row3);
+  function addQuestion() {
+    // add a new form with parameters for identifiers
+    questionNum++;
+    var questionForm = '<form style="margin-top: 10px;" id="form1">  <!-- QUESTION1 INPUT -->  <p style="margin-bottom: 10px;">Question'+questionNum+'</p>  <input id="questionInput'+questionNum+'" class="form-control" type="text">  <!-- SELECTOR ITEMS -->  <div class="form-row">    <!-- QUESTIONTYPE -->    <div class="col">      <p style="margin-bottom: 10px;margin-top: 15px;">Question:</p>      <select id="questionType'+questionNum+'" class="form-control">        <option id="q1" value="brand-awareness">brand-awareness</option>        <option id="q2" value="demographic">demographic</option>      </select>    </div>    <!-- SURVEY TYPE -->    <div class="col">      <p style="margin-top: 15px;margin-bottom: 10px;">Survey:</p>      <select id="surveyType'+questionNum+'" class="form-control">        <option id="s1" value="single">single</option>        <option id="s2" value="multiple">mutiple</option>        <option id="s2" value="agree-disagree">agree-disagree</option>      </select>    </div>  </div>  <!-- SELECTOR #2 -->  <div class="form-row">    <!-- RANDOMIZE ANSWERS -->    <div class="col">      <p style="margin-top: 15px;margin-bottom: 10px;">Randomize Answers?</p>      <select id="randomizeAnswers'+questionNum+'" class="form-control">        <option id="r2" value="false">false</option>        <option id="r1" value="true">true</option>      </select>    </div>  </div>  <!-- ROW OF BUTTONS -->  <div class="form-row">    <!-- ADD ANSWER -->    <div class="col">      <button onclick="addAnswer(this.form);" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Answer</button>    </div>    <!-- ADD QUESTIONS -->    <div class="col">      <button onclick="addQuestion();" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Question</button>    </div>  </div>  <!-- ANSWER INPUT -->  <div class="input-group" style="margin-top: 15px;">    <div class="input-group-prepend">      <span class="input-group-text">Answer</span>    </div><input id="responseInput0" class="form-control" type="text">    <div class="input-group-append"></div>  </div></form>'
 
-  }
-//-----------------------------------------------
-  //removes added rows
-  function removeRow4(rnum) {
-      $('#divRow4' + rnum).remove();
-  }
-//-----------------------------------------------
-  //adds rows
-  function addAnswer4() {
-          //increases row number
-          rowNum4++;
-           //defines a new row's HTML
-          var row4 = ' <div id="divRow4' + rowNum4 + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInputttt'+rowNum4+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow4(' + rowNum4 + ');" id="removeButton' + rowNum4 + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
-          //appends the new row to the div
-  		$('#itemRows4').append(row4);
+    $('#questionTable').append(questionForm);
+  };
 
-  }
-//-----------------------------------------------
-  //removes added rows
-  function removeRow5(rnum) {
-      $('#divRow5' + rnum).remove();
-  }
-//-----------------------------------------------
-  //adds rows
-  function addAnswer5() {
-          //increases row number
-          rowNum5++;
-           //defines a new row's HTML
-          var row5 = ' <div id="divRow5' + rowNum5 + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInputtttt'+rowNum5+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow5(' + rowNum5 + ');" id="removeButton' + rowNum5 + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
-          //appends the new row to the div
-  		$('#itemRows5').append(row5);
+  function removeQuestion() {
+    // remove question with given identifiers
 
-  }
-//-----------------------------------------------
-  //removes added rows
-  function removeRow6(rnum) {
-      $('#divRow6' + rnum).remove();
-  }
-//-----------------------------------------------
-  //adds rows
-  function addAnswer6() {
-          //increases row number
-          rowNum6++;
-           //defines a new row's HTML
-          var row6 = ' <div id="divRow6' + rowNum6 + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInputttttt'+rowNum6+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow6(' + rowNum6 + ');" id="removeButton' + rowNum6 + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
-          //appends the new row to the div
-  		$('#itemRows6').append(row6);
-
-  }
-//-----------------------------------------------
-  //removes added rows
-  function removeRow7(rnum) {
-      $('#divRow7' + rnum).remove();
-  }
-//-----------------------------------------------
-  //adds rows
-  function addAnswer7() {
-          //increases row number
-          rowNum7++;
-           //defines a new row's HTML
-          var row7 = ' <div id="divRow7' + rowNum7 + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInputtttttt'+rowNum7+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow7(' + rowNum7 + ');" id="removeButton' + rowNum7 + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
-          //appends the new row to the div
-  		$('#itemRows7').append(row7);
-
-  }
-//-----------------------------------------------
-  //removes added rows
-  function removeRow8(rnum) {
-      $('#divRow8' + rnum).remove();
-  }
-//-----------------------------------------------
-  //adds rows
-  function addAnswer8() {
-          //increases row number
-          rowNum8++;
-           //defines a new row's HTML
-          var row8 = ' <div id="divRow8' + rowNum8 + '" class="rowDisplay row"><div id="displayName" class="displayNames col-md-2"><b>Answer: </b><textarea id="responseInputttttttt'+rowNum8+'" style="width:800px;height:25px"></textarea><input type="button" value="Remove" onclick="removeRow8(' + rowNum8 + ');" id="removeButton' + rowNum8 + '" class="btn btn-default"></div><div id="emptyColumn" class="col-md-2"></div>';
-          //appends the new row to the div
-  		$('#itemRows8').append(row8);
-
-  }
-  //-----------------------------------------------
+  };
