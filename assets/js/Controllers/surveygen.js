@@ -446,7 +446,7 @@
   function addQuestion() {
     // add a new form with parameters for identifiers
     if (questionNum == 8) {
-      alert("Maximum number of survey questions is 8!");
+      alert("Maximum number of survey questions is 8! Refresh if you deleted questions and have less than 8.");
       return;
     }
 
