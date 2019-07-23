@@ -415,7 +415,6 @@
 
   // var rowNum = 1;
   var questionNum = 1;
-  var curr  = -1;
   var cache = new Array(8).fill(1);
   //removes added rows
   function removeRow(rnum) {
@@ -431,20 +430,31 @@
       var rowNum = cache[qNum-1];
       rowNum++;
        //defines a new row's HTML
-      var row = ' <div id="QuestionNum'+qNum+'InputNum'+rowNum+'" class="input-group" style="margin-top: 15px;"> <div class="input-group-prepend"> <span class="input-group-text">Answer</span> </div> <input id="'+qNum+'_responseInput_'+rowNum+'" type="text" class="form-control"/> <div class="input-group-append"> <button class="btn btn-primary border rounded-0" type="button"> <i class="fa fa-trash-o"></i> </button> </div> </div>'
+      var row = ' <div id="QuestionNum'+qNum+'InputNum'+rowNum+'" class="input-group" style="margin-top: 15px;"> <div class="input-group-prepend"> <span class="input-group-text">Answer</span> </div> <input id="'+qNum+'_responseInput_'+rowNum+'" type="text" class="form-control"/> <div class="input-group-append"> <button onclick="removeAnswer('+qNum+');" class="btn btn-primary border rounded-0" type="button"> <i class="fa fa-trash-o"></i> </button> </div> </div>'
       //appends the new row to the div
       cache[qNum-1] = rowNum;
   		$('#form'+qNum).append(row);
 
   };
 //-----------------------------------------------
-  function removeAnswer() {
+  function removeAnswer(qNum) {
     // get the unique identifiers [form number + answer number]
+    var ansNum = cache[qNum-1];
+    console.log()
+    $('#QuestionNum'+qNum+'InputNum'+ansNum).remove();
+    ansNum--;
+    cache[qNum-1]=ansNum;
 
   };
 //-----------------------------------------------
   function addQuestion() {
     // add a new form with parameters for identifiers
+    if (questionNum == 8) {
+      alert("Maximum number of survey questions is 8!");
+      return;
+    }
+
+
     questionNum++;
     var questionForm = '<form style="margin-top: 10px;" id="form'+questionNum+'">  <!-- QUESTION1 INPUT -->  <p style="margin-bottom: 10px;">Question '+questionNum+'</p>  <input id="questionInput'+questionNum+'" class="form-control" type="text">  <!-- SELECTOR ITEMS -->  <div class="form-row">    <!-- QUESTIONTYPE -->    <div class="col">      <p style="margin-bottom: 10px;margin-top: 15px;">Question:</p>      <select id="questionType'+questionNum+'" class="form-control">        <option id="q1" value="brand-awareness">brand-awareness</option>        <option id="q2" value="demographic">demographic</option>      </select>    </div>    <!-- SURVEY TYPE -->    <div class="col">      <p style="margin-top: 15px;margin-bottom: 10px;">Survey:</p>      <select id="surveyType'+questionNum+'" class="form-control">        <option id="s1" value="single">single</option>        <option id="s2" value="multiple">mutiple</option>        <option id="s2" value="agree-disagree">agree-disagree</option>      </select>    </div>  </div>  <!-- SELECTOR #2 -->  <div class="form-row">    <!-- RANDOMIZE ANSWERS -->    <div class="col">      <p style="margin-top: 15px;margin-bottom: 10px;">Randomize Answers?</p>      <select id="randomizeAnswers'+questionNum+'" class="form-control">        <option id="r2" value="false">false</option>        <option id="r1" value="true">true</option>      </select>    </div>  </div>  <!-- ROW OF BUTTONS -->  <div class="form-row">    <!-- ADD ANSWER -->    <div class="col">      <button onclick="addAnswer('+questionNum+');" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Answer</button>    </div>    <!-- ADD QUESTIONS -->    <div class="col">      <button onclick="addQuestion();" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Question</button>    </div>  </div>  <!-- ANSWER INPUT -->  <div class="input-group" style="margin-top: 15px;">    <div class="input-group-prepend">      <span class="input-group-text">Answer</span>    </div><input id="responseInput0" class="form-control" type="text">    <div class="input-group-append"></div>  </div></form>'
 
