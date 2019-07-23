@@ -8,55 +8,89 @@
   function generateCode() {
 
   var randomQue = e("randomizeQuestions").value;
-
+  // --------------------
   var questionT = e("questionType1").value;
   var surveyTyp = e("surveyType1").value;
   var randomAns = e("randomizeAnswers1").value;
   var	questionI = e("questionInput1").value;
   var responseI = e("1_responseInput_1").value;
+  // --------------------
+  try {
+    var questioT2 = e("questionType2").value;
+    var surveyTy2 = e("surveyType2").value;
+    var randomAn2 = e("randomizeAnswers2").value;
+    var	questioI2 = e("questionInput2").value;
+    var responsI2 = e("2_responseInput_1").value;
 
-  var questioT2 = e("questionType2").value;
-  var surveyTy2 = e("surveyType2").value;
-  var randomAn2 = e("randomizeAnswers2").value;
-  var	questioI2 = e("questionInput2").value;
-  var responsI2 = e("2_responseInput_1").value;
+  } catch (e) {
+    console.log("Only one question now")
+  }
+  // --------------------
+  try {
+    var questioT3 = e("questionType3").value;
+    var surveyTy3 = e("surveyType3").value;
+    var randomAn3 = e("randomizeAnswers3").value;
+    var	questioI3 = e("questionInput3").value;
+    var responsI3 = e("3_responseInput_1").value;
 
-  var questioT3 = e("questionType3").value;
-  var surveyTy3 = e("surveyType3").value;
-  var randomAn3 = e("randomizeAnswers3").value;
-  var	questioI3 = e("questionInput3").value;
-  var responsI3 = e("3_responseInput_1").value;
+  } catch (e) {
+    console.log("Only two questions now")
+  }
+  // --------------------
+  try {
+    var questioT4 = e("questionType4").value;
+    var surveyTy4 = e("surveyType4").value;
+    var randomAn4 = e("randomizeAnswers4").value;
+    var	questioI4 = e("questionInput4").value;
+    var responsI4 = e("4_responseInput_1").value;
 
-  var questioT4 = e("questionType4").value;
-  var surveyTy4 = e("surveyType4").value;
-  var randomAn4 = e("randomizeAnswers4").value;
-  var	questioI4 = e("questionInput4").value;
-  var responsI4 = e("4_responseInput_1").value;
+  } catch (e) {
+    console.log("Only three questions now")
+  }
+  // --------------------
+  try {
+    var questioT5 = e("questionType5").value;
+    var surveyTy5 = e("surveyType5").value;
+    var randomAn5 = e("randomizeAnswers5").value;
+    var	questioI5 = e("questionInput5").value;
+    var responsI5 = e("5_responseInput_1").value;
 
-  var questioT5 = e("questionType5").value;
-  var surveyTy5 = e("surveyType5").value;
-  var randomAn5 = e("randomizeAnswers5").value;
-  var	questioI5 = e("questionInput5").value;
-  var responsI5 = e("5_responseInput_1").value;
+  } catch (e) {
+    console.log("Only four questions now")
+  }
+  // --------------------
+  try {
+    var questioT6 = e("questionType6").value;
+    var surveyTy6 = e("surveyType6").value;
+    var randomAn6 = e("randomizeAnswers6").value;
+    var	questioI6 = e("questionInput6").value;
+    var responsI6 = e("6_responseInput_1").value;
 
-  var questioT6 = e("questionType6").value;
-  var surveyTy6 = e("surveyType6").value;
-  var randomAn6 = e("randomizeAnswers6").value;
-  var	questioI6 = e("questionInput6").value;
-  var responsI6 = e("6_responseInput_1").value;
+  } catch (e) {
+    console.log("Only five questions now")
+  }
+  // --------------------
+  try {
+    var questioT7 = e("questionType7").value;
+    var surveyTy7 = e("surveyType7").value;
+    var randomAn7 = e("randomizeAnswers7").value;
+    var	questioI7 = e("questionInput7").value;
+    var responsI7 = e("7_responseInput_1").value;
 
-  var questioT7 = e("questionType7").value;
-  var surveyTy7 = e("surveyType7").value;
-  var randomAn7 = e("randomizeAnswers7").value;
-  var	questioI7 = e("questionInput7").value;
-  var responsI7 = e("7_responseInput_1").value;
+  } catch (e) {
+    console.log("Only six questions now")
+  }
+  // --------------------
+  try {
+    var questioT8 = e("questionType8").value;
+    var surveyTy8 = e("surveyType8").value;
+    var randomAn8 = e("randomizeAnswers8").value;
+    var	questioI8 = e("questionInput8").value;
+    var responsI8 = e("8_responseInput_1").value;
 
-  var questioT8 = e("questionType8").value;
-  var surveyTy8 = e("surveyType8").value;
-  var randomAn8 = e("randomizeAnswers8").value;
-  var	questioI8 = e("questionInput8").value;
-  var responsI8 = e("8_responseInput_1").value;
-
+  } catch (e) {
+    console.log("Only seven questions now")
+  }
   // --------------------------------------------------------------------------------------------
   var htmlCode2 = "<body>\n"
   	htmlCode2 += "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n"
