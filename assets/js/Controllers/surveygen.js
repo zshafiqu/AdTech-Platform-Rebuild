@@ -1,53 +1,63 @@
 // <script src="assets/js/Controllers/"></script>
 // getElementbyID shortcut applies to all pages
+// --------------------------------------------------------------------------------------------
   function e(n) {
     return document.getElementById(n);
   };
-//-----------------------------------------------
+// --------------------------------------------------------------------------------------------
   function generateCode() {
 
   var randomQue = e("randomizeQuestions").value;
-  var questionT = e("questionType").value;
-  var surveyTyp = e("surveyType").value;
-  var randomAns = e("randomizeAnswers").value;
-  var	questionI = e("questionInput").value;
-  var responseI = e("responseInput0").value;
+
+  var questionT = e("questionType1").value;
+  var surveyTyp = e("surveyType1").value;
+  var randomAns = e("randomizeAnswers1").value;
+  var	questionI = e("questionInput1").value;
+  var responseI = e("1_responseInput_1").value;
+
   var questioT2 = e("questionType2").value;
   var surveyTy2 = e("surveyType2").value;
   var randomAn2 = e("randomizeAnswers2").value;
   var	questioI2 = e("questionInput2").value;
-  var responsI2 = e("responseInputt0").value;
+  var responsI2 = e("2_responseInput_1").value;
+
   var questioT3 = e("questionType3").value;
-  var surveyTy3= e("surveyType3").value;
+  var surveyTy3 = e("surveyType3").value;
   var randomAn3 = e("randomizeAnswers3").value;
   var	questioI3 = e("questionInput3").value;
-  var responsI3 = e("responseInputtt0").value;
+  var responsI3 = e("3_responseInput_1").value;
+
   var questioT4 = e("questionType4").value;
   var surveyTy4 = e("surveyType4").value;
   var randomAn4 = e("randomizeAnswers4").value;
   var	questioI4 = e("questionInput4").value;
-  var responsI4 = e("responseInputttt0").value;
+  var responsI4 = e("4_responseInput_1").value;
+
   var questioT5 = e("questionType5").value;
   var surveyTy5 = e("surveyType5").value;
   var randomAn5 = e("randomizeAnswers5").value;
   var	questioI5 = e("questionInput5").value;
-  var responsI5 = e("responseInputtttt0").value;
+  var responsI5 = e("5_responseInput_1").value;
+
   var questioT6 = e("questionType6").value;
   var surveyTy6 = e("surveyType6").value;
   var randomAn6 = e("randomizeAnswers6").value;
   var	questioI6 = e("questionInput6").value;
-  var responsI6 = e("responseInputttttt0").value;
+  var responsI6 = e("6_responseInput_1").value;
+
   var questioT7 = e("questionType7").value;
   var surveyTy7 = e("surveyType7").value;
   var randomAn7 = e("randomizeAnswers7").value;
   var	questioI7 = e("questionInput7").value;
-  var responsI7 = e("responseInputtttttt0").value;
+  var responsI7 = e("7_responseInput_1").value;
+
   var questioT8 = e("questionType8").value;
   var surveyTy8 = e("surveyType8").value;
   var randomAn8 = e("randomizeAnswers8").value;
   var	questioI8 = e("questionInput8").value;
-  var responsI8 = e("responseInputttttttt0").value;
+  var responsI8 = e("8_responseInput_1").value;
 
+  // --------------------------------------------------------------------------------------------
   var htmlCode2 = "<body>\n"
   	htmlCode2 += "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n"
   	htmlCode2 += "  <script type=\"text/javascript\">\n"
@@ -127,14 +137,25 @@
     htmlCode2 += "        '"+questionI+"', // question\n"
     htmlCode2 += "        '"+randomAns+"', // randomize answers? true or false\n"
 
+    // --------------------------------------------------------------------------------------------
+
+    // we use this counter variable to iterate over each answer within each form.
+    // we take the base id, and append the iterator to its end
+    // the format i'm following is questionNumber+"_responseInput_"+anwerNumber
+
+    // also rowNum was being used to iterate.. because we've put the number value in this "cache" array, we can reference that for each case instead.
+
+    // --------------------------------------------------------------------------------------------
+    // question 1
     var counter = 0;
 
-    for (counter = 0; counter <= rowNum; counter++) {
-  	var whichResponse = "responseInput"
+    // cache[0] has q1's # of answers, cache[1] has q2's, etc
+    for (counter = 0; counter <= cache[0]; counter++) {
+  	var whichResponse = "1_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responseI = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum) { htmlCode2 += "        '"+responseI+"', // response\n"  }
+  		if (counter != cache[0]) { htmlCode2 += "        '"+responseI+"', // response\n"  }
   		else { htmlCode2 += "        '"+responseI+"' // response AND last element, no comma needed\n" }
   		}
   	}
@@ -143,7 +164,9 @@
       if (questioI2 || questioI3 || questioI4 || questioI5 || questioI6 || questioI7 || questioI8) { htmlCode2 += "," }
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // question 2
   	if (questioI2) {
   	htmlCode2 += "      [ // second survey question\n"
       htmlCode2 += "        '"+questioT2+"', // question type\n"
@@ -151,12 +174,12 @@
       htmlCode2 += "        '"+questioI2+"', // question\n"
       htmlCode2 += "        '"+randomAn2+"', // randomize answers? true or false\n"
   	var counter = 0;
-  	for (counter = 0; counter <= rowNum2; counter++) {
-  	var whichResponse = "responseInputt"
+  	for (counter = 0; counter <= cache[1]; counter++) {
+  	var whichResponse = "2_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI2 = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum2) { htmlCode2 += "        '"+responsI2+"', // response\n" }
+  		if (counter != cache[1]) { htmlCode2 += "        '"+responsI2+"', // response\n" }
   		else { 	htmlCode2 += "        '"+responsI2+"' // response AND last element, no comma needed\n" }
   		}
   	}
@@ -165,7 +188,9 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // question 3
   	if (questioI3) {
   	htmlCode2 += "      [ // third survey question\n"
       htmlCode2 += "        '"+questioT3+"', // question type\n"
@@ -173,12 +198,12 @@
       htmlCode2 += "        '"+questioI3+"', // question\n"
       htmlCode2 += "        '"+randomAn3+"', // randomize answers? true or false\n"
   	var counter = 0;
-  	for (counter = 0; counter <= rowNum3; counter++) {
-  	var whichResponse = "responseInputtt"
+  	for (counter = 0; counter <= cache[2]; counter++) {
+  	var whichResponse = "3_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI3 = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum3) { htmlCode2 += "        '"+responsI3+"', // response\n" }
+  		if (counter != cache[2]) { htmlCode2 += "        '"+responsI3+"', // response\n" }
   		else { htmlCode2 += "        '"+responsI3+"' // response AND last element, no comma needed\n" }
   		}
   	}
@@ -187,7 +212,9 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // question 4
   	if (questioI4) {
   	htmlCode2 += "      [ // fourth survey question\n"
       htmlCode2 += "        '"+questioT4+"', // question type\n"
@@ -195,12 +222,12 @@
       htmlCode2 += "        '"+questioI4+"', // question\n"
       htmlCode2 += "        '"+randomAn4+"', // randomize answers? true or false\n"
   	var counter = 0;
-  	for (counter = 0; counter <= rowNum4; counter++) {
-  	var whichResponse = "responseInputttt"
+  	for (counter = 0; counter <= cache[3]; counter++) {
+  	var whichResponse = "4_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI4 = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum4) { htmlCode2 += "        '"+responsI4+"', // response\n" }
+  		if (counter != cache[3]) { htmlCode2 += "        '"+responsI4+"', // response\n" }
   		else { htmlCode2 += "        '"+responsI4+"' // response AND last element, no comma needed\n" }
   		}
   	}
@@ -209,7 +236,9 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // question 5
   	if (questioI5) {
   	htmlCode2 += "      [ // fifth survey question\n"
       htmlCode2 += "        '"+questioT5+"', // question type\n"
@@ -217,12 +246,12 @@
       htmlCode2 += "        '"+questioI5+"', // question\n"
       htmlCode2 += "        '"+randomAn5+"', // randomize answers? true or false\n"
   	var counter = 0;
-  	for (counter = 0; counter <= rowNum5; counter++) {
-  	var whichResponse = "responseInputtttt"
+  	for (counter = 0; counter <= cache[4]; counter++) {
+  	var whichResponse = "5_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI5 = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum5) { htmlCode2 += "        '"+responsI5+"', // response\n" }
+  		if (counter != cache[4]) { htmlCode2 += "        '"+responsI5+"', // response\n" }
   		else { htmlCode2 += "        '"+responsI5+"' // response AND last element, no comma needed\n" }
   		}
   	}
@@ -231,7 +260,9 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // question 6
   	if (questioI6) {
   	htmlCode2 += "      [ // sixth survey question\n"
       htmlCode2 += "        '"+questioT6+"', // question type\n"
@@ -240,12 +271,12 @@
       htmlCode2 += "        '"+randomAn6+"', // randomize answers? true or false\n"
 
     var counter = 0;
-  	for (counter = 0; counter <= rowNum6; counter++) {
-  	var whichResponse = "responseInputttttt"
+  	for (counter = 0; counter <= cache[5]; counter++) {
+  	var whichResponse = "6_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI6 = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum6) { htmlCode2 += "        '"+responsI6+"', // response\n" }
+  		if (counter != cache[5]) { htmlCode2 += "        '"+responsI6+"', // response\n" }
   		else { htmlCode2 += "        '"+responsI6+"' // response AND last element, no comma needed\n" }
   		}
   	}
@@ -255,7 +286,9 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // question 7
   	if (questioI7) {
   	htmlCode2 += "      [ // seventh survey question\n"
       htmlCode2 += "        '"+questioT7+"', // question type\n"
@@ -264,12 +297,12 @@
       htmlCode2 += "        '"+randomAn7+"', // randomize answers? true or false\n"
   	var counter = 0;
 
-    for (counter = 0; counter <= rowNum7; counter++) {
-  	var whichResponse = "responseInputtttttt"
+    for (counter = 0; counter <= cache[6]; counter++) {
+  	var whichResponse = "7_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI7 = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum7) { htmlCode2 += "        '"+responsI7+"', // response\n" }
+  		if (counter != cache[6]) { htmlCode2 += "        '"+responsI7+"', // response\n" }
   		else { htmlCode2 += "        '"+responsI7+"' // response AND last element, no comma needed\n" }
   		}
   	}
@@ -278,7 +311,9 @@
   	htmlCode2 += "\n"
   	htmlCode2 += "\n"
   	}
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // question 8
   	if (questioI8) {
   	htmlCode2 += "      [ // eighth survey question\n"
       htmlCode2 += "        '"+questioT8+"', // question type\n"
@@ -287,19 +322,21 @@
       htmlCode2 += "        '"+randomAn8+"', // randomize answers? true or false\n"
   	var counter = 0;
 
-  	for (counter = 0; counter <= rowNum8; counter++) {
-  	var whichResponse = "responseInputttttttt"
+  	for (counter = 0; counter <= cache[7]; counter++) {
+  	var whichResponse = "8_responseInput_"
   	whichResponse += counter
   	if (e(whichResponse)) { responsI8 = e(whichResponse).value; }
   	if (e(whichResponse)) {
-  		if (counter != rowNum8) { htmlCode2 += "        '"+responsI8+"', // response\n" }
+  		if (counter != cache[7]) { htmlCode2 += "        '"+responsI8+"', // response\n" }
   		else { htmlCode2 += "        '"+responsI8+"' // response AND last element, no comma needed\n" }
   		}
   	}
   	htmlCode2 += "       ]\n"
   	htmlCode2 += "\n"
   	}
-    // --------------------------------
+
+    // --------------------------------------------------------------------------------------------
+    // randomize questions
   	htmlCode2 += "    ];\n"
   	if (randomQue == "true") {
   	    htmlCode2 += "    var randomQst = true; // randomize questions - set to false to turn off\n"
@@ -411,16 +448,10 @@
   	htmlCode2 += "</body>\n"
       e("surveyCode").value = htmlCode2;
   }
-//-----------------------------------------------
-
-  // var rowNum = 1;
+// --------------------------------------------------------------------------------------------
   var questionNum = 1;
   var cache = new Array(8).fill(1);
-  //removes added rows
-  function removeRow(rnum) {
-      $('#divRow' + rnum).remove();
-  }
-//-----------------------------------------------
+// --------------------------------------------------------------------------------------------
   //adds rows
   function addAnswer(qNum) {
       var rowNum = cache[qNum-1];
@@ -432,7 +463,7 @@
   		$('#form'+qNum).append(row);
 
   };
-//-----------------------------------------------
+// --------------------------------------------------------------------------------------------
   function removeAnswer(qNum) {
     // get the unique identifiers [form number + answer number]
     var ansNum = cache[qNum-1];
@@ -442,7 +473,7 @@
     cache[qNum-1]=ansNum;
 
   };
-//-----------------------------------------------
+// --------------------------------------------------------------------------------------------
   function addQuestion() {
     // add a new form with parameters for identifiers
     if (questionNum == 8) {
@@ -450,14 +481,15 @@
       return;
     }
 
-
     questionNum++;
+
     var questionForm = '<form style="margin-top: 10px;" id="form'+questionNum+'">  <!-- QUESTION1 INPUT --> <i onclick="removeQuestion('+questionNum+');" class="fa fa-trash"></i>  <p style="margin-bottom: 10px;">Question '+questionNum+'</p>  <input id="questionInput'+questionNum+'" class="form-control" type="text">  <!-- SELECTOR ITEMS -->  <div class="form-row">    <!-- QUESTIONTYPE -->    <div class="col">      <p style="margin-bottom: 10px;margin-top: 15px;">Question:</p>      <select id="questionType'+questionNum+'" class="form-control">        <option id="q1" value="brand-awareness">brand-awareness</option>        <option id="q2" value="demographic">demographic</option>      </select>    </div>    <!-- SURVEY TYPE -->    <div class="col">      <p style="margin-top: 15px;margin-bottom: 10px;">Survey:</p>      <select id="surveyType'+questionNum+'" class="form-control">        <option id="s1" value="single">single</option>        <option id="s2" value="multiple">mutiple</option>        <option id="s2" value="agree-disagree">agree-disagree</option>      </select>    </div>  </div>  <!-- SELECTOR #2 -->  <div class="form-row">    <!-- RANDOMIZE ANSWERS -->    <div class="col">      <p style="margin-top: 15px;margin-bottom: 10px;">Randomize Answers?</p>      <select id="randomizeAnswers'+questionNum+'" class="form-control">        <option id="r2" value="false">false</option>        <option id="r1" value="true">true</option>      </select>    </div>  </div>  <!-- ROW OF BUTTONS -->  <div class="form-row">    <!-- ADD ANSWER -->    <div class="col">      <button onclick="addAnswer('+questionNum+');" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Answer</button>    </div>    <!-- ADD QUESTIONS -->    <div class="col">      <button onclick="addQuestion();" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Question</button>    </div>  </div>  <!-- ANSWER INPUT -->  <div class="input-group" style="margin-top: 15px;">    <div class="input-group-prepend">      <span class="input-group-text">Answer</span>    </div><input id="'+questionNum+'_responseInput_1" class="form-control" type="text">    <div class="input-group-append"></div>  </div> </form>'
 
     $('#questionTable').append(questionForm);
   };
-//-----------------------------------------------
+// --------------------------------------------------------------------------------------------
   function removeQuestion(qNum) {
     // remove question with given identifiers
     $('#form' + qNum).remove();
   };
+  // --------------------------------------------------------------------------------------------

@@ -80,7 +80,7 @@
                       <!-- QUESTIONTYPE -->
               				<div class="col">
               					<p style="margin-bottom: 10px;margin-top: 15px;">Question:</p>
-                        <select id="questionType" class="form-control">
+                        <select id="questionType1" class="form-control">
                           <option id="q1" value="brand-awareness">brand-awareness</option>
                           <option id="q2" value="demographic">demographic</option>
                         </select>
@@ -88,7 +88,7 @@
                       <!-- SURVEY TYPE -->
               				<div class="col">
               					<p style="margin-top: 15px;margin-bottom: 10px;">Survey:</p>
-                        <select id="surveyType" class="form-control">
+                        <select id="surveyType1" class="form-control">
                           <option id="s1" value="single">single</option>
                           <option id="s2" value="multiple">mutiple</option>
                           <option id="s2" value="agree-disagree">agree-disagree</option>
@@ -100,7 +100,7 @@
                       <!-- RANDOMIZE ANSWERS -->
                       <div class="col">
                         <p style="margin-top: 15px;margin-bottom: 10px;">Randomize Answers?</p>
-                        <select id="randomizeAnswers" class="form-control">
+                        <select id="randomizeAnswers1" class="form-control">
                           <option id="r2" value="false">false</option>
                           <option id="r1" value="true">true</option>
                         </select>
@@ -125,14 +125,8 @@
               				<div class="input-group-append"></div>
               			</div>
               		</form>
-
-
-              	</div>
+              </div>
                 <!-- END FORM -->
-
-
-
-
               </div>
               <!-- END QUESTIONS FORM -->
               <div class="container flex-column" style="margin-top:30px;">
@@ -140,11 +134,11 @@
                       <form>
                         <div class="form-row">
                           <div class="col">
-                            <button class="btn btn-primary border rounded-0" style="margin-top: 0px;" type="button">Submit Survey</button>
+                            <button onclick="generateCode();return false;" class="btn btn-primary border rounded-0" style="margin-top: 0px;" type="button">Submit Survey</button>
                           </div>
                         </div>
                         <p style="margin-top: 20px; margin-bottom: 15px;">Generated Survey Code:</p>
-                        <textarea readonly class="form-control" placeholder="&lt;resulting survey code&gt;" style="height:500px;"></textarea>
+                        <textarea id="surveyCode" readonly class="form-control" placeholder="&lt;resulting survey code&gt;" style="height:700px;"></textarea>
                       </form>
                   </div>
               </div>
@@ -162,7 +156,7 @@
     <div ng-include="'assets/templates/scripts.htm'"></div>
     <!-- site functionality script -->
     <script src="assets/js/Controllers/surveygen.js"></script>
-    <script src="assets/js/Controllers/adxcel.js"></script>
+    <!-- <script src="assets/js/Controllers/adxcel.js"></script> -->
     <!-- script to resize onload -->
     <script type="text/javascript">
         function zoom() {
