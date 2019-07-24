@@ -205,12 +205,29 @@
                         <!-- Summary Form -->
                         <div id="summaryForm">
                           <p style="margin-bottom: 15px;"><strong>*Summary of Issue/Request:</strong></p>
-                          <input id="summary" onchange="formMin();" class="form-control" type="text">
+                          <input id="summary" style="margin-bottom: 15px;" onchange="formMin();" class="form-control" type="text">
                         </div>
                         <!-- General Form -->
                         <div id="generalForm">
-
+                          <p style="margin-bottom: 15px;">Select a region:</p>
+                          <select id="salesTeam" style="margin-bottom: 15px;" class="form-control issueForm" name="Sales Team" value="">
+                              <option id="centralTeam" name="Central Team" value="Central Team">Central</option>
+                              <option id="eastTeam" name="East Team" value="East Team">East</option>
+                              <option id="insideTeam" name="Inside Sales Team" value="Inside Team">Inside Sales</option>
+                              <option id="internationalTeam" name="International Team" value="International Team">International Team</option>
+                              <option id="northWestTeam" name="NorthWest Team" value="NorthWest Team">Northwest Team</option>
+                              <option id="performanceTeam" name="Performance Team" value="Performance Team">Performance</option>
+                              <option id="southWestTeam" name="SouthWest Team" value="SouthWest Team">Southwest</option>
+                          </select>
+                          <p style="margin-bottom: 15px;">Slingshot Link: [Order ID]</p>
+                          <input id="ssLink" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">DFP Link:</p>
+                          <input id="dfpLink" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">Start/End Dates:</p>
+                          <input id="datePicker" style="margin-bottom: 15px;" class="form-control" type="text">
                         </div>
+                        <!-- Affected Form -->
+
                       </div>
                     </form>
                 </div>
