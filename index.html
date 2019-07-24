@@ -261,6 +261,35 @@
                         p1 form <br>
                         --------------
                         <!-- P1 Form -->
+                        <div id="p1Form">
+                          <p style="margin-bottom: 15px;">Sponsor Name: <br>[no spaces, will track trials in analytics]</p>
+                          <input id="sponsorName" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">Max Daily Trials:</p>
+                          <input id="maxDayTrials" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">Max Campaign Trials:</p>
+                          <input id="maxCampTrials" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">Length of Trials:</p>
+                          <select style="margin-bottom: 15px;" class="form-control issueForm" id="trialLength" value="" name="Length of Trials">
+                              <option value="3_day"> 3 Day </option>
+                              <option value="7_day"> 7 Day </option>
+                              <option value="30_day"> 30 Day </option>
+                          </select>
+                          <p style="margin-bottom: 15px;">Intro Video File Path:</p>
+                          <input id="p1Video" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">Intro Video Impression Tracker:</p>
+                          <input id="p1VideoImp" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">Intro Video Click Tracker:</p>
+                          <input id="p1VideoClick" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">P1 in-trial Checked-in Skin File Path:</p>
+                          <input id="p1Skin" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">P1 in-trial Skin impression tracker:</p>
+                          <input id="p1SkinImp" style="margin-bottom: 15px;" class="form-control" type="text">
+                          <p style="margin-bottom: 15px;">P1 in-trial Skin click tracker:</p>
+                          <input id="p1SkinClick" style="margin-bottom: 15px;" class="form-control" type="text">
+                        </div>
+                        branded radio form <br>
+                        --------------
+                        <!-- Branded Radio Form -->
 
                       </div>
                     </form>
@@ -282,7 +311,8 @@
 
 
                 <!-- BEGIN SUMMARY AND DESCRIPTION -->
-                  <p style="margin-bottom: 15px;"><strong>*Summary of Issue/Request:</strong></p>
+
+                  <p style="margin-top: 100px; margin-bottom: 15px;"><strong>*Summary of Issue/Request:</strong></p>
                     <input class="form-control" type="text">
                   <p style="margin-top: 15px;margin-bottom: 15px;"><strong>*Please describe Issue/Request:</strong></p>
                     <textarea class="form-control"></textarea>
