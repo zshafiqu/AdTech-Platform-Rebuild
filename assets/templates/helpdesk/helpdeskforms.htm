@@ -5,14 +5,14 @@
         summary form <br>
         --------------
         <!-- Summary Form -->
-        <div id="summaryForm">
+        <div id="summaryForm" style="display:none">
           <p style="margin-bottom: 15px;"><strong>*Summary of Issue/Request:</strong></p>
           <input id="summary" name="Summary" style="margin-bottom: 15px;" onchange="formMin();" class="form-control" type="text">
         </div>
         general form <br>
         --------------
         <!-- General Form ----------------------------------------------------------->
-        <div id="generalForm">
+        <div id="generalForm" style="display:none">
           <p style="margin-bottom: 15px;">Select a region:</p>
           <select id="salesTeam" style="margin-bottom: 15px;" class="form-control issueForm" name="Sales Team" value="">
               <option id="centralTeam" name="Central Team" value="Central Team">Central</option>
@@ -33,7 +33,7 @@
         affected form <br>
         --------------
         <!-- Affected Form ----------------------------------------------------------->
-        <div id="affectedForm">
+        <div id="affectedForm" style="display:none">
           <p style="margin-bottom: 15px;">Affected Line ID(s):</p>
           <input id="lineID" name="Affected Line ID(s)" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Affected Creative ID(s):</p>
@@ -42,7 +42,7 @@
         cert form <br>
         --------------
         <!-- Cert Form ----------------------------------------------------------->
-        <div id="certForm">
+        <div id="certForm" style="display:none">
           <p style="margin-bottom: 15px;">Vendor Name:</p>
           <input id="vendorName" name="Vendor Name" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Vendor Technical Contact Email:</p>
@@ -61,7 +61,7 @@
         p1 form <br>
         --------------
         <!-- P1 Form ----------------------------------------------------------->
-        <div id="p1Form">
+        <div id="p1Form" style="display:none">
           <p style="margin-bottom: 15px;">Sponsor Name: <br>[no spaces, will track trials in analytics]</p>
           <input id="sponsorName" name="Sponsor Name" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Max Daily Trials:</p>
@@ -90,7 +90,7 @@
         branded radio form <br>
         --------------
         <!-- Branded Radio Form ----------------------------------------------------------->
-        <div id="brandedRadioForm">
+        <div id="brandedRadioForm" style="display:none">
           <p style="margin-bottom: 15px;">Station ID: [separated with commas]</p>
           <input id="stationID" name="Station ID" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Account used to create station:</p>
@@ -99,21 +99,21 @@
         searchable form <br>
         --------------
         <!-- Searachle Form ----------------------------------------------------------->
-        <div id="searchableForm">
+        <div id="searchableForm" style="display:none">
           <p style="margin-bottom: 15px;">Searchable Term: [must be advertiser's name]</p>
           <input id="searchTerm" name="Searchable Term" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
         ad spec form <br>
         --------------
         <!-- Ad Spec Form ----------------------------------------------------------->
-        <div id="adSpecForm">
+        <div id="adSpecForm" style="display:none">
           <p style="margin-bottom: 15px;">Ad Product:</p>
           <input id="product" name="Ad Product" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
         ttr form <br>
         --------------
         <!-- TTR Form ----------------------------------------------------------->
-        <div id="ttrForm">
+        <div id="ttrForm" style="display:none">
           <p style="margin-bottom: 15px;">Opt-in Text:</p>
           <input id="optText" name="Opt-in Text" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Reg URL:</p>
@@ -163,7 +163,7 @@
         idfa postback form <br>
         --------------
         <!-- IDFA Postback Form ----------------------------------------------------------->
-        <div id="idfaPostbackForm">
+        <div id="idfaPostbackForm" style="display:none">
           <p style="margin-bottom: 15px;">Test URL:</p>
           <input id="testUrl" name="Test URL" style="margin-bottom: 15px;" class="form-control" type="text">
           <div class="form-row" style="margin-bottom: 15px;">
@@ -190,7 +190,7 @@
         camp ad form <br>
         --------------
         <!-- Camp Ad Form ----------------------------------------------------------->
-        <div id="campAd">
+        <div id="campAd" style="display:none">
           <p style="margin-bottom: 15px;">Advertiser:</p>
           <input id="advertiser" name="Advertiser" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Campaign:</p>
@@ -199,7 +199,7 @@
         conversion form <br>
         --------------
         <!-- Conversion Form ----------------------------------------------------------->
-        <div id="conversionForm">
+        <div id="conversionForm" style="display:none">
           <p style="margin-bottom: 15px;">Platform:</p>
           <div class="form-row" style="margin-bottom: 15px;">
             <div class="col">
@@ -225,7 +225,7 @@
         spotlight form <br>
         --------------
         <!-- Spotlight Form ----------------------------------------------------------->
-        <div id="spotlightForm">
+        <div id="spotlightForm" style="display:none">
           <p style="margin-bottom: 15px;">DFP Order ID:</p>
           <input id="dfpOrderID" name="DFP Order ID" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Number of activities being tracked:</p>
@@ -238,7 +238,7 @@
         conversion test form <br>
         --------------
         <!-- Conversion Test Form ----------------------------------------------------------->
-        <div id="conversionTestForm">
+        <div id="conversionTestForm" style="display:none">
           <p style="margin-bottom: 15px;">Click URL(s) that need a test line:</p>
           <input id="clickUrlTest" name="Click URLs to be Tested" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Line IDs to be tested:</p>
@@ -247,14 +247,14 @@
         dfp push form <br>
         --------------
         <!-- DFP Push Form ----------------------------------------------------------->
-        <div id="dfpPushForm">
+        <div id="dfpPushForm" style="display:none">
           <p style="margin-bottom: 15px;">DFP Push Failure Message:</p>
           <input id="pushFailCode" name="DFP Push Fail:" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
         boomerang form <br>
         --------------
         <!-- Boomerang Form ----------------------------------------------------------->
-        <div id="boomerangForm">
+        <div id="boomerangForm" style="display:none">
           <p style="margin-bottom: 15px;">Audience Segment Type:</p>
           <select id="audienceSegmentType" name="Audience Segment Type" style="margin-bottom: 15px;" class="form-control" value="">
             <option value="Re-Targeting">Re-Targeting</option>
@@ -266,7 +266,7 @@
         tools vendor form <br>
         --------------
         <!-- Tools Vendor Form ----------------------------------------------------------->
-        <div id="toolsVendorForm">
+        <div id="toolsVendorForm" style="display:none">
           <p style="margin-bottom: 15px;">Vendor Tag Name:</p>
           <input id="vendorTag" value="" name="Vendor Tag Name" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Tag Type:</p>
@@ -300,7 +300,7 @@
         environment form <br>
         --------------
         <!-- Environment Form ----------------------------------------------------------->
-        <div id="environment">
+        <div id="environment" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
             <div class="col">
               <div class="form-check text-right">
@@ -319,7 +319,7 @@
         platform form <br>
         --------------
         <!-- Environment Form ----------------------------------------------------------->
-        <div id="platforms">
+        <div id="platforms" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
             <div class="col">
               <div class="form-check">
@@ -356,7 +356,7 @@
         platform form <br>
         --------------
         <!-- Environment Form ----------------------------------------------------------->
-        <div id="tags">
+        <div id="tags" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
             <div class="col">
               <div class="form-check">
@@ -369,7 +369,7 @@
         discrepancy form <br>
         --------------
         <!-- Discrepancy Form ----------------------------------------------------------->
-        <div id="discrepForm">
+        <div id="discrepForm" style="display:none">
           <p style="margin-bottom: 15px;">Third Party Vendor:</p>
           <input id="discrepVendor" value="" name="Third Party Vendor: (DFA, Atlas)" style="margin-bottom: 15px;" class="form-control" type="text">
           <div class="form-row" style="margin-bottom: 15px;">
@@ -384,7 +384,7 @@
         delivery form <br>
         --------------
         <!-- Delivery Form ----------------------------------------------------------->
-        <div id="deliveryForm">
+        <div id="deliveryForm" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
             <div class="col">
               <div class="form-check">
@@ -397,11 +397,14 @@
         adxcel form <br>
         --------------
         <!-- AdXcel Form ----------------------------------------------------------->
-        <div id="adXcelForm">
+        <div id="adXcelForm" style="display:none">
           <p style="margin-bottom: 15px;">Affected Line ID(s):</p>
           <textarea id="" name="Adxcel Tag" class="inputTagText form-control" style="margin-bottom: 15px;"></textarea>
-
         </div>
+        slingshot form <br>
+        --------------
+        <!-- Slingshot Form ----------------------------------------------------------->
+
 
       </div>
     </form>
