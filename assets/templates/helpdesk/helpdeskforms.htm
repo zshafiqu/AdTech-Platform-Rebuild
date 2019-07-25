@@ -1,5 +1,5 @@
 <!-- !!!!!!! START JIRA ENTRY FORMS !!!!!!! -->
-<div id="theInput" style="display: block;">
+<div id="theInput" style="display: block;" class="d-inline-flex">
     <form id="userInput">
       <div id="jiraForm">
         summary form <br>
@@ -222,6 +222,22 @@
             <option value="User Needs Help">I need technical help to determine this</option>
           </select>
         </div>
+        spotlight form <br>
+        --------------
+        <!-- Spotlight Form ----------------------------------------------------------->
+        <div id="spotlightForm">
+          <p style="margin-bottom: 15px;">DFP Order ID:</p>
+          <input id="dfpOrderID" name="DFP Order ID" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Number of activities being tracked:</p>
+          <input id="activities" name="activities" style="margin-bottom: 15px;width: 150px;" class="form-control d-inline-flex" type="number">
+          <p style="margin-bottom: 15px;">Brief explanation of what the advertiser is tracking as a conversion:</p>
+          <input id="conversionMetric" name="Conversion Metric" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Lookback Requirement? [days]</p>
+          <input id="lookbackReq" name="lookbackRequirement" style="margin-bottom: 15px;width: 150px;" class="form-control d-inline-flex" type="number">
+        </div>
+        conversion test form <br>
+        --------------
+        <!-- Conversion Test Form ----------------------------------------------------------->
 
       </div>
     </form>
