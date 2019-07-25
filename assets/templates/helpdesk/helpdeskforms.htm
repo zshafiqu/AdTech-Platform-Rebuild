@@ -1,0 +1,169 @@
+<!-- !!!!!!! START JIRA ENTRY FORMS !!!!!!! -->
+<div id="theInput" style="display: block;">
+    <form id="userInput">
+      <div id="jiraForm">
+        summary form <br>
+        --------------
+        <!-- Summary Form -->
+        <div id="summaryForm">
+          <p style="margin-bottom: 15px;"><strong>*Summary of Issue/Request:</strong></p>
+          <input id="summary" name="Summary" style="margin-bottom: 15px;" onchange="formMin();" class="form-control" type="text">
+        </div>
+        general form <br>
+        --------------
+        <!-- General Form ----------------------------------------------------------->
+        <div id="generalForm">
+          <p style="margin-bottom: 15px;">Select a region:</p>
+          <select id="salesTeam" style="margin-bottom: 15px;" class="form-control issueForm" name="Sales Team" value="">
+              <option id="centralTeam" name="Central Team" value="Central Team">Central</option>
+              <option id="eastTeam" name="East Team" value="East Team">East</option>
+              <option id="insideTeam" name="Inside Sales Team" value="Inside Team">Inside Sales</option>
+              <option id="internationalTeam" name="International Team" value="International Team">International Team</option>
+              <option id="northWestTeam" name="NorthWest Team" value="NorthWest Team">Northwest Team</option>
+              <option id="performanceTeam" name="Performance Team" value="Performance Team">Performance</option>
+              <option id="southWestTeam" name="SouthWest Team" value="SouthWest Team">Southwest</option>
+          </select>
+          <p style="margin-bottom: 15px;">Slingshot Link: [Order ID]</p>
+          <input id="ssLink" name="Slingshot Link" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">DFP Link:</p>
+          <input id="dfpLink" name="DFP Link" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Start/End Dates:</p>
+          <input id="datePicker" name="Start/End Dates" style="margin-bottom: 15px;" class="form-control" type="text">
+        </div>
+        affected form <br>
+        --------------
+        <!-- Affected Form ----------------------------------------------------------->
+        <div id="affectedForm">
+          <p style="margin-bottom: 15px;">Affected Line ID(s):</p>
+          <input id="lineID" name="Affected Line ID(s)" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Affected Creative ID(s):</p>
+          <input id="cID" name="Affected Creative ID(s)" style="margin-bottom: 15px;" class="form-control" type="text">
+        </div>
+        cert form <br>
+        --------------
+        <!-- Cert Form ----------------------------------------------------------->
+        <div id="certForm">
+          <p style="margin-bottom: 15px;">Vendor Name:</p>
+          <input id="vendorName" name="Vendor Name" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Vendor Technical Contact Email:</p>
+          <input id="vendorEmail" name="Vendor Email" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Vendor Technical Contact Phone Number</p>
+          <input id="vendorPhone" name="Vendor Phone Number" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Requested Due Date:</p>
+          <input id="requestDate" name="Requested Due Date" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Advertiser Name:</p>
+          <input id="advertiserName" name="Advertiser Name" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Campaign Launch Date:</p>
+          <input id="launchDate" name="Campaign Launch Date" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Campaign Dollar Amount:</p>
+          <input id="dollarAmount" name="Campaign Dollar Amount" style="margin-bottom: 15px;" class="form-control" type="text">
+        </div>
+        p1 form <br>
+        --------------
+        <!-- P1 Form ----------------------------------------------------------->
+        <div id="p1Form">
+          <p style="margin-bottom: 15px;">Sponsor Name: <br>[no spaces, will track trials in analytics]</p>
+          <input id="sponsorName" name="Sponsor Name" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Max Daily Trials:</p>
+          <input id="maxDayTrials" name="Max Daily Trials"style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Max Campaign Trials:</p>
+          <input id="maxCampTrials" name="Max Campaign Trials" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Length of Trials:</p>
+          <select style="margin-bottom: 15px;" class="form-control issueForm" id="trialLength" value="" name="Length of Trials">
+              <option value="3_day"> 3 Day </option>
+              <option value="7_day"> 7 Day </option>
+              <option value="30_day"> 30 Day </option>
+          </select>
+          <p style="margin-bottom: 15px;">Intro Video File Path:</p>
+          <input id="p1Video" name="P1 Video File Path" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Intro Video Impression Tracker:</p>
+          <input id="p1VideoImp" name="P1 Video Impression" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Intro Video Click Tracker:</p>
+          <input id="p1VideoClick" name="P1 Video Click" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">P1 in-trial Checked-in Skin File Path:</p>
+          <input id="p1Skin" name="P1 Skin Value" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">P1 in-trial Skin impression tracker:</p>
+          <input id="p1SkinImp" name="P1 Skin Impression" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">P1 in-trial Skin click tracker:</p>
+          <input id="p1SkinClick" name="P1 Skin Click" style="margin-bottom: 15px;" class="form-control" type="text">
+        </div>
+        branded radio form <br>
+        --------------
+        <!-- Branded Radio Form ----------------------------------------------------------->
+        <div id="brandedRadioForm">
+          <p style="margin-bottom: 15px;">Station ID: [separated with commas]</p>
+          <input id="stationID" name="Station ID" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Account used to create station:</p>
+          <input id="stationAccount" name="Station Account" style="margin-bottom: 15px;" class="form-control" type="text">
+        </div>
+        searchable form <br>
+        --------------
+        <!-- Searachle Form ----------------------------------------------------------->
+        <div id="searchableForm">
+          <p style="margin-bottom: 15px;">Searchable Term: [must be advertiser's name]</p>
+          <input id="searchTerm" name="Searchable Term" style="margin-bottom: 15px;" class="form-control" type="text">
+        </div>
+        ad spec form <br>
+        --------------
+        <!-- Ad Spec Form ----------------------------------------------------------->
+        <div id="adSpecForm">
+          <p style="margin-bottom: 15px;">Ad Product:</p>
+          <input id="product" name="Ad Product" style="margin-bottom: 15px;" class="form-control" type="text">
+        </div>
+        ttr form <br>
+        --------------
+        <!-- TTR Form ----------------------------------------------------------->
+        <div id="ttrForm">
+          <p style="margin-bottom: 15px;">Opt-in Text:</p>
+          <input id="optText" name="Opt-in Text" style="margin-bottom: 15px;" class="form-control" type="text">
+          <p style="margin-bottom: 15px;">Reg URL:</p>
+          <input id="regUrl" name="Reg URL" style="margin-bottom: 15px;" class="form-control" type="text">
+          <div style="margin-bottom: 15px;" class="row d-inline-flex">
+            <div class="col">
+              <div class="form-check">
+                <input checked="" class="form-check-input" id="get" name="reqType" type="radio" value="Yes">
+                <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">GET</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" id="post" name="reqType" type="radio" value="Yes">
+                <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">POST</label>
+              </div>
+            </div>
+          </div>
+          <p style="margin-bottom: 15px;">What fields need to be passed?</p>
+          <div class="form-row" style="margin-bottom: 15px;">
+            <div class="col">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="email" value="Yes" name="Pass Email"/>
+                <label class="form-check-label">Email</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="zip" value="Yes" name="Pass Zip"/>
+                <label class="form-check-label">Zip</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="gender" value="Yes" name="Pass Gender"/>
+                <label class="form-check-label">Gender</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="age" value="Yes" name="Pass Age"/>
+                <label class="form-check-label">Age</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        idfa postback form <br>
+        --------------
+        <!-- IDFA Postback Form ----------------------------------------------------------->
+
+      </div>
+    </form>
+</div>
