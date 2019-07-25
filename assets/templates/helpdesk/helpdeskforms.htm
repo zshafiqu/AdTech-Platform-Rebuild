@@ -199,7 +199,29 @@
         conversion form <br>
         --------------
         <!-- Conversion Form ----------------------------------------------------------->
-        
+        <div id="conversionForm">
+          <p style="margin-bottom: 15px;">Platform:</p>
+          <div class="form-row" style="margin-bottom: 15px;">
+            <div class="col">
+              <div class="form-check text-right">
+                <input type="checkbox" class="form-check-input" id="mobilePlatform" value="Yes" name="Mobile"/>
+                <label class="form-check-label">Mobile</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check text-left">
+                <input type="checkbox" class="form-check-input" id="webPlatform" value="Yes" name="Web"/>
+                <label class="form-check-label">Web</label>
+              </div>
+            </div>
+          </div>
+          <p style="margin-bottom: 15px;">Can the advertiser dynamically pass variable(s)?</p>
+          <select id="dynamicallyPassVariable" style="margin-bottom: 15px;" class="form-control" name="Can Adverister Dynamically Pass Variable?" value="">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="User Needs Help">I need technical help to determine this</option>
+          </select>
+        </div>
 
       </div>
     </form>
