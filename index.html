@@ -60,13 +60,8 @@
             <!-- END CONTAINER 1 ---------------------------->
             <!-- START CONTAINER 2 ---------------------------->
             <div class="container">
-                <!-- START BULLETIN BOARD -->
                 <div ng-include="'assets/templates/helpdesk/bulletin.htm'"></div>
-                <!-- END BULLETIN BOARD -->
-
-                <!-- START SEARCH BAR -->
                 <div ng-include="'assets/templates/helpdesk/searchbar.htm'"></div>
-                <!-- END SEARCH BAR -->
             </div>
             <!-- END CONTAINER 2 ---------------------------->
             <!-- START CONTAINER 3 ---------------------------->
@@ -87,7 +82,6 @@
                     </div>
                 </div>
                 <!-- END TITLE -->
-
                 <!-- START DROPDOWN FORM -->
                 <div ng-include="'assets/templates/helpdesk/menu.htm'"></div>
                 <!-- END DROPDOWN FORM -->
@@ -103,13 +97,11 @@
                 </div>
                 <!-- END WIKI INFO -->
                 <!-- START JIRA BUTTON -->
-                <div style="padding: 50px;padding-bottom: 25px;margin-bottom: 25px;">
-                  <button class="btn btn-primary border rounded-0 d-inline" type="button" data-bs-hover-animate="tada"><i class="fa fa-file-text-o"></i>&nbsp;File a JIRA</button>
-                </div>
+                <div ng-include="'assets/templates/helpdesk/jirebtn.htm'"></div>
                 <!-- END JIRA BUTTON -->
 
                 <!-- FORM COMPONENT -->
-                <div ng-include="'assets/templates/helpdesk/helpdeskforms.htm'"></div>
+                <div ng-include="'assets/templates/helpdesk/helpdeskforms.htm'" style="display: none;"></div>
                 <!-- FORM COMPONENT -->
             </div>
             <!-- END CONTAINER 3 ---------------------------->
