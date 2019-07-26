@@ -453,11 +453,146 @@
         </div>
         insights bug form <br>
         --------------
-        <!-- Insights Dashboard Form ----------------------------------------------------------->
+        <!-- Insights Bug Form ----------------------------------------------------------->
         <div id="insightsBugForm">
           <p style="margin-bottom: 15px;">Steps Taken before Encountering Issue:</p>
           <textarea id="stepsTaken" class="form-control" onchange="formMin();" value="" name="Steps Taken before Encountering Issue" style="margin-bottom: 15px; height: 120px;"></textarea>
         </div>
+        new product taxonomy form <br>
+        --------------
+        <!-- New Product Taxonomy Form ----------------------------------------------------------->
+        <div class="newProductTaxonomyForm">
+          <!-- Platform -->
+          <p style="margin-bottom: 15px;">Platform:</p>
+          <select id="platform" name="Platform" style="margin-bottom: 15px;" class="form-control issueForm" value="">
+            <option value="product">Product</option>
+            <option value="sponsorship">Sponsorship</option>
+            <option value="bsp">Brand Station Platform</option>
+          </select>
+          <!-- Platform Type: -->
+          <p style="margin-bottom: 15px;">Platform Type:<br><small>[check all for everywhere]</small></p>
+          <div class="form-row" style="margin-bottom: 15px;">
+            <div class="col">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="iPhonePlatform" value="Yes" name="iPhone"/>
+                <label class="form-check-label">iPhone</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="androidPlatform" value="Yes" name="Android"/>
+                <label class="form-check-label">Android</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="iPadPlatform" value="Yes" name="iPad"/>
+                <label class="form-check-label">iPad</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="tabletPlatform" value="Yes" name="Tablet"/>
+                <label class="form-check-label">Tablet</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Web" value="Yes" name="Web"/>
+                <label class="form-check-label">Web</label>
+              </div>
+            </div>
+          </div>
+          <!-- Ad Type -->
+          <p style="margin-bottom: 15px;"><b>Ad Type:*<b></p>
+          <select id="medium" name="Medium" required style="margin-bottom: 15px;" class="form-control issueForm">
+            <option value="audio">Audio</option>
+            <option value="video">Video</option>
+            <option value="display">Display</option>
+          </select>
+          <!-- Spot Length -->
+          <div id="audioOptions">
+            <p style="margin-bottom: 15px;">Spot Length:</p>
+            <select id="spotLength" required style="margin-bottom: 15px;" class="form-control issueForm">
+              <option>:15</option>
+              <option>:30</option>
+            </select>
+          </div>
+          <!-- DFP Slot Size -->
+          <div id="displayOptions">
+            <p style="margin-bottom: 15px;"><b>DFP Slot Size:*</b></p>
+            <select id="size" required style="margin-bottom: 15px;" class="form-control issueForm">
+              <option selected="" value="1x1">1x1</option>
+              <option value="300x250">300x250</option>
+              <option value="300x600">300x600</option>
+              <option value="360x130">360x130</option>
+              <option value="2000x12">2000x12</option>
+              <option value="newSlot">Other/New Slot Size</option>
+            </select>
+          </div>
+          <!-- Other/New Slot Size -->
+          <div id="newSizeDiv">
+            <p style="margin-bottom: 15px;">Other/New Slot Size</p>
+            <input id="newSize" name="New Size" value="" style="margin-bottom: 15px;" class="form-control" type="text">
+          </div>
+          <!-- Country & Allowed Cost Types -->
+          <div id="allOptions">
+            <p style="margin-bottom: 15px;"><b>Country:*</b></p>
+            <select id="country" required style="margin-bottom: 15px;" class="form-control issueForm">
+              <option selected="" value="us">US</option>
+              <option value="au">AU</option>
+              <option value="nz">NZ</option>
+            </select>
+            <p style="margin-bottom: 15px;"><b>Allowed Cost Types:*</b></p>
+            <select id="allowedCostTypes" required style="margin-bottom: 15px;" class="form-control issueForm">
+              <option selected="" value="cpm">CPM</option>
+              <option value="cpc">CPC</option>
+              <option value="cpa">CPA</option>
+              <option value="cpe">CPE</option>
+            </select>
+          </div>
+          <!-- Allowed Targeting -->
+          <div id="allowedTargetingContainer">
+            <p style="margin-bottom: 15px;">Allowed Targeting:</p>
+            <div class="form-row">
+              <div class="col">
+                <select multiple="multiple" id="allowedTargeting" name="allowedTargeting[]" class="form-control" style="margin-bottom:15px;">
+                  <option value="ageTargeting" name="Age Targeting">Age Targeting</option>
+                  <option value="genderTargeting" name="Gender Targeting">Gender Targeting</option>
+                  <option value="cleanTargeting" name="Clean Targeting">Clean Targeting</option>
+                  <option value="dmaTargeting" name="DMA Targeting">DMA Targeting</option>
+                  <option value="msaTargeting" name="MSA Targeting">MSA Targetiing</option>
+                  <option value="stateTargeting" name="State Targeting">State Targeting</option>
+                  <option value="countyTargeting" name="County Targeting">County Targeting</option>
+                  <option value="zipTargeting" name="Zip Targeting">Zip Targeting</option>
+                  <option value="dayPartTargeting" name="DayPart Targeting">DayPart Targeting</option>
+                  <option value="genreTargeting" name="Genre Targeting">Genre Targeting</option>
+                  <option value="seededArtist" name="Seeded Artist Targeting">Seeded Artist Targeting</option>
+                  <option value="family" name="Family Targeting">Family Targeting</option>
+                  <option value="behavioural" name="Behavioural Targeting">Behavioural Targeting</option>
+                  <option value="legislative" name="Legislative Targeting">Legislative Targeting</option>
+                  <option value="congressional" name="Congressional Targeting">Congressional Targeting</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Default/Mandatory Frequency Caps -->
+          <div id="frequencyContainer">
+            <p style="margin-bottom: 15px;">Default/Mandatory Frequency Caps:</p>
+            <input id="frequencyCaps" type="text" name="Default/Mandatory Frequency Caps" value="" style="margin-bottom: 15px;" class="form-control">
+          </div>
+          <!-- Link to related JIRA ticket-->
+          <div id="relatedContainer">
+            <p style="margin-bottom: 15px;">Link to related JIRA adDev ticket:</p>
+            <input id="adDevTicket" type="text" name="Ad Dev Ticket" value="" style="margin-bottom: 15px;" class="form-control">
+          </div>
+          <!-- Release date for product -->
+          <div id="releaseDateContainer">
+            <p style="margin-bottom: 15px;"><b>Product Release Date:*</b></p>
+            <input iid="releaseDate" type="date" name="Release Date" value="" style="margin-bottom: 15px;" class="form-control">
+          </div>
+        </div>
+
 
 
 
