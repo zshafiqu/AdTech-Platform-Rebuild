@@ -99,58 +99,11 @@
                     </div>
                 </div>
                 <!-- END TITLE -->
+
                 <!-- START DROPDOWN FORM -->
-                <div style="margin-bottom: 40px;">
-                    <form>
-                        <p>Not sure what type of issue you're seeing? <br> Select an item from the dropdown:</p>
-                        <!-- START DROPDOWN 1 -->
-                        <p style="margin-bottom: 10px;">Team Type:</p>
-                        <select class="form-control" style="margin-bottom: 15px;">
-                          <optgroup label="This is a group">
-                            <option value="12" selected="">This is item 1</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                          </optgroup>
-                        </select>
-                        <!-- END DROPDOWN 1 -->
-                        <!-- START DROPDOWN 2 -->
-                        <p style="margin-bottom: 10px;">Issue Type:</p>
-                        <select class="form-control" style="margin-bottom: 15px;">
-                          <optgroup label="This is a group">
-                            <option value="12" selected="">This is item 1</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                          </optgroup>
-                        </select>
-                        <!-- END DROPDOWN 2 -->
-                        <!-- START DROPDOWN 3 -->
-                        <p style="margin-bottom: 10px;">Sub Issue:</p>
-                        <select class="form-control" style="margin-bottom: 15px;">
-                          <optgroup label="This is a group">
-                            <option value="12" selected="">This is item 1</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                          </optgroup>
-                        </select>
-                        <!-- END DROPDOWN 3 -->
-                      </form>
-                </div>
-
-                alternate menu style -- this will use jquery multi select like the existing site
-
-                <form>
-                  <div class="form-row">
-                    <div class="col"><select multiple="multiple" class="form-control"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                    <div class="col"><select multiple="multiple" class="form-control"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                    <div class="col"><select multiple="multiple" class="form-control"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                  </div>
-                </form>
-
-
-
-
-
+                <div ng-include="'assets/templates/helpdesk/menu.htm'"></div>
                 <!-- END DROPDOWN FORM -->
+
                 <!-- START WIKI INFO -->
                 <div style="display: none">
                     <form style="margin-top: 30px;">
@@ -167,88 +120,9 @@
                 </div>
                 <!-- END JIRA BUTTON -->
 
-
-
-
+                <!-- FORM COMPONENT -->
                 <div ng-include="'assets/templates/helpdesk/helpdeskforms.htm'"></div>
-
-
-
-
-
-
-
-                <!-- BEGIN SUMMARY AND DESCRIPTION -->
-                  <!-- END SUMMARY AND DESCRIPTION -->
-                  <!-- BEGIN EMAIL ADDRESS FORM(S) & SUBMIT BUTTON -->
-                  <p style="margin-top: 15px;margin-bottom: 15px;">Comma separated list of watchers email addresses:</p>
-                  <textarea class="form-control" placeholder="patrick@pandora.com, spongebob@pandora.com, mrkrabs@pandora.com"></textarea>
-                  <p style="margin-top: 15px;margin-bottom: 15px;"><strong>*Reporter's Pandora email address:</strong></p>
-                  <input class="form-control" type="text">
-                  <button class="btn btn-primary border rounded-0" type="button" style="margin-top: 20px;">Submit</button>
-                  <!-- END EMAIL ADDRESS FORM(S) & SUBMIT BUTTON -->
-                  <div>
-                    <small>* = Required</small>
-                  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <!-- FORM COMPONENT -->
 
             </div>
             <!-- END CONTAINER 3 ---------------------------->

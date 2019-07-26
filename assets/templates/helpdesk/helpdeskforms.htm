@@ -411,7 +411,7 @@
           <input id="ssLink" name="Slingshot Link" value="" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Affected Line ID(s):</p>
           <input id="lineID" name="Affected Line ID(s)" value="" style="margin-bottom: 15px;" class="form-control" type="text">
-          <p style="margin-bottom: 15px;">Start/Emd Dates:</p>
+          <p style="margin-bottom: 15px;">Start/End Dates:</p>
           <input id="datePicker" name="Start/End Dates" value="" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
         targeting form <br>
@@ -644,13 +644,23 @@
       <!-- Add Watcher Emails  -------------------------------------------------------------->
       <div id="watcherContainer">
         <p style="margin-top: 15px;margin-bottom: 15px;">Comma separated list of watchers email addresses:</p>
-        <textarea class="form-control" placeholder="patrick@pandora.com, spongebob@pandora.com, mrkrabs@pandora.com"></textarea>
-
-
+        <textarea type="text" id="watcherList" name="Watchers" value="" onchange="addWatcherList('watcherList');" class="form-control issueForm"
+        placeholder="patrick@pandora.com, spongebob@pandora.com, mrkrabs@pandora.com"></textarea>
       </div>
-
-
-
-
+      <!-- Reporter's Pandora Email  -------------------------------------------------------------->
+      <div id="reporterEmailContainer">
+        <p style="margin-top: 15px;margin-bottom: 15px;"><strong>Reporter's Pandora email address:*</strong></p>
+        <input type="text" id="emailAdd" name="Email Address" value="" onblur="verifyEmail();" onchange="formMin();" class="form-control">
+      </div>
+      <!-- Required Value Container  -------------------------------------------------------------->
+      <div id="requiredContainer" style="margin-bottom:15px;">
+        <small>* = Required</small>
+      </div>
     </form>
+    <!-- Submit button hidden and created on form verification within cats.js file -->
+    <div id="submits">
+      <!-- <button class="btn btn-primary border rounded-0" type="button" style="margin-top: 20px;">Submit</button> -->
+      <p style="color:red; margin-bottom:-15px;">Please fill out all required fields.</p>
+    </div>
 </div>
+<!-- !!!!!!! END JIRA ENTRY FORMS !!!!!!! -->
