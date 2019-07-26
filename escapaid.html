@@ -31,51 +31,26 @@
             <div class="container"><img class="img-thumbnail img-fluid" src="assets/img/ESCPD_banner.jpg"></div>
         </section> -->
         <!-- END SECTION 1 -->
-
         <!-- START SECTION 2 -->
         <section class="layout-block block-adTechMain" style="margin-top: -50px;">
             <div class="container">
-                <div class="custom-block">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <h1>EscapAid 9000</h1>
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
+              <div ng-include="'assets/templates/Escapaid/title.htm'"></div>
                 <!-- START DESCRIPTION -->
-                <div class="custom-block">
-                    <p>Sometimes special characters can affect some server's abilities to track click URLs or view-through impressions.
-                       To prevent these issues, you need to "escape" the special characters, meaning replace them with special %formats that
-                       can be read easily by any browser or server.<br> escapAid 9000 allows you to escape special characters in URLs.<br></p>
-                </div>
+                <div ng-include="'assets/templates/Escapaid/description.htm'"></div>
                 <!-- END DESCRIPTION -->
                 <div>
-                    <!-- START FORM  -->
-                    <form>
-                        <p>Enter the page URL to be escaped or unescaped:</p>
-                        <input id ="url-escapaid" class="form-control" type="text" placeholder="www.example.com" inputmode="url" style="margin-bottom: 15px;">
-                        <button id = "submit" onclick="escapeIt()" class="btn btn-primary border rounded-0" type="button" style="width: 102.719px;">Escape</button>
-                        <button id = "cat" onclick="unEscapeIt()" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;">Unescape</button>
-                        <p><textarea id = "result-escapaid" class="form-control" readonly placeholder="<result>" style="margin-top: 5px;"></textarea></p>
-                    </form>
-                    <!-- END FORM -->
+                  <!-- START FORM  -->
+                  <div ng-include="'assets/templates/Escapaid/escaper.htm'"></div>
+                  <!-- END FORM -->
                 </div>
             </div>
         </section>
         <!-- END SECTION 2 -->
     </main>
     <!-- END MAIN -->
-
     <!-- START FOOTER -->
     <div ng-include="'assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
-
     <!-- START SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="assets/js/Misc/jquery.min.js"></script>
