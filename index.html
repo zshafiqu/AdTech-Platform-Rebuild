@@ -61,11 +61,9 @@
             <!-- START CONTAINER 2 ---------------------------->
             <div class="container">
                 <!-- START BULLETIN BOARD -->
-                <form style="margin-bottom: 70px;">
-                    <p>Bulletin Board of Known Issues:</p>
-                    <textarea class="form-control" readonly="" placeholder="<06/26/2019  11:30 AM - McDonalds Banner for iPhones not working> <06/24/2019  4:30 PM - Rosetta Stone Audio for desktop not working> " style="height: 125px;"></textarea>
-                </form>
+                <div ng-include="'assets/templates/helpdesk/bulletin.htm'"></div>
                 <!-- END BULLETIN BOARD -->
+
                 <!-- START SEARCH BAR -->
                 <form>
                     <div class="input-group">
@@ -123,7 +121,6 @@
                 <!-- FORM COMPONENT -->
                 <div ng-include="'assets/templates/helpdesk/helpdeskforms.htm'"></div>
                 <!-- FORM COMPONENT -->
-
             </div>
             <!-- END CONTAINER 3 ---------------------------->
         </section>
