@@ -67,39 +67,17 @@
             <!-- START CONTAINER 3 ---------------------------->
             <div class="container" style="padding: 75px;padding-bottom: 0px;">
                 <!-- START TITLE -->
-                <div class="custom-block" style="margin-bottom: 25px;">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <h1><i class="fa fa-list-alt"></i>&nbsp;All Issue Types</h1>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
+                <div ng-include="'assets/templates/helpdesk/issueTypesHeading.htm'"></div>
                 <!-- END TITLE -->
                 <!-- START DROPDOWN FORM -->
                 <div ng-include="'assets/templates/helpdesk/menu.htm'"></div>
                 <!-- END DROPDOWN FORM -->
-
                 <!-- START WIKI INFO -->
-                <div style="display: none">
-                    <form style="margin-top: 30px;">
-                        <p style="margin-bottom: 10px;">Related Wiki Links:</p>
-                        <div class="form-row">
-                            <div class="col"><a href="https://www.pandora.com">&lt;A useful link&gt;</a></div>
-                        </div>
-                    </form>
-                </div>
+                <div ng-include="'assets/templates/helpdesk/wiki.htm'"></div>
                 <!-- END WIKI INFO -->
                 <!-- START JIRA BUTTON -->
-                <div ng-include="'assets/templates/helpdesk/jirebtn.htm'"></div>
+                <div ng-include="'assets/templates/helpdesk/jirabtn.htm'"></div>
                 <!-- END JIRA BUTTON -->
-
                 <!-- FORM COMPONENT -->
                 <div ng-include="'assets/templates/helpdesk/helpdeskforms.htm'" style="display: none;"></div>
                 <!-- FORM COMPONENT -->
