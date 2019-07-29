@@ -540,7 +540,7 @@
       },
       // ******************************************************************************************
       "infoSpec": {
-          "parent": "dfp", // was formerly "info" which was incorrect and undefined... and broke the search function
+          "parent": "adTechOther", // was formerly "info" which was incorrect and undefined... and broke the search function
           "label": "Ad Spec Question",
           "topWikiLink": "https://wiki.savagebeast.com/display/SALESOPS/Ad+Specs",
           "wikiLabel": "Ad Specs",
@@ -550,7 +550,7 @@
       },
       // ******************************************************************************************
       "infoFaq": {
-          "parent": "dfp", // was formerly "info" which was incorrect and undefined... and broke the search function
+          "parent": "adTechOther", // was formerly "info" which was incorrect and undefined... and broke the search function
           "label": "FAQ",
           "topWikiLink": "https://wiki.savagebeast.com/display/SALESOPS/Trafficking+FAQ",
           "wikiLabel": "Trafficking FAQ",
@@ -559,7 +559,7 @@
       },
       // ******************************************************************************************
       "infoDfp": {
-          "parent": "dfp", // was formerly "info" which was incorrect and undefined... and broke the search function
+          "parent": "adTechOther", // was formerly "info" which was incorrect and undefined... and broke the search function
           "label": "Technical DFP Question",
           "topWikiLink": "https://support.google.com/dfp_premium/?hl=en#topic=28132",
           "wikiLabel": "DFP Support",
