@@ -155,7 +155,7 @@
           var regexp = new RegExp('(' + this.term + ')', 'gi');
           var label = item.label.replace(regexp, '<b>$1</b>');
 
-          return $('<li class="border rounded-0"><a href="#">' + label + '</a></li>').appendTo(ul);
+          return $('<li><a href="#">' + label + '</a></li>').appendTo(ul);
       }
   };
 //-------------------------------------------------------------------------------------------------
