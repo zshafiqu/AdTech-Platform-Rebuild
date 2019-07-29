@@ -62,7 +62,10 @@
       showJira();
       e('relatedLinks').style.display = "block";
       var selectedSubIssue = subIssue[e('subIssue').value];
+
+      console.log(issueType[selectedSubIssue['parent']])
       var selectedIssueType = issueType[selectedSubIssue['parent']];
+
 
       var topLinkLabel = selectedSubIssue['wikiLabel'];
       var topLinkUrl = selectedSubIssue['topWikiLink'];
