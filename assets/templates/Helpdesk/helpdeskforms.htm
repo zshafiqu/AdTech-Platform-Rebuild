@@ -1,16 +1,12 @@
 <!-- !!!!!!! START JIRA ENTRY FORMS !!!!!!! -->
-<div id="theInput" style="display: block;" class="d-inline-flex">
-    <form id="userInput">
+<div id="theInput" style="display: none;">
+    <form id="userInput" autocomplete="off">
       <div id="jiraForm">
-        summary form <br>
-        --------------
         <!-- Summary Form -->
-        <div id="summaryForm" style="display:none">
+        <div id="summaryForm">
           <p style="margin-bottom: 15px;"><strong>*Summary of Issue/Request:</strong></p>
           <input id="summary" name="Summary" style="margin-bottom: 15px;" onchange="formMin();" class="form-control" type="text">
         </div>
-        general form <br>
-        --------------
         <!-- General Form ----------------------------------------------------------->
         <div id="generalForm" style="display:none">
           <p style="margin-bottom: 15px;">Select a region:</p>
@@ -30,8 +26,6 @@
           <p style="margin-bottom: 15px;">Start/End Dates:</p>
           <input id="datePicker" name="Start/End Dates" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        affected form <br>
-        --------------
         <!-- Affected Form ----------------------------------------------------------->
         <div id="affectedForm" style="display:none">
           <p style="margin-bottom: 15px;">Affected Line ID(s):</p>
@@ -39,8 +33,6 @@
           <p style="margin-bottom: 15px;">Affected Creative ID(s):</p>
           <input id="cID" name="Affected Creative ID(s)" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        cert form <br>
-        --------------
         <!-- Cert Form ----------------------------------------------------------->
         <div id="certForm" style="display:none">
           <p style="margin-bottom: 15px;">Vendor Name:</p>
@@ -58,8 +50,6 @@
           <p style="margin-bottom: 15px;">Campaign Dollar Amount:</p>
           <input id="dollarAmount" name="Campaign Dollar Amount" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        p1 form <br>
-        --------------
         <!-- P1 Form ----------------------------------------------------------->
         <div id="p1Form" style="display:none">
           <p style="margin-bottom: 15px;">Sponsor Name: <br>[no spaces, will track trials in analytics]</p>
@@ -87,8 +77,6 @@
           <p style="margin-bottom: 15px;">P1 in-trial Skin click tracker:</p>
           <input id="p1SkinClick" name="P1 Skin Click" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        branded radio form <br>
-        --------------
         <!-- Branded Radio Form ----------------------------------------------------------->
         <div id="brandedRadioForm" style="display:none">
           <p style="margin-bottom: 15px;">Station ID: [separated with commas]</p>
@@ -96,22 +84,16 @@
           <p style="margin-bottom: 15px;">Account used to create station:</p>
           <input id="stationAccount" name="Station Account" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        searchable form <br>
-        --------------
         <!-- Searachle Form ----------------------------------------------------------->
         <div id="searchableForm" style="display:none">
           <p style="margin-bottom: 15px;">Searchable Term: [must be advertiser's name]</p>
           <input id="searchTerm" name="Searchable Term" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        ad spec form <br>
-        --------------
         <!-- Ad Spec Form ----------------------------------------------------------->
         <div id="adSpecForm" style="display:none">
           <p style="margin-bottom: 15px;">Ad Product:</p>
           <input id="product" name="Ad Product" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        ttr form <br>
-        --------------
         <!-- TTR Form ----------------------------------------------------------->
         <div id="ttrForm" style="display:none">
           <p style="margin-bottom: 15px;">Opt-in Text:</p>
@@ -160,8 +142,6 @@
             </div>
           </div>
         </div>
-        idfa postback form <br>
-        --------------
         <!-- IDFA Postback Form ----------------------------------------------------------->
         <div id="idfaPostbackForm" style="display:none">
           <p style="margin-bottom: 15px;">Test URL:</p>
@@ -187,8 +167,6 @@
             </div>
           </div>
         </div>
-        camp ad form <br>
-        --------------
         <!-- Camp Ad Form ----------------------------------------------------------->
         <div id="campAd" style="display:none">
           <p style="margin-bottom: 15px;">Advertiser:</p>
@@ -196,8 +174,6 @@
           <p style="margin-bottom: 15px;">Campaign:</p>
           <input id="campaign" name="Campaign" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        conversion form <br>
-        --------------
         <!-- Conversion Form ----------------------------------------------------------->
         <div id="conversionForm" style="display:none">
           <p style="margin-bottom: 15px;">Platform:</p>
@@ -222,8 +198,6 @@
             <option value="User Needs Help">I need technical help to determine this</option>
           </select>
         </div>
-        spotlight form <br>
-        --------------
         <!-- Spotlight Form ----------------------------------------------------------->
         <div id="spotlightForm" style="display:none">
           <p style="margin-bottom: 15px;">DFP Order ID:</p>
@@ -235,8 +209,6 @@
           <p style="margin-bottom: 15px;">Lookback Requirement? [days]</p>
           <input id="lookbackReq" name="lookbackRequirement" style="margin-bottom: 15px;width: 150px;" class="form-control d-inline-flex">
         </div>
-        conversion test form <br>
-        --------------
         <!-- Conversion Test Form ----------------------------------------------------------->
         <div id="conversionTestForm" style="display:none">
           <p style="margin-bottom: 15px;">Click URL(s) that need a test line:</p>
@@ -244,15 +216,11 @@
           <p style="margin-bottom: 15px;">Line IDs to be tested:</p>
           <input id="testLineIds" name="Line IDs to be tested" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        dfp push form <br>
-        --------------
         <!-- DFP Push Form ----------------------------------------------------------->
         <div id="dfpPushForm" style="display:none">
           <p style="margin-bottom: 15px;">DFP Push Failure Message:</p>
           <input id="pushFailCode" name="DFP Push Fail:" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        boomerang form <br>
-        --------------
         <!-- Boomerang Form ----------------------------------------------------------->
         <div id="boomerangForm" style="display:none">
           <p style="margin-bottom: 15px;">Audience Segment Type:</p>
@@ -263,8 +231,6 @@
           <p style="margin-bottom: 15px;">Brief explanation of audience segment:</p>
           <input id="audienceSegment" value="" name="Audience Segement Description" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        tools vendor form <br>
-        --------------
         <!-- Tools Vendor Form ----------------------------------------------------------->
         <div id="toolsVendorForm" style="display:none">
           <p style="margin-bottom: 15px;">Vendor Tag Name:</p>
@@ -297,8 +263,6 @@
             </div>
           </div>
         </div>
-        environment form <br>
-        --------------
         <!-- Environment Form ----------------------------------------------------------->
         <div id="environment" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
@@ -316,8 +280,6 @@
             </div>
           </div>
         </div>
-        platform form <br>
-        --------------
         <!-- Environment Form ----------------------------------------------------------->
         <div id="platforms" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
@@ -353,8 +315,6 @@
             </div>
           </div>
         </div>
-        platform form <br>
-        --------------
         <!-- Environment Form ----------------------------------------------------------->
         <div id="tags" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
@@ -366,8 +326,6 @@
             </div>
           </div>
         </div>
-        discrepancy form <br>
-        --------------
         <!-- Discrepancy Form ----------------------------------------------------------->
         <div id="discrepForm" style="display:none">
           <p style="margin-bottom: 15px;">Third Party Vendor:</p>
@@ -381,8 +339,6 @@
             </div>
           </div>
         </div>
-        delivery form <br>
-        --------------
         <!-- Delivery Form ----------------------------------------------------------->
         <div id="deliveryForm" style="display:none">
           <div class="form-row" style="margin-bottom: 15px;">
@@ -394,17 +350,13 @@
             </div>
           </div>
         </div>
-        adxcel form <br>
-        --------------
         <!-- AdXcel Form ----------------------------------------------------------->
         <div id="adXcelForm" style="display:none">
           <p style="margin-bottom: 15px;">Affected Line ID(s):</p>
           <textarea id="" name="Adxcel Tag" class="inputTagText form-control" style="margin-bottom: 15px;"></textarea>
         </div>
-        slingshot form <br>
-        --------------
         <!-- Slingshot Form ----------------------------------------------------------->
-        <div id="slingshotForm">
+        <div id="slingshotForm" style="display:none">
           <p style="margin-bottom: 15px;">SFDC Link:</p>
           <input id="sfdcLink" name="SFDC Link" value="" style="margin-bottom: 15px;" class="form-control" type="text">
           <p style="margin-bottom: 15px;">Slingshot Link:</p>
@@ -414,54 +366,40 @@
           <p style="margin-bottom: 15px;">Start/End Dates:</p>
           <input id="datePicker" name="Start/End Dates" value="" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        targeting form <br>
-        --------------
         <!-- Targeting Form ----------------------------------------------------------->
-        <div id="targetingForm">
+        <div id="targetingForm" style="display:none">
           <p style="margin-bottom: 15px;">Demographics:<br><small>[Age, Geo, Audience Segments, Dayparts]</small></p>
           <textarea id="Demos" value="" name="Demos" class="form-control" style="margin-bottom: 15px; height: 120px;"></textarea>
         </div>
-        creative form <br>
-        --------------
         <!-- Creative Form ----------------------------------------------------------->
-        <div id="creativeForm">
+        <div id="creativeForm" style="display:none">
           <p style="margin-bottom: 15px;">Filepath to Creative Assets:</p>
           <input id="filePathAssets" name="Filepath to Creative Assets" value="" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        avails tool form <br>
-        --------------
         <!-- AvailsTool Form ----------------------------------------------------------->
-        <div id="availsToolForm">
+        <div id="availsToolForm" style="display:none">
           <p style="margin-bottom: 15px;">Demographics:<br><small>[Age, Geo, Audience Segments, Dayparts]</small></p>
           <textarea id="Demos" value="" name="Demos" class="form-control" style="margin-bottom: 15px; height: 120px;"></textarea>
           <p style="margin-bottom: 15px;">Start/End Dates for Inventory Pull:</p>
           <input id="datePicker" name="Start/End Dates of Inventory Pull" value="" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        broadcast form <br>
-        --------------
         <!-- Broadcast Form ----------------------------------------------------------->
-        <div id="broadcastForm">
+        <div id="broadcastForm" style="display:none">
           <p style="margin-bottom: 15px;">Selected Triton Books:</p>
           <input id="tritonBooks" name="Selected Triton Books" value="" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        insights dashboard form <br>
-        --------------
         <!-- Insights Dashboard Form ----------------------------------------------------------->
-        <div id="insightsDashboardForm">
+        <div id="insightsDashboardForm" style="display:none">
           <p style="margin-bottom: 15px;">Slingshot Link:<br><small>[Order ID]</small></p>
           <input id="ssLink" name="Slingshot Link" value="" style="margin-bottom: 15px;" class="form-control" type="text">
         </div>
-        insights bug form <br>
-        --------------
         <!-- Insights Bug Form ----------------------------------------------------------->
-        <div id="insightsBugForm">
+        <div id="insightsBugForm" style="display:none">
           <p style="margin-bottom: 15px;">Steps Taken before Encountering Issue:</p>
           <textarea id="stepsTaken" class="form-control" onchange="formMin();" value="" name="Steps Taken before Encountering Issue" style="margin-bottom: 15px; height: 120px;"></textarea>
         </div>
-        new product taxonomy form <br>
-        --------------
         <!-- New Product Taxonomy Form ----------------------------------------------------------->
-        <div class="newProductTaxonomyForm">
+        <div class="newProductTaxonomyForm" style="display:none">
           <!-- Platform -->
           <p style="margin-bottom: 15px;">Platform:</p>
           <select id="platform" name="Platform" style="margin-bottom: 15px;" class="form-control issueForm" value="">
@@ -531,7 +469,7 @@
             </select>
           </div>
           <!-- Other/New Slot Size -->
-          <div id="newSizeDiv">
+          <div id="newSizeDiv" style="display:none;">
             <p style="margin-bottom: 15px;">Other/New Slot Size</p>
             <input id="newSize" name="New Size" value="" style="margin-bottom: 15px;" class="form-control" type="text">
           </div>
@@ -592,19 +530,15 @@
             <input id="releaseDate" type="date" name="Release Date" value="" style="margin-bottom: 15px;" class="form-control">
           </div>
         </div>
-        edit product taxonomy form <br>
-        --------------
         <!-- Edit Product Taxonomy Form ----------------------------------------------------------->
-        <div id="editProductTaxonomyForm">
+        <div id="editProductTaxonomyForm" style="display:none">
           <p style="margin-bottom: 15px;">Name of product to be edited:</p>
           <input type="text" id="editedProduct" name="Producut to be Edited" value="" style="margin-bottom: 15px;" class="form-control">
           <p style="margin-bottom: 15px;"><b>Updated product release date:*</b></p>
           <input id="editDueDate" type="date" name="Edit Date" value="" style="margin-bottom: 15px;" class="form-control">
         </div>
-        edit rulesets form <br>
-        --------------
         <!-- Edit Rulesets Form ----------------------------------------------------------->
-        <div id="editRulesetsForm">
+        <div id="editRulesetsForm" style="display:none">
           <p style="margin-bottom: 15px;">Name of ruleset to be edited:</p>
           <input type="text" id="editedRuleset" name="Ruleset to be Edited" value="" style="margin-bottom: 15px;" class="form-control">
           <p style="margin-bottom: 15px;"><b>When does the ruleset need to be edited by?*</b></p>
@@ -615,7 +549,7 @@
       <div id="descriptionForm">
         <p style="margin-top: 15px;margin-bottom: 15px;"><strong>Please describe Issue/Request:</strong></p>
         <textarea id="description" class="form-control textBoxForm" onchange="formMin();" value="" name="Description" style="height:200px;"></textarea>
-        <div class="form-row text-nowrap d-inline-block" style="margin-top: 15px; margin-bottom: 15px;">
+        <div class="form-row text-nowrap d-inline-block" style="margin-top: 15px; margin-bottom: 0px;">
             <div class="col">
                 <div class="form-check">
                   <input type="checkbox" id="rushRequest" onchange="managerEmailReq();" class="rushRequest form-check-input">
@@ -625,7 +559,7 @@
         </div>
       </div>
       <!-- Manager Email Container -------------------------------------------------------------->
-      <div id="managerEmailContainer">
+      <div id="managerEmailContainer" style="display:none">
         <p style="margin-bottom: 15px;"><b>Manager Email:*</b></p>
         <input type="text" id="managerEmailAdd" name="Manager Email Address" value="" onchange="addJiraWatcher('managerEmailAdd');" style="margin-bottom: 15px;" class="form-control">
         <input type='hidden' id='priorityValue' value='3'></input>
@@ -642,7 +576,7 @@
         </div>
       </div>
       <!-- Add Watcher Emails  -------------------------------------------------------------->
-      <div id="watcherContainer">
+      <div id="watcherContainer" style="display:none">
         <p style="margin-top: 15px;margin-bottom: 15px;">Comma separated list of watchers email addresses:</p>
         <textarea type="text" id="watcherList" name="Watchers" value="" onchange="addWatcherList('watcherList');" class="form-control issueForm"
         placeholder="patrick@pandora.com, spongebob@pandora.com, mrkrabs@pandora.com"></textarea>
