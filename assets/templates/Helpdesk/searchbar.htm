@@ -1,11 +1,14 @@
 <form>
-    <div class="input-group">
+    <div class="input-group" id="searchContainer">
         <div class="input-group-prepend">
           <span class="input-group-text">
             <i class="fa fa-search"></i>
           </span>
         </div>
-        <input class="form-control" type="text" placeholder="Search for an issue type...">
-        <div class="input-group-append"></div>
+        <input class="form-control" type="text" placeholder="Search for an issue type..." id="searchBar">
+        <!-- <div class="input-group-append"></div> -->
+        <script>
+        $('searchBar').onload = populateAutocomplete(teamType, issueType, subIssue);
+        </script>
     </div>
 </form>

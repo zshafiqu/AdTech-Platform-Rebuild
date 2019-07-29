@@ -16,6 +16,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/Pricing-Tables-Item-Featured.css">
+    <script src="assets/js/Misc/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="assets/js/Controllers/helpdesk/cats.js"></script>
+    <script src="assets/js/Controllers/helpdesk/data.js"></script>
+    <!--
+    Because we're using angular, script tags within our template files aren't executed automatically when injected
+    with 'innerHTML'. To fix this issue, we need to move our jquery script tag before angular.. this will require
+    angular to use jQuery for DOM manipulations. This is important for site functionality
+    -->
 </head>
 <!--  END HEAD -->
 <!-- START BODY -->
@@ -52,8 +62,8 @@
                 </div>
                 <!-- START DESCRIPTION -->
                 <div class="custom-block">
-                    <p>Formerly known as CATS, the AdTech support center is a tool for submitting AdTech requests. It guides you through the process and
-                       tells you exactly what information is required for our team to quickly look into whatever issues you may have.<br></p>
+                    <p>The Ad Tech Ops Help Desk is a tool for submitting tickets to the Ad Tech Ops team.
+                      It guides you through the process and tells you exactly what information is required for our team to quickly look into whatever issues you may have.<br></p>
                 </div>
                 <!-- END DESCRIPTION -->
             </div>
@@ -61,7 +71,22 @@
             <!-- START CONTAINER 2 ---------------------------->
             <div class="container">
                 <div ng-include="'assets/templates/Helpdesk/bulletin.htm'"></div>
-                <div ng-include="'assets/templates/Helpdesk/searchbar.htm'"></div>
+                <!-- <div ng-include="'assets/templates/Helpdesk/searchbar.htm'"></div> -->
+                <form>
+                    <div class="input-group" id="searchContainer">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="fa fa-search"></i>
+                          </span>
+                        </div>
+                        <input class="form-control" type="text" placeholder="Search for an issue type..." id="searchBar">
+                        <!-- <div class="input-group-append"></div> -->
+                        <script>
+                        $('searchBar').onload = populateAutocomplete(teamType, issueType, subIssue);
+                        </script>
+                    </div>
+                </form>
+
             </div>
             <!-- END CONTAINER 2 ---------------------------->
             <!-- START CONTAINER 3 ---------------------------->
@@ -91,14 +116,19 @@
     <div ng-include="'/assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
     <!-- START SCRIPTS -->
-    <script src="assets/js/Misc/jquery.min.js"></script>
+    <!-- <script src="assets/js/Misc/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+    <!--
+    Because we're using angular, script tags within our template files aren't executed automatically when injected
+    with 'innerHTML'. To fix this issue, we need to move our jquery script tag before angular.. this will require
+    angular to use jQuery for DOM manipulations. This is important for site functionality
+    -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Misc/bs-animation.js"></script>
-    <!-- <div ng-include="'/assets/templates/scripts.htm'"></div> -->
     <script src="assets/js/Controllers/helpdesk/cats.js"></script>
     <script src="assets/js/Controllers/helpdesk/data.js"></script>
+    <!-- <div ng-include="'/assets/templates/scripts.htm'"></div> -->
     <!-- script to resize onload -->
     <script type="text/javascript">
         function zoom() {
