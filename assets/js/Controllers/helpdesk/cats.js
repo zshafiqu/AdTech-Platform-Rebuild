@@ -108,21 +108,29 @@
   // Populate the Autocomplete for the search bar
   function populateAutocomplete(teamType, issueType, subIssue) {
       var searchElement = $('#searchBar');
-
+      var counter = 0;
       // Build the array for populating the autocomplete
       var searchSet = [];
       for (key in subIssue) {
           if (subIssue.hasOwnProperty(key)) {
-              var obj = {}
-              var si = subIssue[key];
-              var it = issueType[si['parent']];
-              var tt = teamType[it['parent']];
-              var label = tt['label'] + ' > ' + it['label'] + ' > ' + si['label'];
-              obj['label'] = label;
-              obj['teamType'] = it['parent'];
-              obj['issueType'] = si['parent'];
-              obj['subIssue'] = key;
-              searchSet.push(obj);
+            var obj = {}
+            var si = subIssue[key];
+            var it = issueType[si['parent']];
+            var tt = teamType[it['parent']];
+
+            console.log(counter);
+            console.log(subIssue[key]);
+            console.log(issueType[si['parent']]);
+            console.log(teamType[it['parent']]);
+
+            counter++;
+
+            var label = tt['label'] + ' > ' + it['label'] + ' > ' + si['label'];
+            obj['label'] = label;
+            obj['teamType'] = it['parent'];
+            obj['issueType'] = si['parent'];
+            obj['subIssue'] = key;
+            searchSet.push(obj);
           }
       }
 
@@ -147,7 +155,7 @@
           var regexp = new RegExp('(' + this.term + ')', 'gi');
           var label = item.label.replace(regexp, '<b>$1</b>');
 
-          return $('<li><a href="#">' + label + '</a></li>').appendTo(ul);
+          return $('<li class="border rounded-0"><a href="#">' + label + '</a></li>').appendTo(ul);
       }
   };
 //-------------------------------------------------------------------------------------------------

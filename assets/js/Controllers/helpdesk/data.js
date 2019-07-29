@@ -538,8 +538,9 @@
           "jiraSubLabel": "14832",
           "formInputs": ['theInput', 'generalForm', 'affectedForm', 'deliveryForm']
       },
+      // ******************************************************************************************
       "infoSpec": {
-          "parent": "info",
+          "parent": "dfp", // was formerly "info" which was incorrect and undefined... and broke the search function
           "label": "Ad Spec Question",
           "topWikiLink": "https://wiki.savagebeast.com/display/SALESOPS/Ad+Specs",
           "wikiLabel": "Ad Specs",
@@ -547,25 +548,25 @@
           "formInputs": ['theInput'],
           'metaLabels': ['HTML5']
       },
-
+      // ******************************************************************************************
       "infoFaq": {
-          "parent": "info",
+          "parent": "dfp", // was formerly "info" which was incorrect and undefined... and broke the search function
           "label": "FAQ",
           "topWikiLink": "https://wiki.savagebeast.com/display/SALESOPS/Trafficking+FAQ",
           "wikiLabel": "Trafficking FAQ",
           "jiraLabel": "14819",
           "formInputs": ['theInput']
       },
-
+      // ******************************************************************************************
       "infoDfp": {
-          "parent": "info",
+          "parent": "dfp", // was formerly "info" which was incorrect and undefined... and broke the search function
           "label": "Technical DFP Question",
           "topWikiLink": "https://support.google.com/dfp_premium/?hl=en#topic=28132",
           "wikiLabel": "DFP Support",
           "jiraLabel": "14819",
           "formInputs": ['theInput']
       },
-
+      // ******************************************************************************************
       "measurementAudience": {
           "parent": "measurement",
           "label": "Audience Verification",

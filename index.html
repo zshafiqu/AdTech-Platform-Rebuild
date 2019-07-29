@@ -16,8 +16,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/Pricing-Tables-Item-Featured.css">
+    <!-- These scripts are at the top because they need to be loaded before the HTML injections from Angular -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
     <script src="assets/js/Misc/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="assets/js/Controllers/helpdesk/cats.js"></script>
     <script src="assets/js/Controllers/helpdesk/data.js"></script>
@@ -85,6 +89,8 @@
                         $('searchBar').onload = populateAutocomplete(teamType, issueType, subIssue);
                         </script>
                     </div>
+                    <!-- <li class="border rounded-0">ARIA Dashboard &gt; Ad Tech Tools &gt; Other</li> -->
+
                 </form>
 
             </div>
@@ -116,14 +122,6 @@
     <div ng-include="'/assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
     <!-- START SCRIPTS -->
-    <!-- <script src="assets/js/Misc/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
-    <!--
-    Because we're using angular, script tags within our template files aren't executed automatically when injected
-    with 'innerHTML'. To fix this issue, we need to move our jquery script tag before angular.. this will require
-    angular to use jQuery for DOM manipulations. This is important for site functionality
-    -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Misc/bs-animation.js"></script>
     <script src="assets/js/Controllers/helpdesk/cats.js"></script>
