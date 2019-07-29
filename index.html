@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/Pricing-Tables-Item-Featured.css">
     <!-- These scripts are at the top because they need to be loaded before the HTML injections from Angular -->
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
     <script src="assets/js/Misc/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
@@ -28,7 +28,7 @@
     <!--
     Because we're using angular, script tags within our template files aren't executed automatically when injected
     with 'innerHTML'. To fix this issue, we need to move our jquery script tag before angular.. this will require
-    angular to use jQuery for DOM manipulations. This is important for site functionality
+    angular to use jQuery for DOM manipulations. This is !important! for site functionality
     -->
 </head>
 <!--  END HEAD -->
@@ -116,7 +116,6 @@
             document.body.style.zoom = "85%"
         }
     </script>
-
     <body onload="zoom()">
     <!-- END SCRIPTS -->
 </body>

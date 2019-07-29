@@ -117,14 +117,11 @@
             var si = subIssue[key];
             var it = issueType[si['parent']];
             var tt = teamType[it['parent']];
-
-            console.log(counter);
-            console.log(subIssue[key]);
-            console.log(issueType[si['parent']]);
-            console.log(teamType[it['parent']]);
-
-            counter++;
-
+            // console.log(counter);
+            // console.log(subIssue[key]);
+            // console.log(issueType[si['parent']]);
+            // console.log(teamType[it['parent']]);
+            // counter++;
             var label = tt['label'] + ' > ' + it['label'] + ' > ' + si['label'];
             obj['label'] = label;
             obj['teamType'] = it['parent'];
