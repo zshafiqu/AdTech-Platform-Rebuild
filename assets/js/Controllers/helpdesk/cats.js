@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
-  // document.getElementById shortcut
+  // Shortcut to get tag ID's quickly
   function e(n) {
       return document.getElementById(n);
   };
 //-------------------------------------------------------------------------------------------------
-  //preventing back button stuff
+  // Method used to prevent accidently navigating away from the page & losing unsaved info
   window.onbeforeunload = function() {
       if ($('#theInput').is(":visible")) {
           return "Any ticket information you have filled out will be lost.";
@@ -14,7 +14,7 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
-  // Populate the select options on page load
+  // Method ppulates the multiple selector on the page by parsing the structured data file
   function populateCategory(selectID, selectOptions) {
       var selectElement = e(selectID); // select box
       for (id in selectOptions) { //looping through elements in JSON object and creating the options in select box
@@ -38,7 +38,7 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
-  // Select a new option in the selectador
+  // Method for selecting an option within the menu, used for filling in autocomplete
   function selectOption(selectID, optionVal) {
       var select = $('#' + selectID);
       select.val(optionVal);
@@ -46,19 +46,21 @@
       select.change();
   };
 //-------------------------------------------------------------------------------------------------
-  //hides and unhides the sub menus on selectador
+  // Method to show/hide submenu
   function showSub(selectID, colNum) {
       e(colNum).style.display = "block";
       e(selectID).style.visibility = "visible";
       e('theInput').style.display = "none";
   };
 //-------------------------------------------------------------------------------------------------
+  // Method to show FILE A JIRA button
   function showJira() {
       e('jiraButtonContainer').style.display = "block";
       e('jiraButton').style.display = "block";
 
   };
 //-------------------------------------------------------------------------------------------------
+  // Method to retrieve Wiki info and show it in its container
   function showWiki(issueType, subIssue) {
     showJira();
     e('relatedLinks').style.display = "block";
@@ -69,7 +71,7 @@
     var topLinkUrl = selectedSubIssue['topWikiLink'];
     var relatedLinks = selectedIssueType['wikiLinks'];
 
-    // Populate Top Link of available
+    // Checks for available top link
     if (typeof topLinkLabel !== "undefined" && typeof topLinkUrl !== "undefined") {
         populateTopLink(topLinkLabel, topLinkUrl);
         e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>Additional Links:</b></p>';
@@ -79,7 +81,7 @@
         e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>Links:</b></p>';
     }
 
-    // Populate related links if available
+    // Checks for available related links
     if (typeof relatedLinks !== "undefined") {
         populateRelatedLinks(relatedLinks);
     } else {
@@ -87,6 +89,7 @@
     }
   };
 //-------------------------------------------------------------------------------------------------
+  // Method used to populate top link container
   function populateTopLink(topLinkLabel, topLinkUrl) {
       var topLink = e('topLink');
       topLink.href = topLinkUrl;
@@ -94,6 +97,7 @@
       e('topLinkContainer').style.display = "block";
   };
 //-------------------------------------------------------------------------------------------------
+  // Method used to populate related link container
   function populateRelatedLinks(relatedLinks) {
       var ul = $('#additionalLinks');
       ul.empty();
@@ -104,12 +108,14 @@
       }
       e('additionalLinksContainer').style.display = "block";
   };
-  //hides/unhides sections of the form based on which issue type is selected
 //-------------------------------------------------------------------------------------------------
-  // Populate the Autocomplete for the search bar
+  // Method for search bar functions. Creates set from structured data, and on hitting enter fills in form
   function populateAutocomplete(teamType, issueType, subIssue) {
       var searchElement = $('#searchBar');
       var counter = 0;
+      // Important to make sure all values in Data.js are consistent
+      // This will break if something references an undefined value
+      // Use debug info to check your expected output vs console output
       // Build the array for populating the autocomplete
       var searchSet = [];
       for (key in subIssue) {
@@ -145,23 +151,25 @@
               selectOption('issueType', selected.issueType);
               showSub('subIssue', 'col3');
               selectOption('subIssue', selected.subIssue);
+              // Wiki must reflect inputted values
               showWiki(issueType, subIssue);
 
           }
-      // close the search bar upon hitting enter.. 'keycode 13'
+      // Close the search bar upon hitting enter.. 'keycode 13'
       }).keyup(function (e) {
         if(e.which === 13) {
           searchElement.autocomplete('close');
           return false;
         }
+      // Close the search bar when mousing on the search bar
       }).mouseup(function (e) {
         if(e.which === 1) {
           searchElement.autocomplete('close');
           return false;
         }
+      // Create regular expression to append list item as search query. This depends on usage of the jquery UI smoothness import..
       }).data('ui-autocomplete')._renderItem = function(ul, item) {
-          // This highlights the matching portions of text in the dropdown items
-          // Based on answers to this SO question: http://stackoverflow.com/questions/3344804/how-to-make-matched-text-bold-with-jquery-ui-autocomplete
+          // http://stackoverflow.com/questions/3344804/how-to-make-matched-text-bold-with-jquery-ui-autocomplete
           var regexp = new RegExp('(' + this.term + ')', 'gi');
           var label = item.label.replace(regexp, '<b>$1</b>');
 
@@ -169,6 +177,7 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
+  // Find appropriate forms for selection and display it
   function showForm() {
       e('userInput').reset();
       e('jiraButton').style.display = "none";
@@ -181,13 +190,14 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
-  //hide forms when a user re-selects a different issue type
+  // If someone changes their selection, hide everything so we can redisplay their updated values
   function hideAllStuff() {
       e('description').style.display = "block";
       e('theInput').style.display = "none";
       e('relatedLinks').style.display = "none";
   };
 //-------------------------------------------------------------------------------------------------
+  // Hide all JIRA forms
   function hideStuff() {
       var jiraForm = e('jiraForm');
       var children = jiraForm.childNodes;
@@ -198,6 +208,7 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
+  // Parse email to build username reference String
   function addJiraWatcher(element) {
       var pandoraDom = /@.*/;
       var ldap = e(element).value;
@@ -205,6 +216,7 @@
       managerEmailAdd.value = "[~" + ldap + "]";
   };
 //-------------------------------------------------------------------------------------------------
+  // Parse watcher list to build username reference(s)
   function addWatcherList(list) {
       var pandoraDom = /@.*|\[~|]/g;
       var emailList = e(list).value.split(',');
@@ -216,7 +228,7 @@
       e(list).value = ldapList.join(',')
   };
 //-------------------------------------------------------------------------------------------------
-  //shows manager email for rush requests
+  // Shows manager email div for rush requests
   function managerEmailReq() {
       if (e('rushRequest').checked == true) {
           e('managerEmailContainer').style.display = "block";
@@ -226,6 +238,7 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
+  // Shows watcher container when add watchers are selected
   function showWatcherContainer() {
       if (e('addWatcher').checked == true) {
           e('watcherContainer').style.display = "block";
@@ -234,18 +247,18 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
-  //resets whatever
+  // Reset values with ID 'name'
   function resetStuff(name) {
       e('name').reset();
   };
 //-------------------------------------------------------------------------------------------------
-  //clears default text
+  // Clears default text
   function clearDefault(name) {
       e('name').value = "";
       alert('cleard');
   };
 //-------------------------------------------------------------------------------------------------
-  //verifies emails is a valid pandora email
+  // Verifies emails is a valid pandora email
   function verifyEmail() {
       var validString = "@pandora.com";
       if (e('emailAdd').value.indexOf(validString) === 0) {
@@ -255,7 +268,7 @@
       }
   };
 //-------------------------------------------------------------------------------------------------
-  //verifies all required fields are filled out
+  // Verifies all required fields are filled out
   function formMin() {
       var teamSelected = e('teamType').value
       var caminIssueType = e('issueType').value
