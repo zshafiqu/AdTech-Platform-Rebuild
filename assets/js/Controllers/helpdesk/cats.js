@@ -85,7 +85,8 @@
     if (typeof relatedLinks !== "undefined") {
         populateRelatedLinks(relatedLinks);
     } else {
-        e('additionalLinksContainer').style.display = "none";
+        e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>No Links Available</b></p>';
+        e('additionalLinksContainer').style.display = "block";
     }
   };
 //-------------------------------------------------------------------------------------------------
