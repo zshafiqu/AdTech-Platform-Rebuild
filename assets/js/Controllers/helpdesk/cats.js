@@ -60,90 +60,32 @@
   };
 //-------------------------------------------------------------------------------------------------
   function showWiki(issueType, subIssue) {
-    /* IMPORTANT NOTE ABOUT THIS METHOD !!!
-    This method relies on the expected output being either a
-    defined value or an undefined value. Sometimes an object may
-    not have a wiki link to reference, which will return "undefined";
-
-    Because of this structure of the data, we can't neccesarily wrap the
-    variable declarations in a try catch block. This code works, but will
-    throw an error in the debugger bc of the undefined obj.
-    */
     showJira();
-e('relatedLinks').style.display = "block";
-var selectedSubIssue = subIssue[e('subIssue').value];
-var selectedIssueType = issueType[selectedSubIssue['parent']];
+    e('relatedLinks').style.display = "block";
+    var selectedSubIssue = subIssue[e('subIssue').value];
+    var selectedIssueType = issueType[selectedSubIssue['parent']];
 
-var topLinkLabel = selectedSubIssue['wikiLabel'];
-var topLinkUrl = selectedSubIssue['topWikiLink'];
-var relatedLinks = selectedIssueType['wikiLinks'];
+    var topLinkLabel = selectedSubIssue['wikiLabel'];
+    var topLinkUrl = selectedSubIssue['topWikiLink'];
+    var relatedLinks = selectedIssueType['wikiLinks'];
 
-// Populate Top Link of available
-if (typeof topLinkLabel !== "undefined" && typeof topLinkUrl !== "undefined") {
-    populateTopLink(topLinkLabel, topLinkUrl);
-    e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>Additional Links:</b></p>';
+    // Populate Top Link of available
+    if (typeof topLinkLabel !== "undefined" && typeof topLinkUrl !== "undefined") {
+        populateTopLink(topLinkLabel, topLinkUrl);
+        e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>Additional Links:</b></p>';
 
-} else {
-    e('topLinkContainer').style.display = "none";
-    e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>Links:</b></p>';
-}
+    } else {
+        e('topLinkContainer').style.display = "none";
+        e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>Links:</b></p>';
+    }
 
-// Populate related links if available
-if (typeof relatedLinks !== "undefined") {
-    populateRelatedLinks(relatedLinks);
-} else {
-    e('additionalLinksContainer').style.display = "none";
-}
-};
-
-      // showJira();
-      // e('relatedLinks').style.display = "block";
-      // var selectedSubIssue = subIssue[e('subIssue').value];
-      // var selectedIssueType = issueType[selectedSubIssue['parent']];
-      //
-      // var topLinkLabel = selectedSubIssue['wikiLabel'];
-      // var topLinkUrl = selectedSubIssue['topWikiLink'];
-      // var relatedLinks = selectedIssueType['wikiLinks'];
-      //
-      //
-      // if (typeof topLinkLabel !== "undefined" && typeof topLinkUrl !== "undefined") {
-      //   // we have top links && related links
-      //   if (typeof relatedLinks !== "undefined") {
-      //     e('additionalLinksContainer').style.display = "block";
-      //     e('additionalLinksContainer').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>Additional Links:</b></p>';
-      //     populateTopLink(topLinkLabel, topLinkUrl);
-      //     populateRelatedLinks(relatedLinks);
-      //   // we have just top links
-      //   } else {
-      //     populateTopLink(topLinkLabel, topLinkUrl);
-      //     e('additionalLinksContainer').style.display = "none";
-      //   }
-      // } else {
-      //   // we just have related links
-      //   if (typeof relatedLinks !== "undefined") {
-      //     e('topLinkContainer').style.display = "none";
-      //     e('additionalLinksContainer').style.display = "block";
-      //     e('moreLinks').innerHTML = '<p style="margin-bottom: 10px; font-size:1.3em"><b>Available Links:</b></p>';
-      //     populateRelatedLinks(relatedLinks);
-      //     // we have nothing..
-      //   } else {
-      //     e('topLinkContainer').style.display = "none";
-      //     e('additionalLinksContainer').innerHTML = '<p style="margin-bottom: 10px; font-size:1.3em"><b>No links available. Sorry!</b></p>';
-      //   }
-      // }
-
-      //     e('topLinkContainer').style.display = "none";
-      //     e('moreLinks').innerHTML = '';'<p style="margin-bottom: 10px; font-size:1.3em"><b>Available Links:</b></p>';
-      // }
-      //
-      // // Populate related links if available
-      // if (typeof relatedLinks !== "undefined") {
-      //     populateRelatedLinks(relatedLinks);
-      // } else {
-      //     e('additionalLinksContainer').innerHTML = '<p style="margin-bottom: 10px; font-size:1.3em"><b>No links available. Sorry!</b></p>';
-      // }
-  // };
-
+    // Populate related links if available
+    if (typeof relatedLinks !== "undefined") {
+        populateRelatedLinks(relatedLinks);
+    } else {
+        e('additionalLinksContainer').style.display = "none";
+    }
+  };
 //-------------------------------------------------------------------------------------------------
   function populateTopLink(topLinkLabel, topLinkUrl) {
       var topLink = e('topLink');
