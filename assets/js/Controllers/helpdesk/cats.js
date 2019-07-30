@@ -196,6 +196,7 @@
       e('description').style.display = "block";
       e('theInput').style.display = "none";
       e('relatedLinks').style.display = "none";
+      e('jiraButtonContainer').style.display ="none";
   };
 //-------------------------------------------------------------------------------------------------
   // Hide all JIRA forms
