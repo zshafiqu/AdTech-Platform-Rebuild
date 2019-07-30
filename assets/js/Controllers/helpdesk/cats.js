@@ -62,9 +62,12 @@
   function showWiki(issueType, subIssue) {
       showJira();
       e('relatedLinks').style.display = "block";
+
+      console.log(1);
+      console.log(subIssue[e('subIssue').value]);
       var selectedSubIssue = subIssue[e('subIssue').value];
 
-      console.log(issueType[selectedSubIssue['parent']])
+      console.log(issueType[selectedSubIssue['parent']]);
       var selectedIssueType = issueType[selectedSubIssue['parent']];
 
 
@@ -149,7 +152,14 @@
               showSub('subIssue', 'col3');
               selectOption('subIssue', selected.subIssue);
               showWiki();
+
           }
+      // close the search bar upon hitting enter.. 'keycode 13'
+      }).keyup(function (e) {
+        if(e.which === 13) {
+          searchElement.autocomplete('close');
+          return false;
+        }
       }).data('ui-autocomplete')._renderItem = function(ul, item) {
           // This highlights the matching portions of text in the dropdown items
           // Based on answers to this SO question: http://stackoverflow.com/questions/3344804/how-to-make-matched-text-bold-with-jquery-ui-autocomplete
