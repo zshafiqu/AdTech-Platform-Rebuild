@@ -3,8 +3,8 @@
     <p>Not sure what type of issue you're seeing? <br> Select an item from the menu:</p>
     <div class="form-row">
       <!-- team type -->
-      <div class="col">
-        <select multiple="multiple" class="form-control" id="teamType" name="Team Type" onclick="showSub('issueType');" size="8">
+      <div class="col" id="col1">
+        <select multiple="multiple" class="form-control" id="teamType" name="Team Type" onclick="showSub('issueType', 'col2');" size="8">
         </select>
         <script>
         // populate with Team Type
@@ -12,8 +12,8 @@
         </script>
       </div>
       <!-- issue type -->
-      <div class="col">
-        <select multiple="multiple" class="form-control" id="issueType" name="Issue Type" style="display:float;visibility:hidden" onclick="showSub('subIssue');" size="8">
+      <div class="col" id="col2" style="display:none;">
+        <select multiple="multiple" class="form-control" id="issueType" name="Issue Type" style="display:float;visibility:hidden" onclick="showSub('subIssue', 'col3');" size="8">
         </select>
         <script>
       // Populate Issue Type select
@@ -23,7 +23,7 @@
       </script>
       </div>
       <!-- subIssue -->
-      <div class="col">
+      <div class="col" id="col3" style="display:none;">
         <select multiple="multiple" class="form-control" id="subIssue" name="Sub Issue" style="visibility:hidden;display:float" size="8">
         </select>
         <script>

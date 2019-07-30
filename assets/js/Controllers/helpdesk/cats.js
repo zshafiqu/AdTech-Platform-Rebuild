@@ -47,7 +47,8 @@
   };
 //-------------------------------------------------------------------------------------------------
   //hides and unhides the sub menus on selectador
-  function showSub(selectID) {
+  function showSub(selectID, colNum) {
+      e(colNum).style.display = "block";
       e(selectID).style.visibility = "visible";
       e('theInput').style.display = "none";
   };
@@ -143,9 +144,9 @@
               hideAllStuff();
               var selected = ui.item;
               selectOption('teamType', selected.teamType);
-              showSub('issueType');
+              showSub('issueType', 'col2');
               selectOption('issueType', selected.issueType);
-              showSub('subIssue');
+              showSub('subIssue', 'col3');
               selectOption('subIssue', selected.subIssue);
               showWiki();
           }
