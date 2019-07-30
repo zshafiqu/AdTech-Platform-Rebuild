@@ -64,12 +64,15 @@
       e('relatedLinks').style.display = "block";
 
       console.log(1);
-      console.log(subIssue[e('subIssue').value]);
-      var selectedSubIssue = subIssue[e('subIssue').value];
+      // console.log(subIssue[e('subIssue').value]);
+      // var selectedSubIssue = subIssue[e('subIssue').value];
+      var selectedSubIssue = e('subIssue').value;
 
-      console.log(issueType[selectedSubIssue['parent']]);
-      var selectedIssueType = issueType[selectedSubIssue['parent']];
 
+
+      // console.log(issueType[selectedSubIssue['parent']]);
+      // var selectedIssueType = issueType[selectedSubIssue['parent']];
+      var selectedIssueType = selectedSubIssue['parent'];
 
       var topLinkLabel = selectedSubIssue['wikiLabel'];
       var topLinkUrl = selectedSubIssue['topWikiLink'];
@@ -157,6 +160,11 @@
       // close the search bar upon hitting enter.. 'keycode 13'
       }).keyup(function (e) {
         if(e.which === 13) {
+          searchElement.autocomplete('close');
+          return false;
+        }
+      }).mouseup(function (e) {
+        if(e.which === 1) {
           searchElement.autocomplete('close');
           return false;
         }
