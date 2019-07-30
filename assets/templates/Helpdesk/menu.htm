@@ -19,7 +19,7 @@
       // Populate Issue Type select
       $('issueType').onload = populateCategory('issueType', issueType);
       //chains issueType to teamType
-      $("#issueType").chained("#teamType");
+      // $("#issueType").chained("#teamType");
       </script>
       </div>
       <!-- subIssue -->
@@ -30,7 +30,7 @@
         // Populate SubIssue select
         $('subIssue').onload = populateCategory('subIssue', subIssue);
         //chains subIssue to Issue
-        $("#subIssue").chained("#issueType");
+        // $("#subIssue").chained("#issueType");
         // Display links when selected
         $('#subIssue').change(function() {
             hideAllStuff();
