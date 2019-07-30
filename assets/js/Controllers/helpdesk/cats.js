@@ -60,19 +60,22 @@
   };
 //-------------------------------------------------------------------------------------------------
   function showWiki(issueType, subIssue) {
+    /* IMPORTANT NOTE ABOUT THIS METHOD !!!
+    This method relies on the expected output being either a
+    defined value or an undefined value. Sometimes an object may
+    not have a wiki link to reference, which will return "undefined";
+
+    Because of this structure of the data, we can't neccesarily wrap the
+    variable declarations in a try catch block. This code works, but will
+    throw an error in the debugger bc of the undefined obj.
+
+
+
+    */
       showJira();
       e('relatedLinks').style.display = "block";
-
-      console.log(1);
-      // console.log(subIssue[e('subIssue').value]);
-      // var selectedSubIssue = subIssue[e('subIssue').value];
-      var selectedSubIssue = e('subIssue').value;
-
-
-
-      // console.log(issueType[selectedSubIssue['parent']]);
-      // var selectedIssueType = issueType[selectedSubIssue['parent']];
-      var selectedIssueType = selectedSubIssue['parent'];
+      var selectedSubIssue = subIssue[e('subIssue').value];
+      var selectedIssueType = issueType[selectedSubIssue['parent']];
 
       var topLinkLabel = selectedSubIssue['wikiLabel'];
       var topLinkUrl = selectedSubIssue['topWikiLink'];
@@ -95,6 +98,7 @@
           e('additionalLinksContainer').style.display = "none";
       }
   };
+
 //-------------------------------------------------------------------------------------------------
   function populateTopLink(topLinkLabel, topLinkUrl) {
       var topLink = e('topLink');
