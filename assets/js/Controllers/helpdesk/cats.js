@@ -88,6 +88,7 @@
         e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>No Links Available</b></p>';
         e('additionalLinksContainer').style.display = "block";
     }
+    $('html, body').animate({ scrollTop: $("#jiraButtonContainer").offset().top }, 1400);
   };
 //-------------------------------------------------------------------------------------------------
   // Method used to populate top link container
