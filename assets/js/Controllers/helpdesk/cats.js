@@ -160,6 +160,8 @@
       }).keyup(function (e) {
         if(e.which === 13) {
           searchElement.autocomplete('close');
+          // add smooth scroll for when you hit enter
+          $('html, body').animate({ scrollTop: $("#jiraButtonContainer").offset().top }, 1000);
           return false;
         }
       // Close the search bar when mousing on the search bar
@@ -181,14 +183,17 @@
   // Find appropriate forms for selection and display it
   function showForm() {
       e('userInput').reset();
-      e('jiraButton').style.display = "none";
+      // e('jiraButtonContainer').style.display = "none";
       e('summaryForm').style.display = "block";
+
       var issueTypeSelected = e("subIssue").value;
       var formInputs = e(issueTypeSelected).getAttribute("data-formInputs").split(",");
       for (var i = 0; i < formInputs.length; i++) {
           var singleForm = formInputs[i];
           e(singleForm).style.display = "block"
       }
+      // smooth scroll down to form
+      $('html, body').animate({ scrollTop: $("#summaryForm").offset().top -300}, 1000);
   };
 //-------------------------------------------------------------------------------------------------
   // If someone changes their selection, hide everything so we can redisplay their updated values
