@@ -1,5 +1,3 @@
-// defines some shitty global variables because JIRA issue collector is the fucking worst. also all these global variables are the fucking worst.
-
 //document.getElementById shortcut
 function e(n) {
     return document.getElementById(n);

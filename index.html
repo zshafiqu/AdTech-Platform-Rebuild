@@ -102,6 +102,24 @@
     <script src="assets/js/Misc/bs-animation.js"></script>
     <script src="assets/js/Controllers/helpdesk/cats.js"></script>
     <script src="assets/js/Controllers/helpdesk/data.js"></script>
+    <script>
+    //jquery
+    $('#medium').change(function() {
+        if ($('#medium').val() === 'display') {
+            e('audioOptions').style.display = "none";
+        } else {
+            e('audioOptions').style.display = "block";
+        }
+    });
+    $('#size').change(function() {
+        if ($('#size').val() === 'newSlot') {
+            e('newSizeDiv').style.display = 'block';
+        } else {
+            e('newSizeDiv').style.display = 'none';
+
+        }
+    });
+    </script>
     <!-- script to resize onload -->
     <script type="text/javascript">
         function zoom() {

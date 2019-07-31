@@ -275,7 +275,12 @@
       var teamSelected = e('teamType').value
       var caminIssueType = e('issueType').value
       console.log(teamSelected);
-      // $.getScript("/issue_collector.js");
+      // jQuery $.getScript() requires an HTTP connection, so without a local web server the function call won't work [it will return a 404 error].
+      // while loading locally, I'll just use a script tag
+      var imported = document.createElement('script');
+      imported.src = 'assets/js/Controllers/helpdesk/issue_collector.js';
+      document.head.appendChild(imported);
+      // $.getScript('/issue_collector.js');
       if (e('summary').value !== "" && e('description').value !== "" && e('emailAdd').value !== "" && e('issueType').value !== "slingshotFeatureRequest") {
           console.log(verifyEmail);
           switch (teamSelected) {
