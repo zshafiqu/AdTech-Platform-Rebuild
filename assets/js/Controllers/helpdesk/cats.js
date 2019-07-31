@@ -275,43 +275,52 @@
       var teamSelected = e('teamType').value
       var caminIssueType = e('issueType').value
       console.log(teamSelected);
-      $.getScript("js/issue_collector.js");
+      // $.getScript("/issue_collector.js");
       if (e('summary').value !== "" && e('description').value !== "" && e('emailAdd').value !== "" && e('issueType').value !== "slingshotFeatureRequest") {
           console.log(verifyEmail);
           switch (teamSelected) {
+              //-----------------------
               case "slingShot":
-                  e('submits').innerHTML = '<input type=\"button\" id=\"slingJira\" value=\"Submit\" class=\"submit_button\"></input>';
+                  // <button id=\"slingJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>
+                  e('submits').innerHTML = '<button id=\"slingJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   break;
+              //-----------------------
               case "featureRequest":
-                  e('submits').innerHTML = '<input type=\"button\" id=\"jiraSubmitButton\" value=\"Submit\" class=\"submit_button\"></input>';
+                  e('submits').innerHTML = '<button id=\"jiraSubmitButton\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   break;
+              //-----------------------
               case "adTech":
-  			case "ariaDashboard":
-                  e('submits').innerHTML = '<input type=\"button\" id=\"jira\" value=\"Submit\" class=\"submit_button\"></input>';
+              //-----------------------
+              case "ariaDashboard":
+                  e('submits').innerHTML = '<button id=\"jira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   break;
-  			case "audienceExplorer":
-                  e('submits').innerHTML = '<input type=\"button\" id=\"jira\" value=\"Submit\" class=\"submit_button\"></input>';
+              //-----------------------
+  			      case "audienceExplorer":
+                  e('submits').innerHTML = '<button id=\"jira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   break;
+              //-----------------------
               case "madTech":
-                  e('submits').innerHTML = '<input type=\"button\" id=\"jira\" value=\"Submit\" class=\"submit_button\"></input>';
+                  e('submits').innerHTML = '<button id=\"jira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   break;
+              //-----------------------
               case "campaignInsights":
                   if (caminIssueType === "insightsSubmitDataIssue") {
-                      e('submits').innerHTML = '<input type=\"button\" id=\"caminDataJira\" value=\"Submit\" class=\"submit_button\"></input>';
+                      e('submits').innerHTML = '<button id=\"caminDataJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   } else if (caminIssueType === "insightsDashboardAccess") {
-                      e('submits').innerHTML = '<input type=\"button\" id=\"caminBugJira\" value=\"Submit\" class=\"submit_button\"></input>';
+                      e('submits').innerHTML = '<button id=\"caminBugJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   } else if (caminIssueType === "insightsFeatureRequest") {
-                      e('submits').innerHTML = '<input type=\"button\" id=\"caminFeatureJira\" value=\"Submit\" class=\"submit_button\"></input>';
+                      e('submits').innerHTML = '<button id=\"caminFeatureJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
                   } else {
-                      console.log("no issue type detected");
+                      console.log("No issue type detected");
                   }
                   break;
+              //-----------------------
               default:
-                  alert("default");
+                  alert("Default");
                   break;
           }
       } else if (e('issueType').value == "slingshotFeatureRequest" && e('summary').value !== "" && e('emailAdd').value !== "") {
-          e('submits').innerHTML = '<input type=\"button\" id=\"featureJira\" value=\"Submit\" class=\"submit_button\"></input>';
+          e('submits').innerHTML = '<button id=\"featureJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>';
       } else {
       // nothing
       }
