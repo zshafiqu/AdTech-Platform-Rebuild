@@ -1,0 +1,65 @@
+<form>
+  <!-- START INPUTS -->
+  <div id="inputs">
+      <!-- INPUT #1 -->
+      <div style="margin-bottom: 10px;">
+          <p style="margin-bottom: 10px;padding-top: 10px;">Enter the base URL of the client's landing page:</p>
+          <input id="domain" name="domain" class="form-control" type="text" placeholder="http://www.clientLandingPage.com" inputmode="url" style="margin-bottom: 0px;">
+      </div>
+      <!-- INPUT #2 -->
+      <div style="margin-bottom: 10px;">
+          <p style="margin-bottom: 10px;padding-top: 10px;"><strong>*Campaign Source:</strong></p>
+          <input id="source" name="source" readonly=true value="Pandora" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Referrer: Pandora)</small>
+      </div>
+      <!-- INPUT #3 -->
+      <div style="margin-bottom: 10px;">
+          <p style="margin-bottom: 10px;padding-top: 10px;"><strong>*Campaign Medium:</strong></p>
+          <input id="medium" name="medium" class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;"><small>(Medium: audio, display, video)</small>
+      </div>
+      <!-- INPUT #4 -->
+      <div style="margin-bottom: 10px;">
+          <p style="margin-bottom: 10px;padding-top: 10px;"><strong>*Campaign Name:</strong></p>
+          <input id="name" name="name" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Campaign Name: chevy_tahoe_jan, toyotaCamryQ3, McdonaldsNW2011)</small>
+      </div>
+      <!-- INPUT #5 -->
+      <div style="margin-bottom: 10px;">
+          <p style="margin-bottom: 10px;padding-top: 10px;">Campaign Term:</p>
+          <input id="term" name="term" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Target Demographics: f25-35, m18-24)</small>
+      </div>
+      <!-- INPUT #6 -->
+      <div style="margin-bottom: 10px;">
+          <p style="margin-bottom: 10px;padding-top: 10px;">Campaign Content:</p>
+          <input id="content" name="content" class="form-control" type="text" style="margin-bottom: 0px;"><small>(Creative Specific: blue, tuesday, etc.)</small>
+      </div>
+      <!-- START CHECK BOX FOR ANCHOR DELIMITER -->
+      <div class="form-row">
+          <div class="col">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="anchorTag" name="anchorTag" onclick="warning()">
+                <label class="form-check-label" for="anchorTag" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">
+                  Pass parameters using an <a href="https://wiki.savagebeast.com/display/CS/Google+Analytics+UTM+URLs#GoogleAnalyticsUTMURLs-AnchorURLs" target="_blank">Anchor Delimiter</a>
+                </label>
+              </div>
+              <div style="padding-top: 10px; margin-bottom: -30px; display:none;" id="warned">
+                <p class="text-danger"><small>ONLY USE IF CLIENT HAS ANCHOR DELIMITING ENABLED!<br>Instructions for the client to enable this can be found
+                <a href="https://wiki.savagebeast.com/display/CS/Google+Analytics+UTM+URLs#GoogleAnalyticsUTMURLs-AnchorURLs" target="_blank">here.</a></small></p>
+              </div>
+          </div>
+      </div>
+      <!-- END CHECK BOX FOR ANCHOR DELIMITER -->
+  </div>
+  <!-- END INPUTS -->
+  <!-- START SUBMIT & RESULT -->
+  <div>
+    <div class="form-row">
+        <div class="col">
+          <button id="submit-utmatic" onclick="generateUrl()" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate URL</button>
+        </div>
+    </div>
+      <!-- RESULT TEXTARE, NO WRAP WITH DIV. -->
+      <div id="html">
+      <textarea id="url-utmatic" class="form-control" readonly="" placeholder="<generated URL>" style="height: 100px;margin-top: 25px;"></textarea>
+      </div>
+    </div>
+    <!-- END SUBMIT & RESULT -->
+</form>
