@@ -1,0 +1,38 @@
+<form>
+  <!-- BEGIN INPUTS -->
+  <div>
+      <!-- BEGIN FIRST FIVE INPUTS -->
+      <p style="margin-bottom: 10px;padding-top: 10px;">Checked-in interstitial URL:</p>
+      <input id="lp_input" class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
+      <p style="margin-bottom: 10px;margin-top: 0px;">Intskip HTML:</p>
+      <textarea id="htmlCode" class="form-control" style="height:150px" placeholder="<HTML>"></textarea>
+      <!-- two CTA div -->
+      <div id="twoCTAinput" style="display:none">
+        <p style="margin-bottom: 10px;padding-top: 10px;">Second click URL:</p>
+        <input id="secondClick" class="form-control" type="text" inputmode="url" style="margin-bottom: 0px;">
+      </div>
+      <!-- end two CTA div -->
+      <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
+      <input id="impressionURL" class="form-control" type="text" value="%i" inputmode="url" style="margin-bottom: 0px;">
+      <p style="margin-bottom: 10px;padding-top: 10px;">Third party impression tracker:</p>
+      <input id="impressionTracker" class="form-control" type="text" inputmode="url" style="margin-bottom: 15px;">
+      <!-- END FIRST FIVE INPUTS -->
+      <!-- BEGIN HEIGHT -->
+      <div class="form-row d-inline-block">
+        <div class="col">
+            <p>Ad Height:</p>
+            <input id = "adHeight" class="form-control" type="text" value="100" style="margin-top: -25px;margin-bottom: 10px;">
+        </div>
+      </div>
+      <!-- END HEIGHT -->
+  </div>
+  <!-- END INPUTS -->
+  <!-- BEGIN SUBMIT BUTTON AND RESULT -->
+  <div>
+    <button onclick="generateCode(); return false;" class="btn btn-primary border rounded-0" type="button"
+    style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
+    <p>Generated code:</p>
+    <textarea id="adCode" class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 250px;"></textarea>
+  </div>
+  <!-- END SUBMIT BUTTON AND RESULT -->
+</form>
