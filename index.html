@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
     <!-- These scripts are at the top because they need to be loaded before the HTML injections from Angular -->
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.0/themes/smoothness/jquery-ui.css"/>
     <script src="assets/js/Misc/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
@@ -37,61 +37,41 @@
     <!-- END NAV  -->
     <!-- START MAIN -->
     <main class="page">
-        <!-- START SECTION 2 -->
-        <section class="layout-block block-adTechMain" style="margin-top: -50px;">
-          <!-- START CONTAINER 1 ---------------------------->
-            <div class="container">
-              <!-- <div style="margin-bottom:20px">
-                <button class="btn btn-primary border rounded-0" type="button" style="margin-top: 20px;">JUMP</button>
-              </div> -->
-                <div class="custom-block">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <h1>Ad Tech Ops Help Desk</h1>
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <!-- START DESCRIPTION -->
-                <div class="custom-block">
-                    <p>The Ad Tech Ops Help Desk is a tool for submitting tickets to the Ad Tech Ops team.
-                      It guides you through the process and tells you exactly what information is required for our team to quickly look into whatever issues you may have.<br></p>
-                </div>
-                <!-- END DESCRIPTION -->
-            </div>
-            <!-- END CONTAINER 1 ---------------------------->
-            <!-- START CONTAINER 2 ---------------------------->
-            <div class="container">
-                <div ng-include="'assets/templates/Helpdesk/bulletin.htm'" style="display:none"></div>
-                <div ng-include="'assets/templates/Helpdesk/searchbar.htm'"></div>
-            </div>
-            <!-- END CONTAINER 2 ---------------------------->
-            <!-- START CONTAINER 3 ---------------------------->
-            <div class="container" style="padding: 75px;padding-bottom: 0px;">
-                <!-- START TITLE -->
-                <div ng-include="'assets/templates/Helpdesk/issueTypesHeading.htm'"></div>
-                <!-- END TITLE -->
-                <!-- START DROPDOWN FORM -->
-                <div ng-include="'assets/templates/Helpdesk/menu.htm'"></div>
-                <!-- END DROPDOWN FORM -->
-                <!-- START WIKI INFO -->
-                <div ng-include="'assets/templates/Helpdesk/wiki.htm'"></div>
-                <!-- END WIKI INFO -->
-                <!-- START JIRA BUTTON -->
-                <div ng-include="'assets/templates/Helpdesk/jirabtn.htm'"></div>
-                <!-- END JIRA BUTTON -->
-                <!-- FORM COMPONENT -->
-                <div ng-include="'assets/templates/Helpdesk/helpdeskforms.htm'" style="display: block;"></div>
-                <!-- FORM COMPONENT -->
-            </div>
-            <!-- END CONTAINER 3 ---------------------------->
-        </section>
-        <!-- END SECTION 2 -->
+      <!-- START SECTION 2 -->
+      <section class="layout-block block-adTechMain" style="margin-top: -50px;">
+        <!-- START CONTAINER 1 ---------------------------->
+        <div class="container">
+          <div ng-include="'assets/templates/Helpdesk/title.htm'"></div>
+          <div ng-include="'assets/templates/Helpdesk/description.htm'"></div>
+        </div>
+        <!-- END CONTAINER 1 ---------------------------->
+        <!-- START CONTAINER 2 ---------------------------->
+        <div class="container">
+          <div ng-include="'assets/templates/Helpdesk/bulletin.htm'" style="display:none"></div>
+          <div ng-include="'assets/templates/Helpdesk/searchbar.htm'"></div>
+        </div>
+        <!-- END CONTAINER 2 ---------------------------->
+        <!-- START CONTAINER 3 ---------------------------->
+        <div class="container" style="padding: 75px;padding-bottom: 0px;">
+          <!-- START TITLE -->
+          <div ng-include="'assets/templates/Helpdesk/issueTypesHeading.htm'"></div>
+          <!-- END TITLE -->
+          <!-- START DROPDOWN FORM -->
+          <div ng-include="'assets/templates/Helpdesk/menu.htm'"></div>
+          <!-- END DROPDOWN FORM -->
+          <!-- START WIKI INFO -->
+          <div ng-include="'assets/templates/Helpdesk/wiki.htm'"></div>
+          <!-- END WIKI INFO -->
+          <!-- START JIRA BUTTON -->
+          <div ng-include="'assets/templates/Helpdesk/jirabtn.htm'"></div>
+          <!-- END JIRA BUTTON -->
+          <!-- FORM COMPONENT -->
+          <div ng-include="'assets/templates/Helpdesk/helpdeskforms.htm'" style="display: block;"></div>
+          <!-- FORM COMPONENT -->
+        </div>
+        <!-- END CONTAINER 3 ---------------------------->
+      </section>
+      <!-- END SECTION 2 -->
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
