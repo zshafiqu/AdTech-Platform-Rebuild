@@ -1,0 +1,103 @@
+<div id="inputOutputContainer" class="d-flex flex-row flex-grow-1 flex-shrink-0 justify-content-center align-items-center align-content-center flex-wrap">
+  <!-- d-flex float-none flex-row flex-grow-1 flex-shrink-0 flex-fill justify-content-center align-items-center align-content-center flex-wrap -->
+  <div id="inputOutput0">
+    <form>
+            <p style="margin-bottom: 10px;">Vendor/Tag Format:</p>
+            <!-- START DROPDOWN MENU -->
+                <div id="vendorSelect" style="padding-bottom: 5px;" class="field">
+                  <select id="tagType0" class="vendorClass form-control" onchange="getText('inputText0',this.id,'outputText0'); applyToAll();">
+                    <option value="nullVal">Pick a Vendor</option>
+                    <option value="adaraPix">Adara Pixel</option>
+                    <option value="adshufflePix">AdShuffle Pixel/Click</option>
+                    <option value="adTechJs">AdTech Javascript</option>
+                    <option value="amazonPix">Amazon Pixel</option>
+                    <option value="atlasJs">Atlas Javascript</option>
+                    <option value="atlasPix">Atlas Pixel/Click</option>
+                    <option value="barometric">Barometric</option>
+                    <option value="bridgetrackIframe">Bridgetrack Iframe</option>
+                    <option value="bridgetrackPix">Bridgetrack Pixel/Click</option>
+                    <option value="cobaltPix">Cobalt Pixel/Click</option>
+                    <option value="comscorePix">Comscore Pixel/vCE Tracker (Web ONLY)</option>
+                    <option value="dfaIframe">Doubleclick Iframe</option>
+                    <option value="dfaJs">Doubleclick Javascript</option>
+                    <option value="dfaDcmJs">Doubleclick INS Javascript (DCM)</option>
+                    <option value="dfaPix">Doubleclick Pixel/Click</option>
+                    <option value="extremePix">Extreme Reach Pixel</option>
+                    <option value="facilitateJs">Facilitate Javascript/Pixel/Click</option>
+                    <option value="flashtalkingJs">Flashtalking Javascript</option>
+                    <option value="flashtalkingPix">Flashtalking Pixel/Click</option>
+                    <option value="innovidPix">Innovid Pixel/Click</option>
+                    <option value="insightPix">Insight Express Pixel</option>
+                    <option value="justAdJs">JustAd Javascript</option>
+                    <option value="lucidPix">Lucid Pixel</option>
+                    <option value="medialetsJs">Medialets Javascript</option>
+                    <option value="mediamathPix">MediaMath</option>
+                    <option value="mediaplexJs">Mediaplex/Conversant Javascript</option>
+                    <option value="mediaplexPix">Mediaplex/Conversant Pixel/Click</option>
+                    <option value="millwardBrown">Millward Brown Pixel</option>
+                    <option value="mobileMajority">Mobile Majority Standard Tag</option>
+                    <option value="mookiePix">Mookie Pixel</option>
+                    <option value="nielsenPix">Nielsen Pixel (Web ONLY)</option>
+                    <option value="numberly">Numberly Pixel</option>
+                    <option value="pointrollJs">Pointroll Javascript</option>
+                    <option value="pointrollPix">Pointroll Pixel/Click</option>
+                    <option value="mediamindJs">Sizmek (Mediamind) Javascript</option>
+                    <option value="mediamindPix">Sizmek Pixel/Click</option>
+                    <option value="mediamindStandard">Sizmek Standard Creative</option>
+                    <option value="spongecellJs">Spongecell JS</option>
+                    <option value="smartJS">Smart Ad Server JS</option>
+                    <option value="trueEffectJs">True Effect Iframe/JS</option>
+                    <option value="trueEffectPix">True Effect Pixel/Click</option>
+                    <option value="veltiStandard">Velti Standard Tags</option>
+                    <option value="videoHubPix">VideoHub Pixel</option>
+                    <option value="vindicoIframe">Vindico Iframe</option>
+                    <option value="vindicoPix">Vindico Pixel/Click</option>
+                    <option value="vindicoVast">Vindico VAST/VPAID URL</option>
+                    <option value="visualIqPix">Visual IQ Pixel</option>
+                    <option value="vizuIframe">Vizu Iframe</option>
+                    <option value="whiteOpsJs">White Ops Javascript</option>
+                    <option value="whiteOpsPix">White Ops Pixel</option>
+                    <option value="x1Pix">X+1 Pixel</option>
+                    <option value="zedoIframe">Zedo Iframe</option>
+                  </select>
+                </div>
+            <!-- END DROPDOWN -->
+            <!-- START CHECKBOX -->
+            <div class="form-row">
+                <div class="col">
+                  <div class="form-check" style="margin-top: 10px;">
+                    <input id="vendorTagCheck" value="True" onchange="applyToAll();" class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="vendorTagCheck" style="font-family: Lato, sans-serif;font-size: 1.2em;font-weight: 300;width: 210px;">Apply vendor to all tags</label>
+                  </div>
+                </div>
+            </div>
+        <!-- END CHECKBOX -->
+        <!-- START INPUT -->
+        <div>
+            <!-- PLACEMENT NAME -->
+            <p style="margin-bottom: 10px;padding-top: 10px;">Placement Name:</p>
+            <input id="pixelNamepix0" class="pixelNameText form-control" type="text" inputmode="url" style="margin-bottom: 10px;">
+            <!-- TAG TO BE CONVERTED: -->
+            <div id="inputTextRow0">
+              <p style="margin-bottom: 10px;">Tag to be converted:</p>
+              <textarea id="inputText0" onchange="getText(this.id,'tagType0','outputText0')" class="inputTagText form-control" style="margin-bottom: 10px;"></textarea>
+            </div>
+            <!-- CONVERTED TAG: -->
+            <div id="outputTextRow0">
+              <p style="margin-bottom: 10px;">Converted tag:</p>
+              <textarea id="outputText0" class="outputTagText form-control" disabled="" readonly="" style="margin-bottom: 10px;"></textarea>
+            </div>
+            <!-- ADD TAGS BUTTON -->
+            <button onclick="addRow(this.form);" class="addRemoveButton btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;">Add Tags</button>
+            <!-- PREVIEW TAG -->
+            <div class="form-row">
+                <div class="col">
+                  <a href="#" onclick="previewTag('inputText0')">Preview Tag</a>
+                </div>
+            </div>
+        </div>
+        <!-- END INPUTS -->
+    </form>
+    <!-- END FORM -->
+  </div>
+</div>
