@@ -1,0 +1,48 @@
+<form onsubmit="return false;">
+  <!-- htmlOptions div -------------------------------------------------------------------------------->
+  <div id="htmlOptions" style="display:block">
+    <p style="margin-bottom: 10px;">Ad HTML:</p>
+    <textarea id="htmlCode" class="form-control" placeholder="<HTML>" style="height: 125px;"></textarea>
+  </div>
+  <!-- imageOptions div -------------------------------------------------------------------------------->
+  <div id="imageOptions" style="display:none">
+    <p style="margin-bottom: 10px;">Image URL:</p>
+    <input id="imageURL" class="form-control" type="text" style="margin-bottom: 15px;">
+    <p style="margin-bottom: 10px;padding-top: 10px;">Click URL:</p>
+    <input id="clickURL" class="form-control" type="text" value="%c%u" style="margin-bottom: 15px;">
+  </div>
+  <!-- basicForm div -------------------------------------------------------------------------------->
+  <div id="basicForm" style="display:block">
+    <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
+    <input id="impressionURL" class="form-control" type="text" value="%i" placeholder="www.example.com" inputmode="url" style="margin-bottom: 15px;">
+    <!-- START AD HEIGHT AND LOGON SPONSOR -->
+    <div class="form-row d-inline-block">
+        <!-- START COLUMN 1 -->
+        <div class="col">
+            <p>Ad Height:</p>
+            <input id="adHeight" class="form-control" type="text" value="50" style="margin-top: -25px;margin-bottom: 10px;">
+        </div>
+        <!-- END COLUMN 1 -->
+        <!-- START COLUMN 2 -->
+        <div class="col">
+            <p>Logon Sponsor:</p>
+            <input id="logonSponsor" class="form-control" type="text" style="margin-top: -25px;width: 200px;">
+        </div>
+        <!-- END COLUMN 2 -->
+    </div>
+    <!-- END AD HEIGHT AND LOGON SPONSOR -->
+    <!-- START SMALL FOOTER MESSAGE-->
+    <div class="form-row">
+        <div class="col">
+          <small>Note: Logon sponsor is a splash screen only, available in iPhone 3.0.3+</small>
+        </div>
+    </div>
+</div>
+<!-- END basicForm div -------------------------------------------------------------------------------->
+  <!-- END SMALL FOOTER MESSAGE -->
+  <div>
+    <button onclick="generateMobileCode(); return false;" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
+    <p>Generated code:</p>
+    <textarea id="adCode" class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 170px;"></textarea>
+  </div>
+</form>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <!-- START HEAD -->
 <head>
     <meta charset="utf-8">
@@ -25,112 +24,24 @@
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
-        <!-- START SECTION 1 -->
-        <!-- <section class="d-xl-flex flex-grow-1">
-            <div class="container"><img class="img-thumbnail img-fluid" src="assets/img/mobileCode_BANNER.jpg"></div>
-        </section> -->
-        <!-- END SECTION 1 -->
         <!-- START SECTION 2 -->
         <section class="layout-block block-adTechMain" style="margin-top: -50px;">
-            <!-- START CONTAINER 1 -->
-            <div class="container">
-              <!-- START TITLE BLOCK -->
-                <div class="custom-block">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <h1>Mobile Code Generator</h1>
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <!-- END TITLE BLOCK -->
-                <!-- START DESCRIPTION -->
-                <div class="custom-block">
-                    <p>The Mobile Code Generator is a tool to create bare-bone mobile banners.<br></p>
-                </div>
-                <!-- END DESCRIPTION -->
-                <!-- START SELECTOR FOR AD TYPE -->
-                <div>
-                    <p style="margin-bottom: 5px;">Select an advertisement type:</p>
-                    <div class="row d-inline-flex" style="padding-bottom: 25px;padding-top: 0px;">
-                        <!-- START COLUMN 1 -->
-                        <div class="col">
-                            <div class="form-check">
-                              <input id="htmlAdType" onclick="updateTypeMobile()" name="adType" checked class="form-check-input" type="radio">
-                              <label class="form-check-label" for="formCheck-3" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">HTML</label>
-                            </div>
-                        </div>
-                        <!-- END COLUMN 1 -->
-                        <!-- START COLUMN 2 -->
-                        <div class="col">
-                            <div class="form-check">
-                              <input id="imageAdType" onclick="updateTypeMobile()" name="adType" class="form-check-input" type="radio">
-                              <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Image</label>
-                            </div>
-                        </div>
-                        <!-- END COLUMN 2 -->
-                    </div>
-                </div>
-                <!-- END SELECTOR FOR AD TYPE -->
-                <!-- START INPUT FORM #1 -->
-                <div>
-                    <form onsubmit="return false;">
-                        <!-- htmlOptions div -------------------------------------------------------------------------------->
-                        <div id="htmlOptions" style="display:block">
-                          <p style="margin-bottom: 10px;">Ad HTML:</p>
-                          <textarea id="htmlCode" class="form-control" placeholder="<HTML>" style="height: 125px;"></textarea>
-                        </div>
-                        <!-- imageOptions div -------------------------------------------------------------------------------->
-                        <div id="imageOptions" style="display:none">
-                          <p style="margin-bottom: 10px;">Image URL:</p>
-                          <input id="imageURL" class="form-control" type="text" style="margin-bottom: 15px;">
-                          <p style="margin-bottom: 10px;padding-top: 10px;">Click URL:</p>
-                          <input id="clickURL" class="form-control" type="text" value="%c%u" style="margin-bottom: 15px;">
-                        </div>
-                        <!-- basicForm div -------------------------------------------------------------------------------->
-                        <div id="basicForm" style="display:block">
-                          <p style="margin-bottom: 10px;padding-top: 10px;">Impression URL:</p>
-                          <input id="impressionURL" class="form-control" type="text" value="%i" placeholder="www.example.com" inputmode="url" style="margin-bottom: 15px;">
-                          <!-- START AD HEIGHT AND LOGON SPONSOR -->
-                          <div class="form-row d-inline-block">
-                              <!-- START COLUMN 1 -->
-                              <div class="col">
-                                  <p>Ad Height:</p>
-                                  <input id="adHeight" class="form-control" type="text" value="50" style="margin-top: -25px;margin-bottom: 10px;">
-                              </div>
-                              <!-- END COLUMN 1 -->
-                              <!-- START COLUMN 2 -->
-                              <div class="col">
-                                  <p>Logon Sponsor:</p>
-                                  <input id="logonSponsor" class="form-control" type="text" style="margin-top: -25px;width: 200px;">
-                              </div>
-                              <!-- END COLUMN 2 -->
-                          </div>
-                          <!-- END AD HEIGHT AND LOGON SPONSOR -->
-                          <!-- START SMALL FOOTER MESSAGE-->
-                          <div class="form-row">
-                              <div class="col">
-                                <small>Note: Logon sponsor is a splash screen only, available in iPhone 3.0.3+</small>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- END basicForm div -------------------------------------------------------------------------------->
-                        <!-- END SMALL FOOTER MESSAGE -->
-                        <div>
-                          <button onclick="generateMobileCode(); return false;" class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;">Generate code</button>
-                          <p>Generated code:</p>
-                          <textarea id="adCode" class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 170px;"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <!-- END INPUT FORM #1 -->
-            </div>
-            <!-- END CONTAINER 1 -->
+          <!-- START CONTAINER 1 -->
+          <div class="container">
+            <!-- START TITLE BLOCK -->
+            <div ng-include="'assets/templates/mobileCodeGenerator/title.htm'"></div>
+            <!-- END TITLE BLOCK -->
+            <!-- START DESCRIPTION -->
+            <div ng-include="'assets/templates/mobileCodeGenerator/description.htm'"></div>
+            <!-- END DESCRIPTION -->
+            <!-- START SELECTOR FOR AD TYPE -->
+            <div ng-include="'assets/templates/mobileCodeGenerator/selector.htm'"></div>
+            <!-- END SELECTOR FOR AD TYPE -->
+            <!-- START INPUT FORM -->
+            <div ng-include="'assets/templates/mobileCodeGenerator/mobileCodeForm.htm'"></div>
+            <!-- END INPUT FORM -->
+          </div>
+          <!-- END CONTAINER 1 -->
         </section>
         <!-- END SECTION 2 -->
     </main>
@@ -143,13 +54,12 @@
     <script src="assets/js/Misc/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Misc/bs-animation.js"></script>
-    <div ng-include="'assets/templates/scripts.htm'"></div>
     <!-- site function script -->
     <script src="assets/js/Controllers/mobilecodegen.js"></script>
     <!-- script to resize onload -->
     <script type="text/javascript">
         function zoom() {
-            document.body.style.zoom = "85%"
+            document.body.style.zoom = "75%"
         }
     </script>
 
