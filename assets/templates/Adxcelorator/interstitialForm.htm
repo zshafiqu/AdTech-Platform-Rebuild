@@ -1,0 +1,80 @@
+<div class="itemRows container" id="intItemRows" style="display: none;">
+  <form style="margin-top: 50px;">
+    <!-- AD SPECS -->
+    <div id="adSpecs">
+      <div id="impression">
+        <p style="margin-bottom: 10px;padding-top: 10px;">Impression Macro:</p>
+        <input class="form-control d-inline-flex" id="impressionURLInt" style="margin-bottom: 15px;" type="text" value="%i">
+      </div>
+      <div id="height">
+        <p style="margin-bottom: 15px;">Ad Height:</p>
+        <input class="form-control d-inline-flex" id="adHeight" style="margin-top: -15px;width: 150px;" type="text" value="1">
+      </div>
+    </div>
+    <!-- INPUT FIELDS -->
+    <div id="divIntRow">
+      <!-- PLACEMENT NAME -->
+      <div class="displayNames" id="intName">
+        <p>Placement Name:</p>
+        <textarea class="intNameText form-control" id="intName0" style="margin-top: -20px;"></textarea>
+      </div>
+      <!-- ADXCEL TAG -->
+      <div class="adxcel" id="adxcelInt">
+        <p style="margin-top: 15px;">AdXcel Tag:</p>
+        <textarea class="form-control" id="int0" onchange="generateInt(this.id);" style="margin-top: -20px;"></textarea>
+      </div>
+      <!-- DFP CODE -->
+      <div class="xfp" id="xfpInt">
+        <p style="margin-top: 15px;">DFP Code:</p>
+        <textarea class="form-control" id="adCodeXFPint0" readonly style="margin-top: -20px; height: 200px;"></textarea>
+      </div>
+      <!-- SLINGSHOT CODE -->
+      <div class="ss" id="ssInt">
+        <p style="margin-top: 15px;">Slingshot Code:</p>
+        <textarea class="ssIntText form-control" id="adCodeSSint0" readonly style="margin-top: -20px; height: 100px;"></textarea>
+      </div>
+      <!-- PLATFORM SELECTOR -->
+      <div id="platformSelector">
+        <p style="margin-top:15px; margin-bottom: 5px;">Platform:</p>
+        <div class="row d-inline-flex">
+          <!-- ANDROID -->
+          <div class="col">
+            <div class="form-check">
+              <input checked class="form-check-input" id="droid" name="platform" onclick="generateInt('int0')" type="radio"> <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Android</label>
+            </div>
+          </div>
+          <!-- IPHONE -->
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" id="iphone" name="platform" onclick="generateInt('int0')" type="radio"> <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">iPhone</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ADD TAGS -->
+      <div class="addRemoveButton form-row" id="addButton" style="margin-top: 15px;">
+        <div class="col">
+          <button class="btn btn-primary border rounded-0" onclick="addRow(this.form);" style="width: 110px;" type="button">Add Tags</button>
+        </div>
+      </div>
+      <!-- SUBMIT BUTTONS -->
+      <div id="submitButtons">
+        <!-- CAMPAIGN NAME -->
+        <div class="form-row">
+          <div class="col">
+            <p style="margin-top: 15px;">Campaign Name:</p>
+            <input class="form-control" id="campaignNameInt" style="margin-top: -20px;" type="text">
+          </div>
+        </div>
+        <!-- EXPORT SS TAGS -->
+        <div class="form-row">
+          <div class="col">
+            <button class="downloadLinks btn btn-primary border rounded-0" id="downloadLinkInt" style="margin-top: 15px;margin-bottom: 0px;" type="button">Export SS Tags</button>
+          </div>
+        </div>
+      </div>
+      <!-- END SUBMIT BUTTONS -->
+    </div>
+    <!-- END INPUT FIELDS -->
+  </form>
+</div>

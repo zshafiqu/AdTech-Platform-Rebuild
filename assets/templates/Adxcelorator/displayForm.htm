@@ -1,0 +1,62 @@
+<div class="itemRows container" id="itemRows" style="display:block;">
+  <form style="margin-top: 50px">
+    <!-- AD SPECS -->
+    <div id="adSpecs">
+      <div id="impression">
+        <p style="margin-bottom: 10px;padding-top: 10px;">Impression Macro:</p>
+        <input class="form-control d-inline-flex" id="impressionURL" style="margin-bottom: 15px;" type="text" value="%i">
+      </div>
+      <div id="height">
+        <p style="margin-bottom: 15px;">Ad Height:</p>
+        <input class="form-control d-inline-flex" id="adHeight" style="margin-top: -15px;width: 150px;" type="text" value="1">
+      </div>
+    </div>
+    <!-- INPUT FIELDS -->
+    <div class="rowDisplay" id="divRow0">
+      <!-- PLACEMENT NAME -->
+      <div class="displayNames" id="displayName">
+        <p>Placement Name:</p>
+        <textarea class="displayNameText form-control" id="displayName0" style="margin-top: -20px;"></textarea>
+      </div>
+      <!-- ADXCEL TAG -->
+      <div class="adxcel" id="adxcel">
+        <p style="margin-top: 15px;">AdXcel Tag:</p>
+        <textarea class="form-control" id="0" onchange="generateCode(this.id);" style="margin-top: -20px;"></textarea>
+      </div>
+      <!-- DFP CODE -->
+      <div class="xfp" id="xfp">
+        <p style="margin-top: 15px;">DFP Code:</p>
+        <textarea class="form-control" id="adcodeXFP0" readonly style="margin-top: -20px; height: 200px;"></textarea>
+      </div>
+      <!-- SLINGSHOT CODE -->
+      <div class="ss" id="ss">
+        <p style="margin-top: 15px;">Slingshot Code:</p>
+        <textarea class="ssDisplayText form-control" id="adcodeSS0" readonly style="margin-top: -20px; height:100px;"></textarea>
+      </div>
+      <!-- ADD TAGS -->
+      <div class="addRemoveButton form-row" id="addButton" style="margin-top: 15px;">
+        <div class="col">
+          <button class="ssDisplayText btn btn-primary border rounded-0" onclick="addRow(this.form);" style="width: 110px;" type="button">Add Tags</button>
+        </div>
+      </div>
+      <!-- SUBMIT BUTTONS -->
+      <div id="submitButtons">
+        <!-- CAMPAIGN NAME -->
+        <div class="form-row">
+          <div class="col">
+            <p style="margin-top: 15px;">Campaign Name:</p>
+            <input class="form-control" id="campaignName" style="margin-top: -20px;" type="text">
+          </div>
+        </div>
+        <!-- EXPORT SS TAGS -->
+        <div class="form-row">
+          <div class="col">
+            <button class="downloadLinks btn btn-primary border rounded-0" id="downloadLinkDisplay" style="margin-top: 15px;margin-bottom: 0px;" type="button">Export SS Tags</button>
+          </div>
+        </div>
+      </div>
+      <!-- END SUBMIT BUTTONS -->
+    </div>
+    <!-- END INPUT FIELDS -->
+  </form>
+</div>

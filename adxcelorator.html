@@ -25,268 +25,32 @@
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
-      <!-- START SECTION 1 -->
-        <!-- <section class="d-xl-flex flex-grow-1">
-            <div class="container"><img class="img-thumbnail img-fluid" src="assets/img/adxcelorator_BANNER.jpg"></div>
-        </section> -->
-        <!-- END SECTION 1 -->
         <!-- START SECTION 2 -->
         <section class="layout-block block-adTechMain" style="margin-top: -50px;">
           <!-- START CONTAINER 1 -->
-            <div class="container">
-              <!-- START TITLE & DESCRIPTION  -->
-                <div>
-                    <div class="custom-block">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <h1>Adxcelorator</h1>
-                                        </th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="custom-block">
-                        <p>Adxcelorator creates Adxcel tags and tracking pixels<br></p>
-                    </div>
-                </div>
-                <!-- END TITLE AND DESCRIPTION -->
-                <!-- START SELECTOR -->
-                <div class="row d-inline-flex">
-                	<div class="col">
-                		<div class="form-check">
-                			<input checked class="form-check-input" id="tag" name="adType" onclick="updateType()" type="radio"> <label class="form-check-label" for="formCheck-4" style=
-                			"font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Create Adxcel display banner tags</label>
-                		</div>
-                	</div>
-                	<div class="col">
-                		<div class="form-check">
-                			<input class="form-check-input" id="intersitial" name="adType" onclick="updateType()" type="radio"> <label class="form-check-label" for="formCheck-5" style=
-                			"font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Create Adxcel interstitial tags</label>
-                		</div>
-                	</div>
-                	<div class="col">
-                		<div class="form-check">
-                			<input class="form-check-input" id="pixel" name="adType" onclick="updateType()" type="radio"> <label class="form-check-label" for="formCheck-6" style=
-                			"font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Create DFP pixel</label>
-                		</div>
-                	</div>
-                </div>
-                <!-- END SELECTOR -->
-                <!-- START MAIN FORM -->
-                <div id="outerDiv" style="margin-top: 15px;">
-
-                    <!-- START DISPLAY FORM  -------------------------------------------------------------------------------------------------------->
-                    <div class="itemRows container" id="itemRows" style="display:block;">
-                    	<form style="margin-top: 50px">
-                        <!-- AD SPECS -->
-                        <div id="adSpecs">
-                    			<div id="impression">
-                    				<p style="margin-bottom: 10px;padding-top: 10px;">Impression Macro:</p>
-                    				<input class="form-control d-inline-flex" id="impressionURL" style="margin-bottom: 15px;" type="text" value="%i">
-                    			</div>
-                    			<div id="height">
-                    				<p style="margin-bottom: 15px;">Ad Height:</p>
-                    				<input class="form-control d-inline-flex" id="adHeight" style="margin-top: -15px;width: 150px;" type="text" value="1">
-                    			</div>
-                    		</div>
-                        <!-- INPUT FIELDS -->
-                    		<div class="rowDisplay" id="divRow0">
-                          <!-- PLACEMENT NAME -->
-                    			<div class="displayNames" id="displayName">
-                    				<p>Placement Name:</p>
-                    				<textarea class="displayNameText form-control" id="displayName0" style="margin-top: -20px;"></textarea>
-                    			</div>
-                          <!-- ADXCEL TAG -->
-                    			<div class="adxcel" id="adxcel">
-                    				<p style="margin-top: 15px;">AdXcel Tag:</p>
-                    				<textarea class="form-control" id="0" onchange="generateCode(this.id);" style="margin-top: -20px;"></textarea>
-                    			</div>
-                          <!-- DFP CODE -->
-                    			<div class="xfp" id="xfp">
-                    				<p style="margin-top: 15px;">DFP Code:</p>
-                    				<textarea class="form-control" id="adcodeXFP0" readonly style="margin-top: -20px; height: 200px;"></textarea>
-                    			</div>
-                          <!-- SLINGSHOT CODE -->
-                    			<div class="ss" id="ss">
-                    				<p style="margin-top: 15px;">Slingshot Code:</p>
-                    				<textarea class="ssDisplayText form-control" id="adcodeSS0" readonly style="margin-top: -20px; height:100px;"></textarea>
-                    			</div>
-                          <!-- ADD TAGS -->
-                    			<div class="addRemoveButton form-row" id="addButton" style="margin-top: 15px;">
-                    				<div class="col">
-                    					<button class="ssDisplayText btn btn-primary border rounded-0" onclick="addRow(this.form);" style="width: 110px;" type="button">Add Tags</button>
-                    				</div>
-                    			</div>
-                          <!-- SUBMIT BUTTONS -->
-                          <div id="submitButtons">
-                            <!-- CAMPAIGN NAME -->
-                            <div class="form-row">
-                              <div class="col">
-                                <p style="margin-top: 15px;">Campaign Name:</p>
-                                <input class="form-control" id="campaignName" style="margin-top: -20px;" type="text">
-                              </div>
-                            </div>
-                            <!-- EXPORT SS TAGS -->
-                            <div class="form-row">
-                              <div class="col">
-                                <button class="downloadLinks btn btn-primary border rounded-0" id="downloadLinkDisplay" style="margin-top: 15px;margin-bottom: 0px;" type="button">Export SS Tags</button>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- END SUBMIT BUTTONS -->
-                    		</div>
-                        <!-- END INPUT FIELDS -->
-                    	</form>
-                    </div>
-                    <!-- END DISPLAY FORM  -------------------------------------------------------------------------------------------------------------->
-
-                    <!-- START INTERSTITAL FORM  -------------------------------------------------------------------------------------------------------->
-                    <div class="itemRows container" id="intItemRows" style="display: none;">
-                    	<form style="margin-top: 50px;">
-                        <!-- AD SPECS -->
-                    		<div id="adSpecs">
-                    			<div id="impression">
-                    				<p style="margin-bottom: 10px;padding-top: 10px;">Impression Macro:</p>
-                    				<input class="form-control d-inline-flex" id="impressionURLInt" style="margin-bottom: 15px;" type="text" value="%i">
-                    			</div>
-                    			<div id="height">
-                    				<p style="margin-bottom: 15px;">Ad Height:</p>
-                    				<input class="form-control d-inline-flex" id="adHeight" style="margin-top: -15px;width: 150px;" type="text" value="1">
-                    			</div>
-                    		</div>
-                        <!-- INPUT FIELDS -->
-                    		<div id="divIntRow">
-                          <!-- PLACEMENT NAME -->
-                    			<div class="displayNames" id="intName">
-                    				<p>Placement Name:</p>
-                    				<textarea class="intNameText form-control" id="intName0" style="margin-top: -20px;"></textarea>
-                    			</div>
-                          <!-- ADXCEL TAG -->
-                    			<div class="adxcel" id="adxcelInt">
-                    				<p style="margin-top: 15px;">AdXcel Tag:</p>
-                    				<textarea class="form-control" id="int0" onchange="generateInt(this.id);" style="margin-top: -20px;"></textarea>
-                    			</div>
-                          <!-- DFP CODE -->
-                    			<div class="xfp" id="xfpInt">
-                    				<p style="margin-top: 15px;">DFP Code:</p>
-                    				<textarea class="form-control" id="adCodeXFPint0" readonly style="margin-top: -20px; height: 200px;"></textarea>
-                    			</div>
-                          <!-- SLINGSHOT CODE -->
-                    			<div class="ss" id="ssInt">
-                    				<p style="margin-top: 15px;">Slingshot Code:</p>
-                    				<textarea class="ssIntText form-control" id="adCodeSSint0" readonly style="margin-top: -20px; height: 100px;"></textarea>
-                    			</div>
-                          <!-- PLATFORM SELECTOR -->
-                    			<div id="platformSelector">
-                    				<p style="margin-top:15px; margin-bottom: 5px;">Platform:</p>
-                    				<div class="row d-inline-flex">
-                              <!-- ANDROID -->
-                    					<div class="col">
-                    						<div class="form-check">
-                    							<input checked class="form-check-input" id="droid" name="platform" onclick="generateInt('int0')" type="radio"> <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Android</label>
-                    						</div>
-                    					</div>
-                              <!-- IPHONE -->
-                    					<div class="col">
-                    						<div class="form-check">
-                    							<input class="form-check-input" id="iphone" name="platform" onclick="generateInt('int0')" type="radio"> <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">iPhone</label>
-                    						</div>
-                    					</div>
-                    				</div>
-                    			</div>
-                          <!-- ADD TAGS -->
-                    			<div class="addRemoveButton form-row" id="addButton" style="margin-top: 15px;">
-                    				<div class="col">
-                    					<button class="btn btn-primary border rounded-0" onclick="addRow(this.form);" style="width: 110px;" type="button">Add Tags</button>
-                    				</div>
-                    			</div>
-                          <!-- SUBMIT BUTTONS -->
-                    			<div id="submitButtons">
-                            <!-- CAMPAIGN NAME -->
-                            <div class="form-row">
-                    					<div class="col">
-                    						<p style="margin-top: 15px;">Campaign Name:</p>
-                    						<input class="form-control" id="campaignNameInt" style="margin-top: -20px;" type="text">
-                    					</div>
-                    				</div>
-                            <!-- EXPORT SS TAGS -->
-                    				<div class="form-row">
-                    					<div class="col">
-                    						<button class="downloadLinks btn btn-primary border rounded-0" id="downloadLinkInt" style="margin-top: 15px;margin-bottom: 0px;" type="button">Export SS Tags</button>
-                    					</div>
-                    				</div>
-                    			</div>
-                          <!-- END SUBMIT BUTTONS -->
-                    		</div>
-                        <!-- END INPUT FIELDS -->
-                    	</form>
-                    </div>
-                    <!-- END INTERSTITAL FORM  ---------------------------------------------------------------------------------------------------------->
-
-                    <!-- START PIXEL FORM  -------------------------------------------------------------------------------------------------------------->
-                    <div class="itemRows container" id="pixelItemRows" style="display: none;">
-                    	<form style="margin-top: 50px">
-                        <!-- INPUT FIELDS -->
-                        <div class="rowPix" id="divPixRow0">
-                          <!-- PLACEMENT NAME -->
-                          <div class="pixelNames" id="pixelName">
-                    				<p>Placement Name:</p>
-                            <textarea class="pixelNameText form-control" id="pixelNamepix0" style="margin-top: -20px;"></textarea>
-                    			</div>
-                          <!-- DFP CREATUIVE ID -->
-                    			<div class="creativeIds" id="creativeId">
-                    				<p style="margin-top: 15px;">DFP Creative ID:</p>
-                            <textarea class="form-control" id="pix0" onchange="generatePixel(this.id);" style="margin-top: -20px;"></textarea>
-                    			</div>
-                          <!-- DFP PIXEL OPT IN -->
-                    			<div class="optInPixels" id="opt-in">
-                    				<p style="margin-top: 15px;">DFP Pixel Opt-in:</p>
-                    				<textarea class="form-control" id="optinTextpix0" readonly style="margin-top: -20px; height: 200px;"></textarea>
-                    			</div>
-                          <!-- DFP PIXEL OPT OUT -->
-                    			<div class="optOutPixels" id="opt-out">
-                    				<p style="margin-top: 15px;">DFP Pixel Opt-out:</p>
-                    				<textarea class="form-control" id="optoutTextpix0" readonly style="margin-top: -20px; height:170px;"></textarea>
-                    			</div>
-                          <!-- ADD PIXELS -->
-                    			<div class="addRemoveButton" id="addPixelButton" style="margin-top: 15px;">
-                    				<div class="form-row">
-                    					<div class="col">
-                    						<button class="btn btn-primary border rounded-0" onclick="addRow(this.form);" style="width: 110px;" type="button">Add Pixels</button>
-                    					</div>
-                    				</div>
-                    			</div>
-                          <!-- SUBMIT BUTTONS -->
-                          <div id="submitButtons">
-                            <!-- CAMPAIGN NAME -->
-                            <div class="form-row">
-                              <div class="col">
-                                <p style="margin-top: 15px;">Campaign Name:</p>
-                                <input class="form-control" id="campaignNamePix" style="margin-top: -20px;" type="text">
-                              </div>
-                            </div>
-                            <!-- EXPORT SS TAGS -->
-                            <div class="form-row">
-                              <div class="col">
-                                <button class="downloadLinks btn btn-primary border rounded-0" id="downloadLinkPix" style="margin-top: 15px;margin-bottom: 0px;" type="button">Export Pixels</button>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- END SUBMIT BUTTONS -->
-                    		</div>
-                        <!-- END INPUT FIELDS -->
-                    	</form>
-                    </div>
-                    <!-- END PIXEL FORM  ---------------------------------------------------------------------------------------------------------------->
-
-                </div>
-                <!-- END MAIN FORM -->
+          <div class="container">
+            <!-- START TITLE & DESCRIPTION  -->
+            <div ng-include="'assets/templates/Adxcelorator/title.htm'"></div>
+            <div ng-include="'assets/templates/Adxcelorator/description.htm'"></div>
+            <!-- END TITLE AND DESCRIPTION -->
+            <!-- START SELECTOR -->
+            <div ng-include="'assets/templates/Adxcelorator/selector.htm'"></div>
+            <!-- END SELECTOR -->
+            <!-- START MAIN FORM -->
+            <div id="outerDiv" style="margin-top: 15px;">
+              <!-- START DISPLAY FORM  -------------------------------------------------------------------------------------------------------->
+              <div ng-include="'assets/templates/Adxcelorator/displayForm.htm'"></div>
+              <!-- END DISPLAY FORM  -------------------------------------------------------------------------------------------------------------->
+              <!-- START INTERSTITAL FORM  -------------------------------------------------------------------------------------------------------->
+              <div ng-include="'assets/templates/Adxcelorator/interstitialForm.htm'"></div>
+              <!-- END INTERSTITAL FORM  ---------------------------------------------------------------------------------------------------------->
+              <!-- START PIXEL FORM  -------------------------------------------------------------------------------------------------------------->
+              <div ng-include="'assets/templates/Adxcelorator/pixelForm.htm'"></div>
+              <!-- END PIXEL FORM  ---------------------------------------------------------------------------------------------------------------->
             </div>
-            <!-- END CONTAINER 1 -->
+            <!-- END MAIN FORM -->
+          </div>
+          <!-- END CONTAINER 1 -->
         </section>
         <!-- END SECTION 1 -->
     </main>
@@ -299,7 +63,6 @@
     <script src="assets/js/Misc/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Misc/bs-animation.js"></script>
-    <div ng-include="'assets/templates/scripts.htm'"></div>
     <!-- Site functions-->
     <script src="assets/js/Controllers/adxcel.js"></script>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -320,7 +83,7 @@
     <!-- script to resize onload -->
     <script type="text/javascript">
         function zoom() {
-            document.body.style.zoom = "85%"
+            document.body.style.zoom = "75%"
         }
     </script>
 
