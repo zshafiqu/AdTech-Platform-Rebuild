@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <!-- START HEAD -->
 <head>
     <meta charset="utf-8">
@@ -25,135 +24,24 @@
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
-        <!-- START SECTION 1 -->
-        <!-- <section class="d-xl-flex flex-grow-1">
-            <div class="container"><img class="img-thumbnail img-fluid" src="assets/img/XML_banner.jpg"></div>
-        </section> -->
-        <!-- END SECTION 1 -->
         <!-- START SECTION 2 -->
-        <<section class="layout-block block-adTechMain" style="margin-top: -50px;">
-            <!-- START CONTAINER 1 -->
-            <div class="container">
-                <!-- START TITLE BLOCK -->
-                <div class="custom-block">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <h1>XML Member Generator</h1>
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <!-- END TITLE BLOCK -->
-                <!-- START DESCRIPTION BLOCK -->
-                <div class="custom-block">
-                    <p>The XML member generator allows you to create one off tracking XML members for audio or video ads<br></p>
-                </div>
-                <!-- END DESCRIPTION BLOCK -->
-                <!-- START INPUT SELECTORS -->
-                <div>
-                    <p style="margin-bottom: 5px;">Select a product type:</p>
-                    <!-- START ROW FOR INPUT SELECTORS -->
-                    <div class="row d-inline-flex" style="padding-bottom: 25px;padding-top: 0px;">
-                        <!-- START COLUMN 1 -->
-                        <div class="col">
-                            <div class="form-check">
-                              <input id="audioRadio" name="product" checked onclick="updateProduct()" class="form-check-input" type="radio">
-                              <label class="form-check-label" for="formCheck-3" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Audio</label>
-                            </div>
-                        </div>
-                        <!-- END COLUMN 1 -->
-                        <!-- START COLUMN 2 -->
-                        <div class="col">
-                            <div class="form-check">
-                              <input id="videoRadio" name="product" onclick="updateProduct()" class="form-check-input" type="radio">
-                              <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Video</label>
-                            </div>
-                        </div>
-                        <!-- END COLUMN 2 -->
-                    </div>
-                    <!-- END ROW FOR INPUT SELECTORS -->
-                </div>
-                <!-- END INPUT SELECTORS -->
-                <!-- START INPUT FORM -->
-                <div>
-                    <form>
-                      <!-- START TRACKER TYPE SELECTORS -->
-                        <div style="padding-bottom: 15px;margin-top: 0px;">
-                            <p style="margin-bottom: 10px;margin-top: -10px;">Select a tracker type:</p>
-                            <!-- START SELECTOR DIV -->
-                            <div class="form-row text-center d-inline-flex" style="padding-bottom: 0px;padding-top: 0px;">
-                                <!-- COLUMN 1 -->
-                                <div class="col">
-                                    <div class="form-check">
-                                      <input id="thirdPartyTracker" name="trackerType" class="form-check-input" type="radio" checked>
-                                      <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif;font-size: 1.2em;font-weight: 300;width: 100px;">Third Party</label>
-                                    </div>
-                                </div>
-                                <!-- COLUMN 2 -->
-                                <div class="col">
-                                    <div class="form-check">
-                                      <input id="internalTracker" name="trackerType" class="form-check-input" type="radio">
-                                      <label class="form-check-label" for="formCheck-6" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Internal</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END SELECTOR DIV -->
-                        </div>
-                        <!-- END TRACKER TYPE SELECTORS -->
-                        <!-- START DROPDOWN FOR EVENT TYPE *** THIRD PARTY *** -->
-                        <div style="padding-bottom: 7px;">
-                            <p style="margin-bottom: 10px;">Select an event:</p>
-                            <div id="audioDiv" class="field">
-                              <select id="audioEvent" class="form-control">
-                                <option id="tracker" value="tracker" onClick="getMemberName()">tracker</option>
-                        				<option id="tile_tracker_url" value="tile_tracker_url">tile_tracker_url</option>
-                        				<option id="banner_render_tracker" value="banner_render_tracker">banner_render_tracker</option>
-                        				<option id="banner_render_dark_tracker" value="banner_render_dark_tracker">banner_render_dark_tracker</option>
-                        				<option id="banner_display_after_dark_tracker" value="banner_display_after_dark_tracker">banner_display_after_dark_tracker</option>
-                              </select>
-                            </div>
-                            <div id="videoDiv" class="field" style="display:none">
-                              <select id="videoEvent" class="form-control">
-                                <option id="impression" value="impression">impression</option>
-                        				<option id="videoInititated" value="videoInititated">videoInititated</option>
-                        				<option id="videoPlaybackStarted" value="videoPlaybackStarted">videoPlaybackStarted</option>
-                        				<option id="videoPlayedToCompletion" value="videoPlayedToCompletion">videoPlayedToCompletion</option>
-                        				<option id="videoPlayedTo1stQuartile" value="videoPlayedTo1stQuartile">videoPlayedTo1stQuartile</option>
-                        				<option id="videoPlayedTo2ndQuartile" value="videoPlayedTo2ndQuartile">videoPlayedTo2ndQuartile</option>
-                        				<option id="videoPlayedTo3rdQuartile" value="videoPlayedTo3rdQuartile">videoPlayedTo3rdQuartile</option>
-                        				<option id="learnMoreClicked" value="learnMoreClicked">learnMoreClicked</option>
-                        				<option id="videoClosedBeforeEnd" value="videoClosedBeforeEnd">videoClosedBeforeEnd</option>
-                        				<option id="pauseClicked" value="pauseClicked">pauseClicked</option>
-                        				<option id="unpauseClicked" value="unpauseClicked">unpauseClicked</option>
-                        				<option id="muteClicked" value="muteClicked">muteClicked</option>
-                        				<option id="unmuteClicked" value="unmuteClicked">unmuteClicked</option>
-                              </select>
-                            </div>
-                          </div>
-                          <!-- END DROPDOWN FOR EVENT TYPE -->
-                        <!-- START PIXEL INPUT / BUTTON -->
-                        <div>
-                            <p style="margin-bottom: 10px;padding-top: 10px;">Tracking pixel:</p>
-                            <input id="tracking_pixel" class="form-control" type="text" inputmode="url" style="margin-bottom: 10px;">
-                            <button id="submit-XML" onclick="generateMember()" return false; class="btn btn-primary border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;">Generate Member</button>
-                        </div>
-                        <!-- END PIXEL INPUT / BUTTON -->
-                        <!-- START RESULT -->
-                        <div>
-                            <p>Generated member:</p>
-                            <textarea id="member_code" class="form-control" readonly="" placeholder="<result>" style="margin-top: -20px;height: 175px;"></textarea>
-                        </div>
-                        <!-- END RESULT -->
-                    </form>
-                </div>
-                <!-- END INPUT FORM -->
-            </div>
-            <!-- END CONTAINER 1 -->
+        <section class="layout-block block-adTechMain" style="margin-top: -50px;">
+          <!-- START CONTAINER 1 -->
+          <div class="container">
+            <!-- START TITLE BLOCK -->
+            <div ng-include="'assets/templates/XMLgenerator/title.htm'"></div>
+            <!-- END TITLE BLOCK -->
+            <!-- START DESCRIPTION BLOCK -->
+            <div ng-include="'assets/templates/XMLgenerator/description.htm'"></div>
+            <!-- END DESCRIPTION BLOCK -->
+            <!-- START INPUT SELECTORS -->
+            <div ng-include="'assets/templates/XMLgenerator/selector.htm'"></div>
+            <!-- END INPUT SELECTORS -->
+            <!-- START INPUT FORM -->
+            <div ng-include="'assets/templates/XMLgenerator/xmlForm.htm'"></div>
+            <!-- END INPUT FORM -->
+          </div>
+          <!-- END CONTAINER 1 -->
         </section>
         <!-- END SECTION 2 -->
     </main>
@@ -166,13 +54,12 @@
     <script src="assets/js/Misc/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Misc/bs-animation.js"></script>
-    <div ng-include="'assets/templates/scripts.htm'"></div>
     <!-- Site functionality script -->
     <script src="assets/js/Controllers/XML.js"></script>
     <!-- script to resize onload -->
     <script type="text/javascript">
         function zoom() {
-            document.body.style.zoom = "85%"
+            document.body.style.zoom = "75%"
         }
     </script>
 
