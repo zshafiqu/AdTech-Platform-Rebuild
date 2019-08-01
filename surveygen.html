@@ -25,123 +25,27 @@
   <!-- END NAV  -->
   <!-- START MAIN -->
     <main class="page">
-        <!-- START SECTION 1 -->
-        <!-- <section class="d-xl-flex flex-grow-1">
-            <div class="container"><img class="img-thumbnail img-fluid" src="assets/img/survey_BANNER.jpg"></div>
-        </section> -->
-        <!-- END SECTION 1 -->
         <!-- START SECTION 2 -->
         <section class="layout-block block-adTechMain" style="margin-top: -50px;">
-            <!-- START CONTAINER 1 -->
-            <div class="container">
-                <!-- START TITLE -->
-                <div class="custom-block">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <h1>Survey Code Generator</h1>
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-                <!-- END TITLE -->
-                <!-- START DESCRIPTION -->
-                <div class="custom-block">
-                    <p style="font-family: Lato, sans-serif;">Generate code for given survey questions and answers.</p>
-                </div>
-                <!-- END DESCRIPTION -->
-            </div>
-            <!-- END CONTAINER 1 -->
-            <!-- START RANDOMIZE QUESTIONS -->
-              <div style="margin-bottom: 15px;">
-                <p style="margin-bottom: 10px;">Randomize Questions?</p>
-                <div class="field" style="display: inline-block;">
-                  <select id="randomizeQuestions" class="form-control">
-                    <option id="rq2" value="false">No</option>
-                    <option id="rq1" value="true">Yes</option>
-                  </select>
-                </div>
-              </div>
-              <!-- END RANDOMIZE QUESTIONS -->
-              <!-- START QUESTIONS FORN -->
-              <div id="questionRows" class="container flex-column" style="padding-top: 0px;">
-                <!-- START FORM -->
-              	<div class="d-flex flex-wrap" id="questionTable">
-                  <form style="margin-top: 10px;" id="form1">
-                    <!-- QUESTION1 INPUT -->
-              			<p style="margin-top: 24px; margin-bottom: 10px;">Question 1</p>
-                    <input id="questionInput1" class="form-control" type="text">
-                    <!-- SELECTOR ITEMS -->
-              			<div class="form-row">
-                      <!-- QUESTIONTYPE -->
-              				<div class="col">
-              					<p style="margin-bottom: 10px;margin-top: 15px;">Question:</p>
-                        <select id="questionType1" class="form-control">
-                          <option id="q1" value="brand-awareness">brand-awareness</option>
-                          <option id="q2" value="demographic">demographic</option>
-                        </select>
-              				</div>
-                      <!-- SURVEY TYPE -->
-              				<div class="col">
-              					<p style="margin-top: 15px;margin-bottom: 10px;">Survey:</p>
-                        <select id="surveyType1" class="form-control">
-                          <option id="s1" value="single">single</option>
-                          <option id="s2" value="multiple">mutiple</option>
-                          <option id="s2" value="agree-disagree">agree-disagree</option>
-                        </select>
-              				</div>
-              			</div>
-                    <!-- SELECTOR #2 -->
-                    <div class="form-row">
-                      <!-- RANDOMIZE ANSWERS -->
-                      <div class="col">
-                        <p style="margin-top: 15px;margin-bottom: 10px;">Randomize Answers?</p>
-                        <select id="randomizeAnswers1" class="form-control">
-                          <option id="r2" value="false">false</option>
-                          <option id="r1" value="true">true</option>
-                        </select>
-                      </div>
-                    </div>
-                    <!-- ROW OF BUTTONS -->
-              			<div class="form-row">
-                      <!-- ADD ANSWER -->
-              				<div class="col text-right">
-              					<button onclick="addAnswer(1);" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Answer</button>
-              				</div>
-                      <!-- ADD QUESTIONS -->
-              				<div class="col text-left">
-              					<button onclick="addQuestion();" class="btn btn-primary border rounded-0" style="margin-top: 20px;" type="button">Add Question</button>
-              				</div>
-              			</div>
-                    <!-- ANSWER INPUT -->
-              			<div class="input-group" style="margin-top: 15px;">
-              				<div class="input-group-prepend">
-              					<span class="input-group-text">Answer</span>
-              				</div><input id="1_responseInput_1" class="form-control" type="text">
-              				<div class="input-group-append"></div>
-              			</div>
-              		</form>
-              </div>
-                <!-- END FORM -->
-              </div>
-              <!-- END QUESTIONS FORM -->
-              <div class="container flex-column" style="margin-top:30px;">
-                  <div class="">
-                      <form>
-                        <div class="form-row">
-                          <div class="col">
-                            <button onclick="generateCode();return false;" class="btn btn-primary border rounded-0" style="margin-top: 0px;" type="button">Submit Survey</button>
-                          </div>
-                        </div>
-                        <p style="margin-top: 20px; margin-bottom: 15px;">Generated Survey Code:</p>
-                        <textarea id="surveyCode" readonly class="form-control" placeholder="&lt;resulting survey code&gt;" style="height:700px;"></textarea>
-                      </form>
-                  </div>
-              </div>
+          <!-- START CONTAINER 1 -->
+          <div class="container">
+            <!-- START TITLE -->
+            <div ng-include="'assets/templates/SurveyGenerator/title.htm'"></div>
+            <!-- END TITLE -->
+            <!-- START DESCRIPTION -->
+            <div ng-include="'assets/templates/SurveyGenerator/description.htm'"></div>
+            <!-- END DESCRIPTION -->
+          </div>
+          <!-- END CONTAINER 1 -->
+          <!-- START RANDOMIZE QUESTIONS -->
+          <div ng-include="'assets/templates/SurveyGenerator/randomSelector.htm'"></div>
+          <!-- END RANDOMIZE QUESTIONS -->
+          <!-- START QUESTIONS FORN -->
+          <div ng-include="'assets/templates/SurveyGenerator/surveyForm.htm'"></div>
+          <!-- END QUESTIONS FORM -->
+          <!-- START RESULT BLOCK -->
+          <div ng-include="'assets/templates/SurveyGenerator/results.htm'"></div>
+          <!-- END RESULT BLOCK -->
         </section>
     </main>
     <!-- END MAIN -->
@@ -153,14 +57,13 @@
     <script src="assets/js/Misc/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Misc/bs-animation.js"></script>
-    <div ng-include="'assets/templates/scripts.htm'"></div>
     <!-- site functionality script -->
     <script src="assets/js/Controllers/surveygen.js"></script>
     <!-- <script src="assets/js/Controllers/adxcel.js"></script> -->
     <!-- script to resize onload -->
     <script type="text/javascript">
         function zoom() {
-            document.body.style.zoom = "85%"
+            document.body.style.zoom = "75%"
         }
     </script>
 
