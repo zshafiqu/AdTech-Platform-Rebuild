@@ -233,7 +233,7 @@
           var ldap = "[~" + emailList[c].replace(pandoraDom, '').trim() + "]";
           ldapList.push(ldap);
       }
-      e(list).value = ldapList.join(',')
+      e(list).value = ldapList.join(', ')
   };
 //-------------------------------------------------------------------------------------------------
   // Shows manager email div for rush requests
@@ -268,13 +268,30 @@
 //-------------------------------------------------------------------------------------------------
   // Verifies emails is a valid pandora email
   function verifyEmail() {
-      var validString = "@pandora.com";
-      if (e('emailAdd').value.indexOf(validString) === 0) {
-          return false;
-      } else {
-          return true;
-      }
+      // var validString = "@pandora.com";
+      // if (e('emailAdd').value.indexOf(validString) === 0) {
+      //     return false;
+      // } else {
+      //     return true;
+      // }
+      return;
   };
+//-------------------------------------------------------------------------------------------------
+  // A function that we use to make sure the email address ends in "@pandora.com"
+    function checkEmail() {
+      var validEmail = "@pandora.com";
+      var currEmail = e('emailAdd').value;
+
+      if(currEmail.substring(currEmail.length-12,currEmail.length) != validEmail) {
+        console.log("Invalid email")
+        return false;
+      } else {
+        console.log("Valid email")
+        // Now move onto the form method
+        formMin();
+      }
+    }
+
 //-------------------------------------------------------------------------------------------------
   // Verifies all required fields are filled out
   function formMin() {
