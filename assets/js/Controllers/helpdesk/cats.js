@@ -279,6 +279,7 @@
 //-------------------------------------------------------------------------------------------------
   // A function that we use to make sure the email address ends in "@pandora.com"
     function checkEmail() {
+      
       var validEmail = "@pandora.com";
       var currEmail = e('emailAdd').value;
 

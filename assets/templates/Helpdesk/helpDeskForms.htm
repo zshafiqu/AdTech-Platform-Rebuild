@@ -585,7 +585,7 @@
       <!-- Reporter's Pandora Email  -------------------------------------------------------------->
       <div id="reporterEmailContainer">
         <p style="margin-top: 15px;margin-bottom: 15px;"><strong>Reporter's <u>Pandora</u> email address:*</strong></p>
-        <input type="text" id="emailAdd" name="Email Address" value="" onchange="checkEmail();" class="form-control">
+        <input type="text" id="emailAdd" name="Email Address" value="" onblur="verifyEmail();" onchange="checkEmail();" class="form-control">
       </div>
       <!-- Required Value Container  -------------------------------------------------------------->
       <div id="requiredContainer" style="margin-bottom:15px; margin-top:10px;">
