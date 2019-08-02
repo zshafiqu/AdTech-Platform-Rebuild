@@ -1,5 +1,44 @@
+<form style="max-width:100%;">
+    <div class="form-row" style="margin-bottom: 15px;">
+        <div class="col">
+            <p style="margin-bottom: 15px;">Vendor/Tag Format:<br /></p>
+            <select class="form-control" style="margin-bottom: 15px;">
+              <optgroup label="This is a group">
+                <option value="12" selected>This is item 1</option>
+                <option value="13">This is item 2</option>
+                <option value="14">This is item 3</option>
+              </optgroup>
+            </select>
+            <div class="form-check" style="margin-bottom:15px;">
+              <input type="checkbox" class="form-check-input" id="formCheck-2"/>
+              <label class="form-check-label" for="formCheck-2">Apply vendor to all tags</label>
+            </div>
+        <p style="margin-bottom: 15px;">Placement Name:<br /></p><input type="text" class="form-control" style="margin-bottom: 0px;"/>
+      </div>
+    <div class="col">
+        <p style="margin-bottom: 15px;">Tag to be converted:<br /></p>
+        <textarea class="form-control" style="height:200px;"></textarea>
+      </div>
+    <div class="col">
+        <p style="margin-bottom: 15px;">Converted tag:<br /></p>
+        <textarea class="form-control" style="height:200px;"></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+          <button class="btn btn-primary border rounded-0" type="button" style="margin-right: 20px;">Add Tags</button>
+          <button class="btn btn-primary border rounded-0" type="button" style="margin-left: 20px;">Remove</button>
+        </div>
+    </div>
+    <div class="form-row" style="margin-bottom: -15px;margin-top: 15px;">
+        <div class="col">
+          <a href="">Preview Tag</a>
+        </div>
+    </div>
+</form>
 <div id="inputOutputContainer" class="d-flex flex-row flex-grow-1 flex-shrink-0 justify-content-center align-items-center align-content-center flex-wrap">
   <!-- d-flex float-none flex-row flex-grow-1 flex-shrink-0 flex-fill justify-content-center align-items-center align-content-center flex-wrap -->
+
   <div id="inputOutput0">
     <form>
             <p style="margin-bottom: 10px;">Vendor/Tag Format:</p>
