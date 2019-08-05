@@ -271,16 +271,29 @@
           none("adSpecs");
           none("intItemRows");
           block("pixelItemRows");
+
+          block("submitButtonsPix");
+          none("submitButtonsInt");
+          none("submitButtonsDisplay");
       } else if (isIntersitial()) {
           none("itemRows");
           none("adSpecs");
           none("pixelItemRows");
           block("intItemRows");
+
+          block("submitButtonsInt");
+          none("submitButtonsPix");
+          none("submitButtonsDisplay");
       } else {
           block("adSpecs");
           block("itemRows");
           none("intItemRows");
           none("pixelItemRows");
+
+          block("submitButtonsDisplay");
+          none("submitButtonsInt");
+          none("submitButtonsPix");
+
       }
   };
 //export options
