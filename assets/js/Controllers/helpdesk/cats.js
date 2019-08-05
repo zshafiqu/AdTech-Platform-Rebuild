@@ -193,7 +193,7 @@
           var singleForm = formInputs[i];
           e(singleForm).style.display = "block"
       }
-      // smooth scroll down to form
+      // smooth scroll down to form [offset top by 500 pixels, 1000 milliseconds]
       $('html, body').animate({ scrollTop: $("#summaryForm").offset().top -500}, 1000);
   };
 //-------------------------------------------------------------------------------------------------
@@ -279,16 +279,19 @@
 //-------------------------------------------------------------------------------------------------
   // A function that we use to make sure the email address ends in "@pandora.com"
     function checkEmail() {
+      e('submits').style.display = "none";
 
       var validEmail = "@pandora.com";
       var currEmail = e('emailAdd').value;
 
       if(currEmail.substring(currEmail.length-12,currEmail.length) != validEmail) {
         console.log("Invalid email")
+        e('requiredInfo').style.display = "block";
         return false;
       } else {
         console.log("Valid email")
         // Now move onto the form method
+        e('submits').style.display = "block";
         formMin();
       }
     }
@@ -311,33 +314,41 @@
               //-----------------------
               case "slingShot":
                   // <button id=\"slingJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\" style=\"margin-top: 20px;\">Submit</button>
+                  e('requiredInfo').style.display = "none";
                   e('submits').innerHTML = '<button id=\"slingJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   break;
               //-----------------------
               case "featureRequest":
+                  e('requiredInfo').style.display = "none";
                   e('submits').innerHTML = '<button id=\"jiraSubmitButton\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   break;
               //-----------------------
               case "adTech":
               //-----------------------
               case "ariaDashboard":
+                  e('requiredInfo').style.display = "none";
                   e('submits').innerHTML = '<button id=\"jira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   break;
               //-----------------------
   			      case "audienceExplorer":
+                  e('requiredInfo').style.display = "none";
                   e('submits').innerHTML = '<button id=\"jira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   break;
               //-----------------------
               case "madTech":
+                  e('requiredInfo').style.display = "none";
                   e('submits').innerHTML = '<button id=\"jira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   break;
               //-----------------------
               case "campaignInsights":
                   if (caminIssueType === "insightsSubmitDataIssue") {
+                      e('requiredInfo').style.display = "none";
                       e('submits').innerHTML = '<button id=\"caminDataJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   } else if (caminIssueType === "insightsDashboardAccess") {
+                      e('requiredInfo').style.display = "none";
                       e('submits').innerHTML = '<button id=\"caminBugJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   } else if (caminIssueType === "insightsFeatureRequest") {
+                      e('requiredInfo').style.display = "none";
                       e('submits').innerHTML = '<button id=\"caminFeatureJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
                   } else {
                       console.log("No issue type detected");
@@ -349,6 +360,7 @@
                   break;
           }
       } else if (e('issueType').value == "slingshotFeatureRequest" && e('summary').value !== "" && e('emailAdd').value !== "") {
+          e('requiredInfo').style.display = "none";
           e('submits').innerHTML = '<button id=\"featureJira\" value=\"Submit\" class=\"btn btn-primary border rounded-0\" type=\"button\">Submit</button>';
       } else {
       // nothing
