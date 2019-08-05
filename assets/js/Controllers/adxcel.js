@@ -268,24 +268,32 @@
   function updateType() {
       if (isPixel()) {
           none("itemRows");
-          none("adSpecs");
+          // none("adSpecs");
           none("intItemRows");
           block("pixelItemRows");
 
           block("submitButtonsPix");
           none("submitButtonsInt");
           none("submitButtonsDisplay");
+
+          none("adSpecsDiv");
+
       } else if (isIntersitial()) {
           none("itemRows");
-          none("adSpecs");
+          // none("adSpecs");
           none("pixelItemRows");
           block("intItemRows");
 
           block("submitButtonsInt");
           none("submitButtonsPix");
           none("submitButtonsDisplay");
+
+          block("adSpecsDiv");
+          block("adSpecsInt");
+          none("adSpecsDisplay");
+
       } else {
-          block("adSpecs");
+          // block("adSpecs");
           block("itemRows");
           none("intItemRows");
           none("pixelItemRows");
@@ -293,6 +301,10 @@
           block("submitButtonsDisplay");
           none("submitButtonsInt");
           none("submitButtonsPix");
+
+          block("adSpecsDiv");
+          block("adSpecsDisplay");
+          none("adSpecsInt");
 
       }
   };

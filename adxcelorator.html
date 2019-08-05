@@ -28,7 +28,7 @@
         <!-- START SECTION 2 -->
         <section class="layout-block block-adTechMain" style="margin-top: -50px;">
           <!-- START CONTAINER 1 -->
-          <div class="container">
+          <div class="container" style="max-width:100%">
             <!-- START TITLE & DESCRIPTION  -->
             <div ng-include="'assets/templates/Adxcelorator/title.htm'"></div>
             <div ng-include="'assets/templates/Adxcelorator/description.htm'"></div>
@@ -36,8 +36,9 @@
             <!-- START SELECTOR -->
             <div ng-include="'assets/templates/Adxcelorator/selector.htm'"></div>
             <!-- END SELECTOR -->
+                        <div ng-include="'assets/templates/Adxcelorator/adSpecs.htm'"></div>
             <!-- START MAIN FORM -->
-            <div id="outerDiv" style="margin-top: 15px;">
+
               <!-- START DISPLAY FORM  -------------------------------------------------------------------------------------------------------->
               <div ng-include="'assets/templates/Adxcelorator/displayForm.htm'"></div>
               <!-- END DISPLAY FORM  -------------------------------------------------------------------------------------------------------------->
@@ -47,7 +48,7 @@
               <!-- START PIXEL FORM  -------------------------------------------------------------------------------------------------------------->
               <div ng-include="'assets/templates/Adxcelorator/pixelForm.htm'"></div>
               <!-- END PIXEL FORM  ---------------------------------------------------------------------------------------------------------------->
-            </div>
+
             <!-- END MAIN FORM -->
             <div ng-include="'assets/templates/Adxcelorator/exportForm.htm'"></div>
           </div>
