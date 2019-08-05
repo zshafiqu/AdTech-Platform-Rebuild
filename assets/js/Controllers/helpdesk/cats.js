@@ -155,6 +155,8 @@
               selectOption('subIssue', selected.subIssue);
               // Wiki must reflect inputted values
               showWiki(issueType, subIssue);
+              // Scroll down when you press on an item on the list
+              // $('html, body').animate({ scrollTop: $("#jiraButtonContainer").offset().top }, 1500);
 
           }
       // Close the search bar upon hitting enter.. 'keycode 13'
@@ -180,7 +182,7 @@
           return $('<li><a href="#">' + label + '</a></li>').appendTo(ul);
       }
   };
-//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------\
   // Find appropriate forms for selection and display it
   function showForm() {
       e('userInput').reset();
@@ -194,7 +196,7 @@
           e(singleForm).style.display = "block"
       }
       // smooth scroll down to form [offset top by 500 pixels, 1000 milliseconds]
-      $('html, body').animate({ scrollTop: $("#summaryForm").offset().top -500}, 1500);
+      $('html, body').animate({ scrollTop: $("#summaryForm").offset().top -450}, 1000);
   };
 //-------------------------------------------------------------------------------------------------
   // If someone changes their selection, hide everything so we can redisplay their updated values
