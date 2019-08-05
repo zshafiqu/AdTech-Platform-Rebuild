@@ -88,7 +88,7 @@
         e('moreLinks').innerHTML = '<p id="moreLinks" style="margin-bottom: 10px; font-size:1.3em"><b>No Links Available</b></p>';
         e('additionalLinksContainer').style.display = "block";
     }
-    $(window).animate({ scrollTop: $("#jiraButtonContainer").offset().top }, 1400);
+    // $('html, body').animate({ scrollTop: $("#jiraButtonContainer").offset().top }, 2000);
   };
 //-------------------------------------------------------------------------------------------------
   // Method used to populate top link container
@@ -162,7 +162,7 @@
         if(e.which === 13) {
           searchElement.autocomplete('close');
           // add smooth scroll for when you hit enter
-          $('html, body').animate({ scrollTop: $("#jiraButtonContainer").offset().top }, 2000);
+          $('html, body').animate({ scrollTop: $("#jiraButtonContainer").offset().top }, 1500);
           return false;
         }
       // Close the search bar when mousing on the search bar
@@ -194,7 +194,7 @@
           e(singleForm).style.display = "block"
       }
       // smooth scroll down to form [offset top by 500 pixels, 1000 milliseconds]
-      $('html, body').animate({ scrollTop: $("#summaryForm").offset().top -500}, 1000);
+      $('html, body').animate({ scrollTop: $("#summaryForm").offset().top -500}, 1500);
   };
 //-------------------------------------------------------------------------------------------------
   // If someone changes their selection, hide everything so we can redisplay their updated values
