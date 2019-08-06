@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>adTech</title>
+    <title>Survey Code Generator</title>
     <link rel="shortcut icon" href="assets/img/shortcut.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/fonts/font-awesome.min.css">
@@ -26,21 +26,19 @@
     <main class="page">
         <!-- START SECTION 2 -->
         <section class="layout-block block-adTechMain" style="margin-top: -50px;">
-          <!-- START CONTAINER 1 -->
-          <div class="container">
-            <!-- START TITLE -->
-            <div ng-include="'assets/templates/SurveyGenerator/title.htm'"></div>
-            <!-- END TITLE -->
-            <!-- START DESCRIPTION -->
-            <div ng-include="'assets/templates/SurveyGenerator/description.htm'"></div>
-            <!-- END DESCRIPTION -->
-          </div>
-          <!-- END CONTAINER 1 -->
+          <!-- START TITLE -->
+          <div ng-include="'assets/templates/SurveyGenerator/title.htm'"></div>
+          <!-- END TITLE -->
+          <!-- START DESCRIPTION -->
+          <div ng-include="'assets/templates/SurveyGenerator/description.htm'"></div>
+          <!-- END DESCRIPTION -->
           <!-- START RANDOMIZE QUESTIONS -->
           <div ng-include="'assets/templates/SurveyGenerator/randomSelector.htm'"></div>
           <!-- END RANDOMIZE QUESTIONS -->
           <!-- START QUESTIONS FORN -->
-          <div ng-include="'assets/templates/SurveyGenerator/surveyForm.htm'"></div>
+          <div class="container" style="max-width:100%">
+            <div ng-include="'assets/templates/SurveyGenerator/surveyForm.htm'"></div>
+          </div>
           <!-- END QUESTIONS FORM -->
           <!-- START RESULT BLOCK -->
           <div ng-include="'assets/templates/SurveyGenerator/results.htm'"></div>
