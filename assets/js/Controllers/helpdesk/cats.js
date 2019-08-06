@@ -279,11 +279,11 @@
       return;
   };
 //-------------------------------------------------------------------------------------------------
+  var validEmail = "@pandora.com";
+//-------------------------------------------------------------------------------------------------
   // A function that we use to make sure the email address ends in "@pandora.com"
     function checkEmail() {
       e('submits').style.display = "none";
-
-      var validEmail = "@pandora.com";
       var currEmail = e('emailAdd').value;
 
       if(currEmail.substring(currEmail.length-12,currEmail.length) != validEmail) {
@@ -296,8 +296,7 @@
         e('submits').style.display = "block";
         formMin();
       }
-    }
-
+    };
 //-------------------------------------------------------------------------------------------------
   // Verifies all required fields are filled out
   function formMin() {
