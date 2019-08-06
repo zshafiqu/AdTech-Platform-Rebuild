@@ -281,12 +281,28 @@
 //-------------------------------------------------------------------------------------------------
   var validEmail = "@pandora.com";
 //-------------------------------------------------------------------------------------------------
+    function checkManager() {
+      e('submits').style.display = "none";
+      if (e('rushRequest').checked == true) {
+        var managerEmail = e('managerEmailAdd').value;
+        if(managerEmail.substring(managerEmail.length-12,managerEmail.length) != validEmail || managerEmail.length <= 12) {
+          console.log("Invalid Manager Email");
+          e('requiredInfo').style.display = "block";
+          return false;
+      } else {
+        console.log("Valid Manager Email");
+        addJiraWatcher('managerEmailAdd');
+        checkEmail();
+      }
+    }
+  };
+//-------------------------------------------------------------------------------------------------
   // A function that we use to make sure the email address ends in "@pandora.com"
     function checkEmail() {
       e('submits').style.display = "none";
       var currEmail = e('emailAdd').value;
 
-      if(currEmail.substring(currEmail.length-12,currEmail.length) != validEmail) {
+      if(currEmail.substring(currEmail.length-12,currEmail.length) != validEmail || currEmail.length <= 12) {
         console.log("Invalid email")
         e('requiredInfo').style.display = "block";
         return false;
