@@ -281,38 +281,50 @@
 //-------------------------------------------------------------------------------------------------
   var validEmail = "@pandora.com";
 //-------------------------------------------------------------------------------------------------
-    function checkManager() {
-      e('submits').style.display = "none";
-      if (e('rushRequest').checked == true) {
-        var managerEmail = e('managerEmailAdd').value;
-        if(managerEmail.substring(managerEmail.length-12,managerEmail.length) != validEmail || managerEmail.length <= 12) {
-          console.log("Invalid Manager Email");
-          e('requiredInfo').style.display = "block";
-          return false;
+  // this function is called onChange for both the checkbox on "rush request" and the manager's email address input
+  function checkManager() {
+    // start by setting the submit button display to none incase it's already visible
+    e('submits').style.display = "none";
+    // lets check if this is a rush request
+    if (e('rushRequest').checked == true) {
+      // get the manager email and do a check that it ends in '@pandora.com' && its more than just '@pandora.com'
+      var managerEmail = e('managerEmailAdd').value;
+      if(managerEmail.substring(managerEmail.length-12,managerEmail.length) != validEmail || managerEmail.length <= 12) {
+        console.log("Invalid Manager Email");
+        // trigger the requiredinfo block to become visible again, incase we had a submit button show up
+        e('requiredInfo').style.display = "block";
+        return false;
       } else {
+        // valid manager email, convert the email format, then move on to verify the reporter's email is good too.
         console.log("Valid Manager Email");
         addJiraWatcher('managerEmailAdd');
         checkEmail();
       }
+    // if this isn't a rush request, let's reset the priorityValue incase someone decides it after intially selecting a rush request
+    } else {
+      console.log("Rush request is no [or no longer] checked.")
+      e('priorityValue').value = '3';
+      checkEmail();
     }
   };
 //-------------------------------------------------------------------------------------------------
   // A function that we use to make sure the email address ends in "@pandora.com"
-    function checkEmail() {
-      e('submits').style.display = "none";
-      var currEmail = e('emailAdd').value;
-
-      if(currEmail.substring(currEmail.length-12,currEmail.length) != validEmail || currEmail.length <= 12) {
-        console.log("Invalid email")
-        e('requiredInfo').style.display = "block";
-        return false;
-      } else {
-        console.log("Valid email")
-        // Now move onto the form method
-        e('submits').style.display = "block";
-        formMin();
-      }
-    };
+  function checkEmail() {
+    // reset the submit button incase they put a valid pandora email, then decide to change it to a non pandora email after...
+    e('submits').style.display = "none";
+    var currEmail = e('emailAdd').value;
+    // get the manager email and do a check that it ends in '@pandora.com' && its more than just '@pandora.com'
+    if(currEmail.substring(currEmail.length-12,currEmail.length) != validEmail || currEmail.length <= 12) {
+      console.log("Invalid email")
+      e('requiredInfo').style.display = "block"; // trigger the requiredinfo block to become visible again, incase we had a submit button show up
+      return false;
+    } else {
+      console.log("Valid email")
+      // Now move onto the form verification method
+      e('submits').style.display = "block";
+      formMin();
+    }
+  };
 //-------------------------------------------------------------------------------------------------
   // Verifies all required fields are filled out
   function formMin() {
