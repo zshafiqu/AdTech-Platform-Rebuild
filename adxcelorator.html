@@ -28,31 +28,29 @@
         <!-- START SECTION 2 -->
         <section class="layout-block block-adTechMain" style="margin-top: -50px;">
           <!-- START CONTAINER 1 -->
-          <div class="container" style="max-width:100%">
-            <!-- START TITLE & DESCRIPTION  -->
-            <div ng-include="'assets/templates/Adxcelorator/title.htm'"></div>
-            <div ng-include="'assets/templates/Adxcelorator/description.htm'"></div>
-            <!-- END TITLE AND DESCRIPTION -->
-            <!-- START SELECTOR -->
-            <div ng-include="'assets/templates/Adxcelorator/selector.htm'"></div>
-            <!-- END SELECTOR -->
-                        <div ng-include="'assets/templates/Adxcelorator/adSpecs.htm'"></div>
-            <!-- START MAIN FORM -->
-
-              <!-- START DISPLAY FORM  -------------------------------------------------------------------------------------------------------->
-              <div ng-include="'assets/templates/Adxcelorator/displayForm.htm'"></div>
-              <!-- END DISPLAY FORM  -------------------------------------------------------------------------------------------------------------->
-              <!-- START INTERSTITAL FORM  -------------------------------------------------------------------------------------------------------->
-              <div ng-include="'assets/templates/Adxcelorator/interstitialForm.htm'"></div>
-              <!-- END INTERSTITAL FORM  ---------------------------------------------------------------------------------------------------------->
-              <!-- START PIXEL FORM  -------------------------------------------------------------------------------------------------------------->
-              <div ng-include="'assets/templates/Adxcelorator/pixelForm.htm'"></div>
-              <!-- END PIXEL FORM  ---------------------------------------------------------------------------------------------------------------->
-
-            <!-- END MAIN FORM -->
-            <div ng-include="'assets/templates/Adxcelorator/exportForm.htm'"></div>
-          </div>
-          <!-- END CONTAINER 1 -->
+                 <div class="container">
+                   <!-- START TITLE & DESCRIPTION  -->
+                   <div ng-include="'assets/templates/Adxcelorator/title.htm'"></div>
+                   <div ng-include="'assets/templates/Adxcelorator/description.htm'"></div>
+                   <!-- END TITLE AND DESCRIPTION -->
+                   <!-- START SELECTOR -->
+                   <div ng-include="'assets/templates/Adxcelorator/selector.htm'"></div>
+                   <!-- END SELECTOR -->
+                   <!-- START MAIN FORM -->
+                   <div id="outerDiv" style="margin-top: 15px;">
+                     <!-- START DISPLAY FORM  -------------------------------------------------------------------------------------------------------->
+                     <div ng-include="'assets/templates/Adxcelorator/displayForm.htm'"></div>
+                     <!-- END DISPLAY FORM  -------------------------------------------------------------------------------------------------------------->
+                     <!-- START INTERSTITAL FORM  -------------------------------------------------------------------------------------------------------->
+                     <div ng-include="'assets/templates/Adxcelorator/interstitialForm.htm'"></div>
+                     <!-- END INTERSTITAL FORM  ---------------------------------------------------------------------------------------------------------->
+                     <!-- START PIXEL FORM  -------------------------------------------------------------------------------------------------------------->
+                     <div ng-include="'assets/templates/Adxcelorator/pixelForm.htm'"></div>
+                     <!-- END PIXEL FORM  ---------------------------------------------------------------------------------------------------------------->
+                   </div>
+                   <!-- END MAIN FORM -->
+                 </div>
+                 <!-- END CONTAINER 1 -->
         </section>
         <!-- END SECTION 1 -->
     </main>

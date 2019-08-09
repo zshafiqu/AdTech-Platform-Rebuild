@@ -1,5 +1,16 @@
-<div class="container d-flex flex-wrap justify-content-center" style="display:block;" id="itemRows">
+<div class="itemRows container" id="itemRows" style="display:block;">
   <form style="margin-top: 50px">
+    <!-- AD SPECS -->
+    <div id="adSpecs">
+      <div id="impression">
+        <p style="margin-bottom: 10px;padding-top: 10px;">Impression Macro:</p>
+        <input class="form-control d-inline-flex" id="impressionURL" style="margin-bottom: 15px;" type="text" value="%i">
+      </div>
+      <div id="height">
+        <p style="margin-bottom: 15px;">Ad Height:</p>
+        <input class="form-control d-inline-flex" id="adHeight" style="margin-top: -15px;width: 150px;" type="text" value="1">
+      </div>
+    </div>
     <!-- INPUT FIELDS -->
     <div class="rowDisplay" id="divRow0">
       <!-- PLACEMENT NAME -->
@@ -28,6 +39,23 @@
           <button class="ssDisplayText btn btn-primary border rounded-0" onclick="addRow(this.form);" style="width: 110px;" type="button">Add Tags</button>
         </div>
       </div>
+      <!-- SUBMIT BUTTONS -->
+      <div id="submitButtons">
+        <!-- CAMPAIGN NAME -->
+        <div class="form-row">
+          <div class="col">
+            <p style="margin-top: 15px;">Campaign Name:</p>
+            <input class="form-control" id="campaignName" style="margin-top: -20px;" type="text">
+          </div>
+        </div>
+        <!-- EXPORT SS TAGS -->
+        <div class="form-row">
+          <div class="col">
+            <button class="downloadLinks btn btn-primary border rounded-0" id="downloadLinkDisplay" style="margin-top: 15px;margin-bottom: 0px;" type="button">Export SS Tags</button>
+          </div>
+        </div>
+      </div>
+      <!-- END SUBMIT BUTTONS -->
     </div>
     <!-- END INPUT FIELDS -->
   </form>
