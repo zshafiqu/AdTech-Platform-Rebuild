@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <!-- START HEAD -->
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Adxcelorator</title>
@@ -16,43 +15,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/Pricing-Tables-Item-Featured.css">
-</head>
+  </head>
 <!--  END HEAD -->
 <!-- START BODY -->
-<body ng-app="">
-  <!-- START NAV -->
-  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
-  <!-- END NAV  -->
-  <!-- START MAIN -->
+  <body ng-app="" onload="zoom()">
+    <!-- START NAV -->
+    <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
+    <!-- END NAV  -->
+    <!-- START MAIN -->
     <main class="page">
-        <!-- START SECTION 2 -->
-        <section class="layout-block block-adTechMain" style="margin-top: -50px;">
-          <!-- START CONTAINER 1 -->
-                 <div class="container">
-                   <!-- START TITLE & DESCRIPTION  -->
-                   <div ng-include="'assets/templates/Adxcelorator/title.htm'"></div>
-                   <div ng-include="'assets/templates/Adxcelorator/description.htm'"></div>
-                   <!-- END TITLE AND DESCRIPTION -->
-                   <!-- START SELECTOR -->
-                   <div ng-include="'assets/templates/Adxcelorator/selector.htm'"></div>
-                   <!-- END SELECTOR -->
-                   <!-- START MAIN FORM -->
-                   <div id="outerDiv" style="margin-top: 15px;">
-                     <!-- START DISPLAY FORM  -------------------------------------------------------------------------------------------------------->
-                     <div ng-include="'assets/templates/Adxcelorator/displayForm.htm'"></div>
-                     <!-- END DISPLAY FORM  -------------------------------------------------------------------------------------------------------------->
-                     <!-- START INTERSTITAL FORM  -------------------------------------------------------------------------------------------------------->
-                     <div ng-include="'assets/templates/Adxcelorator/interstitialForm.htm'"></div>
-                     <!-- END INTERSTITAL FORM  ---------------------------------------------------------------------------------------------------------->
-                     <!-- START PIXEL FORM  -------------------------------------------------------------------------------------------------------------->
-                     <div ng-include="'assets/templates/Adxcelorator/pixelForm.htm'"></div>
-                     <!-- END PIXEL FORM  ---------------------------------------------------------------------------------------------------------------->
-                   </div>
-                   <!-- END MAIN FORM -->
-                 </div>
-                 <!-- END CONTAINER 1 -->
-        </section>
-        <!-- END SECTION 1 -->
+      <!-- START SECTION 2 -->
+      <section class="layout-block block-adTechMain" style="margin-top: -50px;">
+        <!-- START CONTAINER 1 -->
+        <div class="container">
+          <!-- START TITLE & DESCRIPTION  -->
+          <div ng-include="'assets/templates/Adxcelorator/title.htm'"></div>
+          <div ng-include="'assets/templates/Adxcelorator/description.htm'"></div>
+          <!-- END TITLE AND DESCRIPTION -->
+          <!-- START SELECTOR -->
+          <div ng-include="'assets/templates/Adxcelorator/selector.htm'"></div>
+          <!-- END SELECTOR -->
+          <!-- START MAIN FORM -->
+          <div id="outerDiv" style="margin-top: 15px;">
+            <!-- START DISPLAY FORM  -->
+            <div ng-include="'assets/templates/Adxcelorator/displayForm.htm'"></div>
+            <!-- END DISPLAY FORM  -->
+            <!-- START INTERSTITAL FORM  -->
+            <div ng-include="'assets/templates/Adxcelorator/interstitialForm.htm'"></div>
+            <!-- END INTERSTITAL FORM  -->
+            <!-- START PIXEL FORM  -->
+            <div ng-include="'assets/templates/Adxcelorator/pixelForm.htm'"></div>
+            <!-- END PIXEL FORM  -->
+          </div>
+          <!-- END MAIN FORM -->
+        </div>
+        <!-- END CONTAINER 1 -->
+      </section>
+      <!-- END SECTION 1 -->
     </main>
     <!-- END MAIN -->
     <!-- START FOOTER -->
@@ -68,27 +67,25 @@
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script>
-      $('.downloadLinks').click(function() {
-          console.log('onclick');
-          if (isPixel()) {
-              var fileName = 'Adxcel_Tags_' + e('campaignNamePix').value;
-          }else if(isIntersitial()){
-              var fileName = 'Adxcel_Tags_' + e('campaignNameInt').value;
-          }else{
-              var fileName = 'Adxcel_Tags_' + e('campaignName').value;
-          }
-          downloadInnerHtml(fileName, 'text/html');
-      });
+    $('.downloadLinks').click(function() {
+      console.log('onclick');
+      if (isPixel()) {
+          var fileName = 'Adxcel_Tags_' + e('campaignNamePix').value;
+      }else if(isIntersitial()){
+          var fileName = 'Adxcel_Tags_' + e('campaignNameInt').value;
+      }else{
+          var fileName = 'Adxcel_Tags_' + e('campaignName').value;
+      }
+      downloadInnerHtml(fileName, 'text/html');
+    });
     </script>
     <!-- script to resize onload -->
     <script type="text/javascript">
-        function zoom() {
-            document.body.style.zoom = "70%"
-        }
+    function zoom() {
+      document.body.style.zoom = "70%"
+    }
     </script>
-
-    <body onload="zoom()">
     <!-- END SCRIPTS -->
-</body>
+  </body>
 <!-- END BODY -->
 </html>

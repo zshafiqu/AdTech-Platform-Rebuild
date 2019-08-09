@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- START HEAD -->
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Interstitial Generator</title>
@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/Pricing-Tables-Item-Featured.css">
-</head>
+  </head>
 <!--  END HEAD -->
 <!-- START BODY -->
-<body ng-app="">
-  <!-- START NAV -->
-  <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
-  <!-- END NAV  -->
-  <!-- START MAIN -->
+  <body ng-app="" onload="zoom()">
+    <!-- START NAV -->
+    <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
+    <!-- END NAV  -->
+    <!-- START MAIN -->
     <main class="page">
       <!-- START SECTION 2 -->
       <section class="layout-block block-adTechMain" style="margin-top: -50px;">
@@ -58,13 +58,11 @@
     <script src="assets/js/Controllers/interstitial.js"></script>
     <!-- script to resize onload -->
     <script type="text/javascript">
-        function zoom() {
-            document.body.style.zoom = "70%"
-        }
+    function zoom() {
+      document.body.style.zoom = "70%"
+    }
     </script>
-
-    <body onload="zoom()">
     <!-- END SCRIPTS -->
-</body>
+  </body>
 <!-- END BODY -->
 </html>

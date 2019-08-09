@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- START HEAD -->
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Ad Tech Ops Help Desk</title>
@@ -27,16 +27,15 @@
     <!-- Because we're using angular, script tags within our template files aren't executed automatically when injected
     with 'innerHTML'. To fix this issue, we need to move our jquery script tag before angular.. this will require
     angular to use jQuery for DOM manipulations. This is important for site functionality & usage of directives -->
-</head>
+  </head>
 <!--  END HEAD -->
 <!-- START BODY -->
-<body ng-app="">
+  <body ng-app="" onload="zoom()">
     <!-- START NAV -->
     <div ng-include="'assets/templates/navbar.htm'" style="padding-bottom: 100px"></div>
     <!-- END NAV  -->
-    <!-- START MAIN -->
     <main class="page">
-      <!-- START SECTION 2 -->
+      <!-- START SECTION 1 -->
       <section class="layout-block block-adTechMain" style="margin-top: -50px;">
         <!-- START CONTAINER 1 ---------------------------->
         <div class="container">
@@ -70,9 +69,8 @@
         </div>
         <!-- END CONTAINER 3 ---------------------------->
       </section>
-      <!-- END SECTION 2 -->
+      <!-- END SECTION 1 -->
     </main>
-    <!-- END MAIN -->
     <!-- START FOOTER -->
     <div ng-include="'assets/templates/footer.htm'"></div>
     <!-- END FOOTER -->
@@ -82,31 +80,28 @@
     <script src="assets/js/Controllers/helpdesk/cats.js"></script>
     <script src="assets/js/Controllers/helpdesk/data.js"></script>
     <script>
-    //jquery
-    $('#medium').change(function() {
+      //jquery
+      $('#medium').change(function() {
         if ($('#medium').val() === 'display') {
-            e('audioOptions').style.display = "none";
+          e('audioOptions').style.display = "none";
         } else {
-            e('audioOptions').style.display = "block";
+          e('audioOptions').style.display = "block";
         }
-    });
-    $('#size').change(function() {
+      });
+      $('#size').change(function() {
         if ($('#size').val() === 'newSlot') {
-            e('newSizeDiv').style.display = 'block';
+          e('newSizeDiv').style.display = 'block';
         } else {
-            e('newSizeDiv').style.display = 'none';
-
+          e('newSizeDiv').style.display = 'none';
         }
-    });
+      });
     </script>
     <!-- script to resize onload -->
     <script type="text/javascript">
-        function zoom() {
-            document.body.style.zoom = "70%"
-        }
+    function zoom() {
+      document.body.style.zoom = "70%"
+    }
     </script>
-    <body onload="zoom()">
-    <!-- END SCRIPTS -->
-</body>
-
+  <!-- END SCRIPTS -->
+  </body>
 </html>
