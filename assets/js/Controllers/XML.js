@@ -3,19 +3,23 @@
   function e(n){
     return document.getElementById(n);
   };
-  // ------------ BEGIN XML.HTML ------------------------------------
+//-----------------------------------------------
   function isVideo() {
     return e("videoRadio").checked;
   };
+//-----------------------------------------------
   function isAudio() {
     return e("audioRadio").checked;
   };
+//-----------------------------------------------
   function isInternal() {
     return e("internalTracker").checked;
   };
+//-----------------------------------------------
   function isThirdParty() {
     return e("thirdPartyTracker").checked;
   };
+//-----------------------------------------------
   function updateProduct(){
     if (isVideo()){
       e("audioDiv").style.display = "none";
@@ -28,6 +32,7 @@
       e("videoDiv").style.display = "block";
     }
   };
+//-----------------------------------------------
   // XML Generator Function
   function generateMember(){
     if (isVideo()) {
@@ -45,4 +50,4 @@
     var memberGenerated = "<member>\n<name>"+memberNameComplete+"</name>\n<value>\n<string><![CDATA["+pix+"]]></string>\n<value>\n</member>";
     e("member_code").value = memberGenerated
   };
-// ------------ END XML.HTML ----------------------------------------
+//-----------------------------------------------

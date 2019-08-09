@@ -3,18 +3,21 @@
   function e(n){
     return document.getElementById(n);
   };
-// ------------ BEGIN ADXCELORATOR.HTML ----------------------------
+//-----------------------------------------------
 //shortcuts for block/none display
   function block(n) {
       e(n).style.display = "block";
   };
+//-----------------------------------------------
   function none(n) {
       e(n).style.display = "none";
   };
+//-----------------------------------------------
 //display functions
   function URL(name) {
       return e(name).value.replace(/\|/g, "%7C");
   };
+//-----------------------------------------------
 //creates global variables for row counting, when adding additonal tags
   var rowNum = 0;
   var pixNum = 0;
@@ -23,14 +26,14 @@
   var tagNum1 = 1;
   var tagNum2 = 1;
   var tagNum3 = 1;
-
+//-----------------------------------------------
 //removes added rows
   function removeRow(rnum) {
       $('#divRow' + rnum).remove();
       $('#pixRowNum' + rnum).remove();
       $('#divIntRow' + rnum).remove();
   }
-
+//-----------------------------------------------
 //adds rows
   function addRow(frm) {
       //ADD PIXEL ROW
@@ -42,7 +45,6 @@
           var pixRow = ' <div id="pixRowNum' + pixNum + '" class="rowPix" style="margin-top:50px;"> <form> <p style="margin-bottom: 0px;"><b>Pixel #'+tagNum3+'</b></p> <div id="pixelName" class="pixelNames"> <p>Placement Name:</p> <textarea id="pixelNamepix' + pixNum + '" class="pixelNameText form-control" style="margin-top: -20px;"></textarea> </div> <div id="' + pixNum + '"" class="creativeIds"> <p style="margin-top: 15px;">DFP Creative ID:</p> <textarea id="pix' + pixNum + '" onchange="generatePixel(this.id);" class="form-control" style="margin-top: -20px;"></textarea> </div> <div id="opt-in" class="optInPixels"> <p style="margin-top: 15px;">DFP Pixel Opt-in:</p> <textarea id="optinTextpix' + pixNum + '" class="form-control" readonly="" style="margin-top: -20px;"></textarea> </div> <div id="opt-out" class="optOutPixels"> <p style="margin-top: 15px;">DFP Pixel Opt-out:</p> <textarea id="optoutTextpix' + pixNum + '" class="form-control" readonly="" style="margin-top: -20px;"></textarea> </div> <div id="addPixelButton" class="addRemoveButton" style="margin-top: 15px;"> <div class="form-row"> <div class="col"> <button onclick="removeRow(' + pixNum + ');" id="removeButton' + pixNum + '" class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Remove</button> <button class="btn btn-primary border rounded-0" id="addButton" onclick="addRow(this.form);" style="width: 120px;" type="button">Add Another</button> </div> </div> </div> </form> </div>';
 
           //appends the row to the div
-
           $('#pixelItemRows').append(pixRow);
       }
       //ADD INTERSTITIAL ROW
@@ -50,15 +52,11 @@
           intRowNum++; // increase row #
           tagNum2++; // counter for additional forms
 
-          //defines a new row's HTML
-          // var intRow = '<div id="divIntRow' + intRowNum + '" class="rowInt row"> <div id="intName" class="displayNames col-md-2"> <label>Placement Name</label> <textarea id="intName' + intRowNum + '" class="intNameText form-control" type="text" type="textarea" style="width:100%;height:100px"></textarea> </div><div id="adxcelInt" class="adxcel col-md-2"> <label>AdXcel Tag</label> <textarea id="int' + intRowNum + '" type="textarea" style="width:100%;height:100px" size="4" onchange="generateInt(this.id);" class="form-control"></textarea> </div><div id="xfpInt" class="xfp col-md-2"> <label>DFP Code</label> <textarea readonly id="adCodeXFPint' + intRowNum + '" type="text" type="textarea" style="width:100%;height:100px" class="form-control"></textarea> </div><div id="ssInt" class="ss col-md-2"> <label>Slingshot Code</label> <textarea readonly id="adCodeSSint' + intRowNum + '" type="text" type="textarea" style="width:100%;height:100px" class="ssIntText form-control"></textarea> </div><div id="rowOptions" class="col-md-1"><div id="platformToggle" class="form-group"> <label>Platform:</label> <input id="platformint' + intRowNum + '" type="checkbox" data-toggle="toggle" data-on="iPhone" data-off="Android" data-onstyle="primary" data-offstyle="success"data-width="80" class="form-control toggle" onchange="generateInt(\'int'+ intRowNum +'\')"></input> </div><div id="addButton" class="addRemoveButton form-group"><input type="button" value="Remove" class="btn btn-default" onclick="removeRow(' + intRowNum + ');" id="removeButton' + intRowNum + '"></div><div id="emptyColumn" class ="col-md-2"></div>'
-
           // updated introw variable
           var intRow = ' <div id="divIntRow' + intRowNum + '" class="rowInt" style="margin-top:50px;"> <form> <p style="margin-bottom: 0px;"><b>Tag #'+tagNum2+'</b></p> <div id="intName" class="displayNames"> <p>Placement Name:</p> <textarea id="intName' + intRowNum + '" class="intNameText form-control" style="margin-top: -20px;"></textarea> </div> <div id="adxcelInt" class="adxcel"> <p style="margin-top: 15px;">AdXcel Tag:</p> <textarea id="int' + intRowNum + '" onchange="generateInt(this.id);" class="form-control" style="margin-top: -20px;"></textarea> </div> <div id="xfpInt" class="xfp"> <p style="margin-top: 15px;">DFP Code:</p> <textarea id="adCodeXFPint' + intRowNum + '" class="form-control" readonly="" style="margin-top: -20px;"></textarea> </div> <div id="ssInt" class="ss"> <p style="margin-top: 15px;">Slingshot Code:</p> <textarea id="adCodeSSint' + intRowNum + '" class="ssIntText form-control" readonly="" style="margin-top: -20px;"></textarea> </div> <div id="platformSelector"> <p style="margin-top:15px; margin-bottom: 5px;">Platform:</p> <div class="row d-inline-flex"> <div class="col"> <div class="form-check"> <input id="" onclick="" name="platform" checked class="form-check-input" type="radio"> <label class="form-check-label" for="formCheck-4" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">Android</label> </div> </div> <div class="col"> <div class="form-check"> <input id="" onclick="" name="platform" class="form-check-input" type="radio"> <label class="form-check-label" for="formCheck-5" style="font-family: Lato, sans-serif; font-size: 1.2em; font-weight: 300;">iPhone</label> </div> </div> </div> </div> <div id="addButton" class="addRemoveButton form-row" style="margin-top: 15px;"> <div class="col"> <button onclick="removeRow(' + intRowNum + ');" id="removeButton' + intRowNum + '" class="btn btn-primary border rounded-0" type="button" style="width: 110px;">Remove</button> <button class="btn btn-primary border rounded-0" id="addButton" onclick="addRow(this.form);" style="width: 120px;" type="button">Add Another</button> </div> </div> </form> </div>';
 
           //appends the new row to the div
           $('#intItemRows').append(intRow);
-
           //call to bootstrap's toggle API
           // $('#platformint' + intRowNum).bootstrapToggle();
       }
@@ -75,6 +73,7 @@
           $('#itemRows').append(row);
       }
   };
+//-----------------------------------------------
 //generates display tags for DFP/Slingshot
   function generateCode(thisRow) {
       //grabs tag and escapes it
@@ -123,6 +122,7 @@
       console.log(htmlXFP);
       console.log(codeXFP);
   };
+//-----------------------------------------------
 //generates DFP opt-in/opt-out pixels for Adxcel
   function generatePixel(thisRow) {
       //grabs the DFP creative ID
@@ -135,6 +135,7 @@
       e("optinText" + thisRow).innerHTML = pixel1;
       console.log(e("optoutText" + thisRow).value);
   };
+//-----------------------------------------------
   //generates interstitial tags for DFP/Slingshot
     function generateInt(thisRow) {
         //checks which platform is selected; returns iPhone for True, Android for False
@@ -248,22 +249,27 @@
             console.log('android');
         }
     };
+//-----------------------------------------------
 // platform checker ->
   function isAndroid() {
     return e("droid").checked;
     console.log("droid");
   };
+//-----------------------------------------------
   function isiPhone() {
     return e("iphone").checked;
   };
+//-----------------------------------------------
 //checks to see if the user has selected pixel generation
   function isPixel() {
       return e("pixel").checked;
   };
+//-----------------------------------------------
 //checks to see if the user has selected interstitial generation
   function isIntersitial() {
       return e("intersitial").checked;
   };
+//-----------------------------------------------
 //changes displayed forms based on tag type
   function updateType() {
       if (isPixel()) {
@@ -283,10 +289,12 @@
           none("pixelItemRows");
       }
   };
+//-----------------------------------------------
 //export options
   function escapeIt(t) {
       return t;
-  }
+  };
+//-----------------------------------------------
 //grabs placement names by class and returns them in comment wrappers
   function getText(rowEl) {
       //pixel placement names
@@ -312,6 +320,7 @@
           return '<!-- ' + placement + '_Slingshot_Tag -->\n' + ssCodeText +'\n';
       }
   };
+//-----------------------------------------------
 //export function
   function downloadInnerHtml(campaignName, mimeType) {
       if (isPixel()){
@@ -345,4 +354,4 @@
       link.click();
       console.log(finalText);
   };
-// ------------ END ADXCELORATOR.HTML ----------------------------
+//-----------------------------------------------

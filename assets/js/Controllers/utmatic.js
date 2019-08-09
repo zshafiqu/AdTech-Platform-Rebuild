@@ -3,7 +3,7 @@
   function e(n){
     return document.getElementById(n);
   };
-// ------------ BEGIN UTMATIC.HTML ----------------------------------
+//-----------------------------------------------
   function generateUrl() {
     var domain = e("domain").value
     var source = e("source").value
@@ -75,7 +75,8 @@
     html = html.replace(' ', "%20");
     e("url-utmatic").value = html;
   };
+//-----------------------------------------------
   function warning() {
     e('warned').style.display="block"
   };
-  // ------------ END UTMATIC.HTML ----------------------------------
+//-----------------------------------------------

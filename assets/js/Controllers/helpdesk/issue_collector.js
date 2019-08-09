@@ -2,6 +2,7 @@
 function e(n) {
     return document.getElementById(n);
 };
+//-------------------------------------------------------------------------------------------------
 //loops through fields in form and prints them to a result array
 var fields = $("#userInput :visible, .hiddenCheck").serializeArray();
 $("#results").empty();
@@ -22,6 +23,7 @@ jQuery.each(fields, function(i, field) {
     }
 
 });
+//-------------------------------------------------------------------------------------------------
 // variables storing some values that get populated when the issue collector window appears
 var emails = e('emailAdd').value;
 var summ = e('summary').value;
@@ -51,8 +53,7 @@ var pandoraDom = /@.*|\[~|]/g;
 var watchers = watchers.replace(pandoraDom, "");
 console.log(watchers)
 
-
-
+//-------------------------------------------------------------------------------------------------
 var affectedArea2 = selectedOption.getAttribute("data-affectedArea");
 //adtech JIRA info
 var teamSelected = e('teamType').value;
@@ -66,7 +67,7 @@ switch (teamSelected) {
     default:
         break;
 }
-
+//-------------------------------------------------------------------------------------------------
 //JIRA ISSUE COLLECTOR SCRIPTS
 //adtech task
 jQuery.ajax({
@@ -112,7 +113,7 @@ jQuery.ajax({
     cache: true,
     dataType: "script"
 });
-
+//-------------------------------------------------------------------------------------------------
 //adtech BUG issue collector customized trigger function
 $(document).ready(function() {
     window.ATL_JQ_PAGE_PROPS = $.extend(window.ATL_JQ_PAGE_PROPS, {
@@ -212,3 +213,4 @@ $(document).ready(function() {
         }
     })
 });
+//-------------------------------------------------------------------------------------------------

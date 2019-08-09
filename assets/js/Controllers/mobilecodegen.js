@@ -3,13 +3,15 @@
   function e(n){
     return document.getElementById(n);
   };
-// ------------ BEGIN MOBILECODEGEN.HTML ----------------------------
+//-----------------------------------------------
   function e(n) {
     return document.getElementById(n);
   };
+//-----------------------------------------------
   function isHTML() {
     return e("htmlAdType").checked;
   };
+//-----------------------------------------------
   function updateTypeMobile() {
     if (isHTML()) {
       e("htmlOptions").style.display = "block";
@@ -19,9 +21,11 @@
       e("imageOptions").style.display = "block";
     }
   };
+//-----------------------------------------------
   function URL(name) {
     return e(name).value.replace(/\|/g, "%7C");
   };
+//-----------------------------------------------
   function generateMobileCode() {
     var code = "{\n";
 
@@ -50,4 +54,4 @@
     code += "}\n"
     e("adCode").value = code;
   };
-// ------------ END MOBILECODEGEN.HTML ------------------------------
+//-----------------------------------------------

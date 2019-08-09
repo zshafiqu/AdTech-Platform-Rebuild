@@ -3,10 +3,11 @@
   function e(n){
     return document.getElementById(n);
   };
-// ------------ BEGIN INTERSTITIAL.HTML -----------------------------
+//-----------------------------------------------
   function isoneCTA() {
     return e("oneCTA").checked;
   };
+//-----------------------------------------------
   function updateTypeInterstitial() {
     if (isoneCTA()) {
       e("twoCTAinput").style.display = "none";
@@ -15,10 +16,11 @@
         e("twoCTAinput").style.display = "block";
     }
   };
-  // removing pipes from %i
+//-----------------------------------------------
   function URL(name) {
     return e(name).value.replace(/\|/g, "%7C");
   };
+//-----------------------------------------------
   function generateCode() {
     var pix = e("impressionTracker").value;
     var trackingPixel = "<img src=\""+ pix +"\" style=\"position:absolute; top:0px; left:0px; visibility:hidden\" \/>\n"
@@ -61,4 +63,4 @@
       code += "}\n"
     e("adCode").value = code
   };
-// ------------ END INTERSTITIAL.HTML -------------------------------
+//-----------------------------------------------

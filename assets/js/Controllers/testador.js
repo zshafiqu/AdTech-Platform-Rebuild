@@ -3,7 +3,7 @@
   function e(n){
     return document.getElementById(n);
   };
-// ------------ BEGIN TESTADOR.HTML ---------------------------------
+//-----------------------------------------------
   function qrCode() {
     var adId = e("adId").value;
   	var cId = e("cId").value;
@@ -25,4 +25,4 @@
     e("result-container").style.display = "block";
   	e("result-test").innerHTML = divResult;
   };
-// ------------ END TESTADOR.HTML -----------------------------------
+//-----------------------------------------------
