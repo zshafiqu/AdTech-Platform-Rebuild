@@ -1,9 +1,8 @@
 /**
- * used for Pixeltron WebPage
  * ExcellentExport.
  * A client side Javascript export to Excel.
  *
- * author: Jordi Burgos (jordiburgos@gmail.com)
+ * @author: Jordi Burgos (jordiburgos@gmail.com)
  *
  * Based on:
  * https://gist.github.com/insin/1031969
