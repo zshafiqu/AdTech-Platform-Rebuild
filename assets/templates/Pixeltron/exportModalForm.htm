@@ -2,7 +2,7 @@
   <form style="height: 255px;padding-top: 25px;padding-bottom: 25px;margin-top: 75px; display:block;">
     <div style="padding-bottom: 0px;height: 198px;">
         <p style="margin-bottom: 10px;padding-top: 10px;">Campaign Name:</p>
-        <input class="form-control" type="text" inputmode="url" style="margin-bottom: 10px;">
+        <input id="campaignNamePix" class="form-control" type="text" inputmode="url" style="margin-bottom: 10px;">
         <button id="exportOptions" data-toggle="modal" data-target="#exportModal" class="btn btn-success border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;">Export</button>
         <button id="resetAll" onclick="location.reload();" class="btn btn-danger border rounded-0" type="button" style="margin: 10px;padding-top: 10px;margin-top: 20px;padding-bottom: 10px;margin-bottom: 25px;">Clear All</button>
     </div>
@@ -11,14 +11,16 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" style="justify-content:center;">Export Options</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <h4 class="modal-title" style="justify-content:center;">Export Options</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
             <div class="modal-body">
               <p>Please choose export file type.</p>
             </div>
             <div class="modal-footer">
               <!-- <button class="btn btn-light" type="button" data-dismiss="modal">Close</button> -->
-              <input type="button" id="downloadLinkPix" class="downloadLinks btn btn-success" value="Export .txt"></input>
-              <a href="#" class="btn btn-primary" id="downloadLinkCsv" onclick="convertToTable();" > Export .xls</a>
+              <input type="button" id="downloadLinkPix" class="downloadLinks btn btn-success border rounded-0" value="Export .txt"></input>
+              <a href="#" class="btn btn-primary border rounded-0" id="downloadLinkCsv" onclick="convertToTable();" > Export .xls</a>
             </div>
           </div>
         </div>
@@ -26,5 +28,4 @@
       <!-- modal -->
   </form>
 </div>
-<div id="hiddenTable">
-</div>
+<div id="hiddenTable"></div>
