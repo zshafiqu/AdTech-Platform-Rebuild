@@ -57,26 +57,35 @@
     <script src="assets/js/Controllers/pixeltron/excellentexport.js"></script>
     <!-- scripts that can't be imported -->
     <script>
+    <script>
+    $('#exportModal').on('shown.bs.modal', function() {
+        $('#exportOptions').click()
+    })
+
     $('#downloadLinkPix').click(function() {
-      console.log('onclick');
-      var fileName = e('campaignNamePix').value;
-      downloadInnerHtml(fileName, 'text/plain');
+        console.log('onclick');
+        var fileName = e('campaignNamePix').value;
+
+        downloadInnerHtml(fileName, 'text/plain');
     });
+
     $('#downloadLinkCsv').click(function() {
-      console.log('stuff');
-      if (!e('campaignNamePix').value) {
-        var fileName = "Campaign" + '.xls';
-      } else {
-        var fileName = e('campaignNamePix').value + '.xls';
-      }
-      $("#downloadLinkCsv").attr("download", fileName);
-      var excelFunction = ExcellentExport.excel(this, 'tabledTags', 'fileName');
-      $("#hiddenTable").empty();
-      return excelFunction;
+        console.log('stuff');
+
+        if (!e('campaignNamePix').value) {
+            var fileName = "Campaign" + '.xls';
+        } else {
+            var fileName = e('campaignNamePix').value + '.xls';
+        }
+        $("#downloadLinkCsv").attr("download", fileName);
+        var excelFunction = ExcellentExport.excel(this, 'tabledTags', 'fileName');
+        $("#hiddenTable").empty();
+        return excelFunction;
     });
     $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="tooltip"]').tooltip();
     });
+    </script>
     </script>
     <!-- script to resize onload -->
     <script type="text/javascript">
