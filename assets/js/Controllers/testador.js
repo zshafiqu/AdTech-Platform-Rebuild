@@ -19,7 +19,7 @@
   	if(e("intAd").checked == true){
    		var url = '@testint%20'+adId+'%20'+cId;
   	}
-  	var imgURL = 'http://qrcode.kaywa.com/img.php?&d='+url;
+  	var imgURL = 'https://qrcode.kaywa.com/img.php?&d='+url;
   	console.log(imgURL);
   	var divResult = '<img class="img-thumbnail img-fluid" src='+imgURL+'>';
     e("result-container").style.display = "block";
