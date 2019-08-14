@@ -24,11 +24,10 @@
           "label": "Slingshot Bugs"
       },
       // Uncomment this out when ready
-      "adsManager": {
-          "parent": null,
-          "label": "Ads Manager"
-      }
-
+      // "adsManager": {
+      //     "parent": null,
+      //     "label": "Ads Manager"
+      // },
   };
 //-------------------------------------------------------------------------------------------------
 // Issue Type
@@ -387,40 +386,42 @@
               "label": "ARIA System Guide"
           }]
       },
+      /*
+      Below are the Issue types for Ads Manager, these can be uncommented when the sub issues are added to JIRA. you can also update the wiki link(s).
+      */
       // Ads Manager Issue Types -------------------------------------------------------------------------------------------------------------------------------------------->
-      "adsManagerDataIssue": {
-          "parent": "adsManager",
-          "label": "Data Issue",
-          "wikiLinks": [{
-              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
-              "label": "Ads Manager Known Bugs & Workarounds"
-          }]
-      },
-      "adsManagerFeatureIssue": {
-          "parent": "adsManager",
-          "label": "Feature Issue",
-          "wikiLinks": [{
-              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
-              "label": "Ads Manager Known Bugs & Workarounds"
-          }]
-      },
-      "adsManagerToolAccess": {
-          "parent": "adsManager",
-          "label": "Tool Access",
-          "wikiLinks": [{
-              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
-              "label": "Ads Manager Known Bugs & Workarounds"
-          }]
-      },
-      "adsManagerFeatureRequest": {
-          "parent": "adsManager",
-          "label": "Feature Request",
-          "wikiLinks": [{
-              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
-              "label": "Ads Manager Known Bugs & Workarounds"
-          }]
-      },
-
+      // "adsManagerDataIssue": {
+      //     "parent": "adsManager",
+      //     "label": "Data Issue",
+      //     "wikiLinks": [{
+      //         "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+      //         "label": "Ads Manager Known Bugs & Workarounds"
+      //     }]
+      // },
+      // "adsManagerFeatureIssue": {
+      //     "parent": "adsManager",
+      //     "label": "Feature Issue",
+      //     "wikiLinks": [{
+      //         "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+      //         "label": "Ads Manager Known Bugs & Workarounds"
+      //     }]
+      // },
+      // "adsManagerToolAccess": {
+      //     "parent": "adsManager",
+      //     "label": "Tool Access",
+      //     "wikiLinks": [{
+      //         "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+      //         "label": "Ads Manager Known Bugs & Workarounds"
+      //     }]
+      // },
+      // "adsManagerFeatureRequest": {
+      //     "parent": "adsManager",
+      //     "label": "Feature Request",
+      //     "wikiLinks": [{
+      //         "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+      //         "label": "Ads Manager Known Bugs & Workarounds"
+      //     }]
+      // },
   };
 //-------------------------------------------------------------------------------------------------
 // Sub Issue Type
