@@ -22,6 +22,11 @@
       "slingShot": {
           "parent": null,
           "label": "Slingshot Bugs"
+      },
+      // Uncomment this out when ready
+      "adsManager": {
+          "parent": null,
+          "label": "Ads Manager"
       }
 
   };
@@ -380,6 +385,39 @@
           "wikiLinks": [{
               "link": "https://wiki.savagebeast.com/download/attachments/59586872/ARIA%20Guide%20-%20ROTE%20-%20March%202017v2.pdf?version=1&modificationDate=1490132444063&api=v2",
               "label": "ARIA System Guide"
+          }]
+      },
+      // Ads Manager Issue Types -------------------------------------------------------------------------------------------------------------------------------------------->
+      "adsManagerDataIssue": {
+          "parent": "adsManager",
+          "label": "Data Issue",
+          "wikiLinks": [{
+              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+              "label": "Ads Manager Known Bugs & Workarounds"
+          }]
+      },
+      "adsManagerFeatureIssue": {
+          "parent": "adsManager",
+          "label": "Feature Issue",
+          "wikiLinks": [{
+              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+              "label": "Ads Manager Known Bugs & Workarounds"
+          }]
+      },
+      "adsManagerToolAccess": {
+          "parent": "adsManager",
+          "label": "Tool Access",
+          "wikiLinks": [{
+              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+              "label": "Ads Manager Known Bugs & Workarounds"
+          }]
+      },
+      "adsManagerFeatureRequest": {
+          "parent": "adsManager",
+          "label": "Feature Request",
+          "wikiLinks": [{
+              "link": "https://wiki.savagebeast.com/pages/viewpage.action?pageId=128009510",
+              "label": "Ads Manager Known Bugs & Workarounds"
           }]
       },
 
@@ -1782,7 +1820,76 @@
           "jiraLabel": "18545",
           "jiraSubLabel": "18571",
           "formInputs": ['theInput']
-      }
-
+      },
+      /*
+      Below are all of the sub issues for the Ads Manager fields. When the labels and sublabels
+      are added to JIRA, you can come in and uncomment these values, and enter the individual label
+      numbers so the tickets know where to route in JIRA.
+      */
+      // // Ads Manager - Sub Issues --------------------------------------->
+      // // Data Issue - Data Lag
+      // "adsManagerDataIssueDataLag": {
+      //     "parent": "adsManagerDataIssue",
+      //     "label": "Data Lag",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
+      // // Data Issue - Missing Data
+      // "adsManagerDataIssueMissingData": {
+      //     "parent": "adsManagerDataIssue",
+      //     "label": "Missing Data",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
+      // // Data Issue - Incorrect Data
+      // "adsManagerDataIssueIncorrectData": {
+      //     "parent": "adsManagerDataIssue",
+      //     "label": "Incorrect Data",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
+      // // Feature Issue - Header
+      // "adsManagerFeatureIssueHeader": {
+      //     "parent": "adsManagerFeatureIssue",
+      //     "label": "Header",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
+      // // Feature Issue - Ads Manager Dashboard
+      // "adsManagerFeatureIssueAdsManagerDashboard": {
+      //     "parent": "adsManagerFeatureIssue",
+      //     "label": "Ads Manager Dashboard",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
+      // // Tool Access - Login Issue
+      // "adsManagerToolAccessLoginIssue": {
+      //     "parent": "adsManagerToolAccess",
+      //     "label": "Login Issue",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
+      // // Tool Access - System Outage
+      // "adsManagerToolAccessSystemOutage": {
+      //     "parent": "adsManagerToolAccess",
+      //     "label": "System Outage",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
+      // // Feature Request - Feature Request
+      // "adsManagerFeatureRequestFeatureRequest": {
+      //     "parent": "adsManagerFeatureRequest",
+      //     "label": "Feature Request",
+      //     "jiraLabel": "",
+      //     "jiraSubLabel": "",
+      //     "formInputs": ['theInput']
+      // },
   };
 //-------------------------------------------------------------------------------------------------
