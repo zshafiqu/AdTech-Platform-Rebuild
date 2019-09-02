@@ -10,4 +10,16 @@ This platform consisted of a set of tools that were used to help the end user's 
 
 Throughout my ten weeks at Pandora, I was able to design and build a new platform for the team that transformed the end user experience. I met with team members across various orgs to collect user stories and feedback on what features needed to be implemented. The end result was a modularly designed component based platform that made updates and maintenance easy for the Ad Tech Ops team.
 
-  
+[Check out the site hosted through GitHub pages here!](https://zshafiqu.github.io/adTech/)
+
+#### Documentation
+
+Part of my project was building a new platform, and drafting documentation that a non-engineering team could use to maintain and update the platform.
+
+![Docs](https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/docs.pdf)
+
+#### Project Presentation
+
+At the end of my internship I also gave a presentation of the project. Here's a copy of the poster I created that gives a high level overview!
+
+![Poster](https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/summary.png)
