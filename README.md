@@ -1,6 +1,8 @@
 # Ad Tech Ops Tools Platform #
 
-![Demo](https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/demo.gif)
+<p align="center">
+  <img src="https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/demo.gif" alt="Demo gif"/>
+</p>
 
 #### Summary:
 
