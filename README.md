@@ -14,9 +14,7 @@ Throughout my ten weeks at Pandora, I was able to design and build a new platfor
 
 #### Documentation
 
-Part of my project was building a new platform, and drafting documentation that a non-engineering team could use to maintain and update the platform.
-
-![Docs](https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/docs.pdf)
+In addition to building a new platform, the other part of my project was drafting documentation that a non-engineering team could use to maintain and update the platform. [Check out the manual I created here!](https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/docs.pdf)
 
 #### Project Presentation
 
