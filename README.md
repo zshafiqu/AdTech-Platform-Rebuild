@@ -12,7 +12,7 @@ This platform consisted of a set of tools that were used to help the end user's 
 
 Throughout my ten weeks at Pandora, I was able to design and build a new platform for the team that transformed the end user experience. I met with team members across various orgs to collect user stories and feedback on what features needed to be implemented. The end result was a modularly designed component based platform that made updates and maintenance easy for the Ad Tech Ops team.
 
-[Check out the site hosted through GitHub pages here!](https://zshafiqu.github.io/adTech/)
+[Check out the site hosted through GitHub pages here!](https://zshafiqu.github.io/AdTech-Platform-Rebuild/)
 
 #### Documentation
 
