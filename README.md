@@ -1,7 +1,7 @@
 # Ad Tech Ops Tools Platform #
 
 <p align="center">
-  <img src="https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/demo.gif" alt="Demo gif"/>
+  <img src="https://github.com/zshafiqu/adTech/blob/master/docs/assets/readMeStuff/demo.gif" alt="Demo gif"/>
 </p>
 
 #### Summary:
@@ -16,10 +16,10 @@ Throughout my ten weeks at Pandora, I was able to design and build a new platfor
 
 #### Documentation
 
-In addition to building a new platform, the other part of my project was drafting documentation that a non-engineering team could use to maintain and update the platform. [Check out the manual I created here!](https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/docs.pdf)
+In addition to building a new platform, the other part of my project was drafting documentation that a non-engineering team could use to maintain and update the platform. [Check out the manual I created here!](https://github.com/zshafiqu/adTech/blob/master/docs/assets/readMeStuff/docs.pdf)
 
 #### Project Presentation
 
 At the end of my internship I also gave a presentation of the project. Here's a copy of the poster I created that gives a high level overview!
 
-![Poster](https://github.com/zshafiqu/adTech/blob/master/assets/readMeStuff/summary.png)
+![Poster](https://github.com/zshafiqu/adTech/blob/master/docs/assets/readMeStuff/summary.png)
